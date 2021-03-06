@@ -1,0 +1,187 @@
+{
+  "firstName": "Matthew",
+  "middleName": "Wang Shun",
+  "lastName": "Kwong",
+  "occupations": [
+    "System DBA",
+    "Front-End Developer"
+  ],
+  "socialMedia": {
+    "facebookHref": "https://www.facebook.com/profile.php?id=1592440345",
+    "linkedinHref": "https://www.linkedin.com/in/matthew-wang-shun-kwong",
+    "gitHubHref": "https://github.com/matthewkwong2"
+  },
+  "about": {
+    "intro": "Dynamic and motivated System DBA with vast IT experience. Skilled in maintaining databases, front-end development, analytical thinking and creative problem-solving. Adaptable and transformational team player with an ability to work independently and a willingness to go the extra mile.",
+    "languages": [
+      {
+        "name": "Cantonese",
+        "rating": 100
+      },
+      {
+        "name": "English",
+        "rating": 70
+      },
+      {
+        "name": "Mandarin",
+        "rating": 80
+      }
+    ],
+    "skills": [
+      {
+        "name": "MySQL",
+        "rating": 85
+      },
+      {
+        "name": "SAP ASE",
+        "rating": 30
+      },
+      {
+        "name": "Oracle Database",
+        "rating": 30
+      },
+      {
+        "name": "Delphix",
+        "rating": 60
+      },
+      {
+        "name": "React",
+        "rating": 90
+      },
+      {
+        "name": "React Native",
+        "rating": 70
+      },
+      {
+        "name": "Java",
+        "rating": 80
+      },
+      {
+        "name": "UI/UX Design",
+        "rating": 60
+      }
+    ]
+  },
+  "funFact": {
+    "completedCourses": 13,
+    "completedProjects": 7,
+    "happySupervisors": 2,
+    "commitment": "120%"
+  },
+  "education": {
+    "experiences": [
+      {
+        "period": "Jan 2020",
+        "school": "Microsoft",
+        "subject": "Administering a SQL Database Infrastructure",
+        "description": "This short yet intensive training course allows me to gain hands-on experiences of Microsoft SQL Server administration, performance tuning and database security.",
+        "proof": "ms_sql_db.pdf"
+      },
+      {
+        "period": "2015 － 2019",
+        "school": "The University of Hong Kong",
+        "subject": "BEng in Computer Science",
+        "description": "Throughout the 4-year degree program, I have gained both theoretical knowledge like algorithms and system architecture, and practical knowledge like software development.",
+        "proof": "hku_cs.pdf"
+      },
+      {
+        "period": "2009 － 2015",
+        "school": "Evangel College",
+        "subject": "Secondary 1 － Secondary 6",
+        "description": "The fundamental knowledge of English, Information Technology, Physics and Mathematics lay the foundations of my career as a Database Administrator and Developer.",
+        "proof": "ec.pdf"
+      }
+    ]
+  },
+  "work": {
+    "experiences": [
+      {
+        "period": "2019 － Present",
+        "position": "Junior Programmer (Database Management Support)",
+        "company": "Hospital Authority",
+        "description": "Right after I graduated, I started working for the Hospital Authority. Despite what my job title suggests, my role is, in fact, a junior system database administrator. I am maintaining 2 architectures of MySQL server instances and provide support to the project teams. Recently, I get my hands on Delphix, a data virtualization platform, which allows provisioning databases in a few minutes with minimal storage overhead."
+      },
+      {
+        "period": "Jun － Aug 2018",
+        "position": "Summer Internship (Software Development)",
+        "company": "Versitech Limited",
+        "description": "Versitech is a tech company that is closely related to HKU, the university I was studying. I tested E-Form Filler, an e-form editor which is customized according to the Hong Kong Government's specification to support varies of unique features. I also developed the installer for E-Form Filler using NSIS MUI2, which gave the installer a more professional look. Finally, I reworked a 3-year-old MPF cross-platform mobile application using React Native to give it a modern look and replace the outdated Apache Cordova framework.",
+        "proof": "versitech_intern.pdf"
+      },
+      {
+        "period": "Jul － Sep 2017",
+        "position": "Student Research Assistant",
+        "company": "School of Public Health, HKU",
+        "description": "Under Dr Tommy Lam, I created a JavaFX to visualize his research result. His research is related to DNA mutations and my program are required to display a large number of DNA sequences. This is the first time I was being introduced to the concept of UI virtualization.",
+        "proof": "hku_med_ra.pdf"
+      },
+      {
+        "period": "Jan － Apr 2017",
+        "position": "Teaching Assistant",
+        "company": "Faculty of Engineering, HKU",
+        "description": "After completing a compulsory C++ course, I was being invited by the instructor to be a volunteer teaching assistant of that course. I assisted her during the tutorial section, answering students questions.",
+        "proof": "hku_eng_ta.pdf"
+      }
+    ],
+    "company": {
+      "ha": {
+        "name": "Hospital Authority",
+        "href": "https://www.ha.org.hk"
+      },
+      "hku": {
+        "name": "The University of Hong Kong",
+        "href": "https://www.hku.hk"
+      },
+      "versitech": {
+        "name": "Versitech Limited",
+        "href": "https://www.versitech.hku.hk"
+      }
+    }
+  },
+  "project": {
+    "mysql": {
+      "title": "MySQL",
+      "date": "July 2019",
+      "description": "Maintaining 2 system architectures: source-replica replication and MySQL InnoDB Cluster. Provide guidance and suggestions to project teams accordingly."
+    },
+    "delphix": {
+      "title": "Delphix",
+      "date": "March 2020",
+      "description": "A test run of the data virtualization platform. Analyze, install and maintain the system and incorporate it into existing systems based on the requirements and limitations."
+    },
+    "dbPwdManager": {
+      "title": "Database Password Manager",
+      "date": "December 2020",
+      "description": "A simple Java program that allows users to update database user passwords in a centralized manner. So far, it supports SAP ASE, Oracle Database, MS SQL and MySQL."
+    },
+    "tsis": {
+      "title": "TSIS",
+      "date": "January 2021",
+      "description": "A complete overhaul of a decade-old web application using React, Express and MySQL. This web portal displays info of databases instances managed by our team."
+    },
+    "timeOffApplication": {
+      "title": "Time Off Application System",
+      "date": "January 2021",
+      "description": "A QoL web application developed using React, Express and MySQL to minimize the manual procedures while team mates apply for time-offs."
+    }
+  },
+  "testimonial": {
+    "references": [
+      {
+        "name": "Dr Tommy Lam",
+        "company": "School of Public Health, HKU",
+        "comment": "Matthew is a very intelligent, determined and self-motivated young person who is capable to work independently to achieve specific tasks. He also showed good potential as team leader to manage complex projects."
+      },
+      {
+        "name": "Dr Marian Choy",
+        "company": "Faculty of Engineering, HKU",
+        "comment": "His active involvement allows him to gain communication skills and other soft skills. Besides, his maturity and genuine passion to share knowledge with others lay a solid foundation in his pursuit of a professional engineer."
+      }
+    ]
+  },
+  "contact": {
+    "phone": "+852 6095 4241",
+    "email": "matthewkwong2@gmail.com",
+    "address": "Sha Tin, Hong Kong SAR"
+  }
+}

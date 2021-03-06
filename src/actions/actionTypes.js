@@ -1,0 +1,1 @@
+export const SW_UPDATE_READY = "SW_UPDATE_READY";

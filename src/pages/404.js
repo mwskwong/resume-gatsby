@@ -1,54 +1,45 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import { Button, Container, Typography } from "@material-ui/core";
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+import { Link } from "gatsby";
+import SEO from "components/SEO";
+import constants from "contents/constants";
+import { useMemo } from "react";
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+const useSx = () => useMemo(() => ({
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100vh"
+  },
+  noMatch: {
+    fontFamily: "\"Azonix\",  sans-serif",
+    mb: 4
+  },
+  noMatchMessage: {
+    textTransform: "uppercase",
+    mb: 4
+  }
+}), []);
 
-// markup
-const NotFoundPage = () => {
+const NoMatch = () => {
+  const sx = useSx();
+
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+    <Container component="main" sx={sx.root}>
+      <SEO title={constants.pageNotFound} />
+      <Typography variant="h1" sx={sx.noMatch}>
+        {constants.noMatch}
+      </Typography>
+      <Typography variant="h5" sx={sx.noMatchMessage}>
+        {constants.noMatchMessage}
+      </Typography>
+      <Button variant="contained" size="large" component={Link} to="/">
+        {constants.goHome}
+      </Button>
+    </Container>
+  );
+};
 
-export default NotFoundPage
+export default NoMatch;
