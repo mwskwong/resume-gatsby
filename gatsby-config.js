@@ -14,6 +14,7 @@ module.exports = {
         actions: `${__dirname}/src/actions`,
         components: `${__dirname}/src/components`,
         contents: `${__dirname}/src/contents`,
+        documents: `${__dirname}/src/documents`,
         fonts: `${__dirname}/src/fonts`,
         hooks: `${__dirname}/src/hooks`,
         images: `${__dirname}/src/images`,
@@ -24,6 +25,7 @@ module.exports = {
       }
     },
     "gatsby-plugin-emotion",
+    "gatsby-background-image",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
@@ -48,14 +50,6 @@ module.exports = {
     "gatsby-plugin-offline",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "src",
-        path: `${__dirname}/src`
-      },
-      __key: "src"
-    },
     {
       resolve: "gatsby-source-filesystem",
       options: {

@@ -1,1 +1,1 @@
-export { default } from './SwSnackbar';
+export { default } from "./SwSnackbar";

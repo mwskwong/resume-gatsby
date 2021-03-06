@@ -16,10 +16,10 @@ const ScrollToTopFab = () => {
     <Zoom in={trigger}>
       <Fab
         sx={sx.fab}
-        size='small'
-        color='primary'
+        size="small"
+        color="primary"
         onClick={handleScrollToTop}
-        aria-label='scroll to top'
+        aria-label="scroll to top"
       >
         <ArrowUp sx={sx.icon} />
       </Fab>

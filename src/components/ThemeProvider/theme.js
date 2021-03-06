@@ -94,7 +94,19 @@ const createTheme = mode => responsiveFontSizes(createMuiTheme({
           },
           scrollMarginTop: "56px",
           paddingTop: initTheme.spacing(10),
-          paddingBottom: initTheme.spacing(10)
+          paddingBottom: initTheme.spacing(10),
+          "&::before": {
+            backgroundAttachment: "fixed",
+            "@supports (-webkit-touch-callout: inherit)": {
+              backgroundAttachment: "scroll"
+            }
+          },
+          "&::after": {
+            backgroundAttachment: "fixed",
+            "@supports (-webkit-touch-callout: inherit)": {
+              backgroundAttachment: "scroll"
+            }
+          }
         },
         input: {
           "@media (min-width: 0px) and (orientation: landscape)": {
