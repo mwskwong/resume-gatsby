@@ -1,0 +1,1 @@
+export const isSwNewContentAvail = ({ swUpdateReady }) => Boolean(swUpdateReady);

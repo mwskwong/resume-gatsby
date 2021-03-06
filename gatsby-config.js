@@ -15,9 +15,12 @@ module.exports = {
         components: `${__dirname}/src/components`,
         contents: `${__dirname}/src/contents`,
         fonts: `${__dirname}/src/fonts`,
+        hooks: `${__dirname}/src/hooks`,
         images: `${__dirname}/src/images`,
         pages: `${__dirname}/src/pages`,
-        reducers: `${__dirname}/src/reducers`
+        reducers: `${__dirname}/src/reducers`,
+        selectors: `${__dirname}/src/selectors`,
+        store: `${__dirname}/src/store`
       }
     },
     "gatsby-plugin-emotion",
@@ -27,20 +30,32 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png"
+        name: "Matthew's Resume",
+        short_name: "Matthew",
+        icon: "src/images/icon.png",
+        start_url: ".",
+        theme_color: "#ffffff",
+        background_color: "#fbfbfc",
+        categories: [
+          "resume",
+          "personalization"
+        ],
+        description: "Matthew's Personal Resume Website",
+        display: "standalone",
+        lang: "en"
       }
     },
     "gatsby-plugin-offline",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    // {
-    //   resolve: "gatsby-source-filesystem",
-    //   options: {
-    //     name: "src",
-    //     path: `${__dirname}/src`
-    //   },
-    //   __key: "src"
-    // },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "src",
+        path: `${__dirname}/src`
+      },
+      __key: "src"
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {

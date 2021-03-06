@@ -1,9 +1,10 @@
 import { CssBaseline } from "@material-ui/core";
 import { Provider } from "react-redux";
 import { StrictMode } from "react";
-import ThemeProvider from "src/components/ThemeProvider";
-import store from "src/store";
-import { swUpdateReady } from "src/actions";
+import SwSnackbar from "components/SwSnackbar";
+import ThemeProvider from "components/ThemeProvider";
+import store from "store";
+import { swUpdateReady } from "actions";
 
 export const wrapRootElement = ({ element }) => (
   <StrictMode>
@@ -17,6 +18,7 @@ export const wrapPageElement = ({ element }) => (
   <ThemeProvider>
     <CssBaseline />
     {element}
+    <SwSnackbar />
   </ThemeProvider>
 );
 

@@ -23,7 +23,7 @@
     "@nivo/core": "^0.67.0",
     "@nivo/radar": "^0.67.0",
     "countup.js": "^2.0.7",
-    "gatsby": "^3.0.2",
+    "gatsby": "^3.0.3",
     "gatsby-plugin-emotion": "^6.0.0",
     "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-manifest": "^3.0.0",
@@ -48,6 +48,21 @@
     "eslint": "^7.21.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "gatsby-plugin-root-import": "^2.0.6"
+  },
+  "browserslist": {
+    "production": [
+      "> 0.5%",
+      "last 2 versions",
+      "Firefox ESR",
+      "not dead",
+      "not IE 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

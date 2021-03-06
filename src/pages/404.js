@@ -15,10 +15,11 @@ const useSx = () => useMemo(() => ({
   },
   noMatch: {
     fontFamily: "\"Azonix\",  sans-serif",
+    textAlign: "center",
     mb: 4
   },
   noMatchMessage: {
-    textTransform: "uppercase",
+    textAlign: "center",
     mb: 4
   }
 }), []);
