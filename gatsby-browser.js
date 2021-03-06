@@ -1,5 +1,4 @@
 import { CssBaseline } from "@material-ui/core";
-import { Fragment } from "react";
 import { Provider } from "react-redux";
 import { StrictMode } from "react";
 import ThemeProvider from "src/components/ThemeProvider";
@@ -8,19 +7,17 @@ import { swUpdateReady } from "src/actions";
 
 export const wrapRootElement = ({ element }) => (
   <StrictMode>
-    <ThemeProvider>
-      <Provider store={store}>
-        {element}
-      </Provider>
-    </ThemeProvider>
+    <Provider store={store}>
+      {element}
+    </Provider>
   </StrictMode>
 );
 
 export const wrapPageElement = ({ element }) => (
-  <Fragment>
+  <ThemeProvider>
     <CssBaseline />
     {element}
-  </Fragment>
+  </ThemeProvider>
 );
 
 export const onServiceWorkerUpdateReady = () => {
