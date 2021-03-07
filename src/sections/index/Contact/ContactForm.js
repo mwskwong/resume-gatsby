@@ -54,10 +54,12 @@ const ContactForm = () => {
       return false;
     }
 
-    document.location.href = `mailto:${data.contact.email}
-    ?cc=${messageData.email}
-    &subject=${encodeURIComponent(messageData.subject)}
-    &body=${encodeURIComponent(messageData.message)}`;
+    document.location.href = `
+      mailto:${data.contact.email}
+      ?cc=${messageData.email}
+      &subject=${encodeURIComponent(messageData.subject)}
+      &body=${encodeURIComponent(messageData.message)}
+    `;
   };
 
   return (

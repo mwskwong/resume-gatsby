@@ -6,7 +6,7 @@ import useSx from "./useNavButtonSx";
 
 const NavButton = ({ label, id, active }) => {
   const sx = useSx();
-  const section = document.getElementById(id);
+  const section = typeof document === "undefined" ? null : document.getElementById(id);
 
   const handleScrollToSection = () => section.scrollIntoView({ behavior: "smooth" });
 

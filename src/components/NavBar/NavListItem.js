@@ -6,7 +6,7 @@ import useSx from "./useNavListItemSx";
 
 const NavListItem = ({ label, id, active }) => {
   const sx = useSx({ active });
-  const section = document.getElementById(id);
+  const section = typeof document === "undefined" ? null : document.getElementById(id);
 
   const primaryTypographyProps = { sx: sx.textPrimary };
 
