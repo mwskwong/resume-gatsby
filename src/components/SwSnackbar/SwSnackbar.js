@@ -31,4 +31,6 @@ const SwSnackbar = () => {
   );
 };
 
+SwSnackbar.whyDidYouRender = true;
+
 export default SwSnackbar;

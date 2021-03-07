@@ -34,4 +34,6 @@ const Title = () => {
   );
 };
 
+Title.whyDidYouRender = true;
+
 export default Title;

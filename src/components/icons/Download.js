@@ -7,5 +7,6 @@ const Download = props => (
 );
 
 Download.muiName = SvgIcon.muiName;
+Download.whyDidYouRender = true;
 
 export default Download;

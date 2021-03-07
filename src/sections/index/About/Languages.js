@@ -29,4 +29,6 @@ const Languages = () => {
   );
 };
 
+Languages.whyDidYouRender = true;
+
 export default Languages;

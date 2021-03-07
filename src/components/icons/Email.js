@@ -7,5 +7,6 @@ const Email = props => (
 );
 
 Email.muiName = SvgIcon.muiName;
+Email.whyDidYouRender = true;
 
 export default Email;

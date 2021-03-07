@@ -19,4 +19,6 @@ ReloadButton.propTypes = {
   onClose: PropTypes.func.isRequired
 };
 
+ReloadButton.whyDidYouRender = true;
+
 export default ReloadButton;

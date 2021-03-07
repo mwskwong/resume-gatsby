@@ -1,6 +1,7 @@
 import { Box, LinearProgress, Typography } from "@material-ui/core";
 
 import PropTypes from "prop-types";
+import { memo } from "react";
 import useSx from "./useSkillRatingSx";
 
 const SkillRating = ({ name, rating }) => {
@@ -31,4 +32,6 @@ SkillRating.propTypes = {
   rating: PropTypes.number.isRequired
 };
 
-export default SkillRating;
+SkillRating.whyDidYouRender = true;
+
+export default memo(SkillRating);

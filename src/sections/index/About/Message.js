@@ -4,6 +4,7 @@ import { CircleSmall } from "mdi-material-ui";
 import { Fragment } from "react";
 import constants from "contents/constants";
 import data from "contents/data";
+import { memo } from "react";
 import useSx from "./useMessageSx";
 
 const Message = () => {
@@ -33,4 +34,6 @@ const Message = () => {
   );
 };
 
-export default Message;
+Message.whyDidYouRender = true;
+
+export default memo(Message);

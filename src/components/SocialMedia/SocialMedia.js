@@ -46,4 +46,6 @@ SocialMedia.propTypes = {
   sx: PropTypes.object
 };
 
+SocialMedia.whyDidYouRender = true;
+
 export default SocialMedia;

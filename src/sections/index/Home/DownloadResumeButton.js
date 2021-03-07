@@ -20,4 +20,6 @@ DownloadResumeButton.propTypes = {
   sx: PropTypes.object
 };
 
+DownloadResumeButton.whyDidYouRender = true;
+
 export default DownloadResumeButton;

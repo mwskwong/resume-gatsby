@@ -30,4 +30,6 @@ const PersonalInfo = () => {
   );
 };
 
+PersonalInfo.whyDidYouRender = true;
+
 export default PersonalInfo;

@@ -1,5 +1,6 @@
 import { Box, Grid, Skeleton } from "@material-ui/core";
 
+import { memo } from "react";
 import useSx from "./useContactFormFallbackSx";
 
 const ContactFormFallback = () => {
@@ -26,4 +27,6 @@ const ContactFormFallback = () => {
   );
 };
 
-export default ContactFormFallback;
+ContactFormFallback.whyDidYouRender = true;
+
+export default memo(ContactFormFallback);

@@ -40,7 +40,7 @@ const NavBar = () => {
       <Toolbar>
         <ThemeProvider mode={trigger || menuEnter ? "light" : "dark"}>
           <Logo sx={sx.logo} />
-          <Hidden mdDown>
+          <Hidden mdDown implementation="css">
             <nav>
               {Object.values(nav).map(({ id, name }) => (
                 <NavButton
@@ -59,7 +59,7 @@ const NavBar = () => {
           </Hidden>
         </ThemeProvider>
       </Toolbar>
-      <Hidden mdUp>
+      <Hidden mdUp implementation="css">
         <Collapse
           in={menuOpen}
           timeout="auto"
@@ -81,5 +81,7 @@ const NavBar = () => {
     </AppBar>
   );
 };
+
+NavBar.whyDidYouRender = true;
 
 export default NavBar;

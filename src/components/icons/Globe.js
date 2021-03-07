@@ -7,5 +7,6 @@ const Globe = props => (
 );
 
 Globe.muiName = SvgIcon.muiName;
+Globe.whyDidYouRender = true;
 
 export default Globe;

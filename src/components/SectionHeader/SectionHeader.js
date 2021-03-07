@@ -1,6 +1,7 @@
 import { Box, Divider, Typography } from "@material-ui/core";
 
 import PropTypes from "prop-types";
+import { memo } from "react";
 import useSx from "./useSectionHeaderSx";
 
 const SectionHeader = ({ heading, Icon }) => {
@@ -25,4 +26,6 @@ SectionHeader.propTypes = {
   Icon: PropTypes.elementType.isRequired
 };
 
-export default SectionHeader;
+SectionHeader.whyDidYouRender = true;
+
+export default memo(SectionHeader);

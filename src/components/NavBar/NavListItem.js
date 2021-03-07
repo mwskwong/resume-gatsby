@@ -1,6 +1,7 @@
 import { ListItem, ListItemText } from "@material-ui/core";
 
 import PropTypes from "prop-types";
+import { memo } from "react";
 import useSx from "./useNavListItemSx";
 
 const NavListItem = ({ label, id, active }) => {
@@ -29,4 +30,6 @@ NavListItem.propTypes = {
   active: PropTypes.bool.isRequired
 };
 
-export default NavListItem;
+NavListItem.whyDidYouRender = true;
+
+export default memo(NavListItem);

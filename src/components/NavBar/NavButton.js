@@ -1,6 +1,7 @@
 import { Box, Button } from "@material-ui/core";
 
 import PropTypes from "prop-types";
+import { memo } from "react";
 import useSx from "./useNavButtonSx";
 
 const NavButton = ({ label, id, active }) => {
@@ -27,4 +28,6 @@ NavButton.propTypes = {
   active: PropTypes.bool.isRequired
 };
 
-export default NavButton;
+NavButton.whyDidYouRender = true;
+
+export default memo(NavButton);

@@ -7,5 +7,6 @@ const Mobile = props => (
 );
 
 Mobile.muiName = SvgIcon.muiName;
+Mobile.whyDidYouRender = true;
 
 export default Mobile;

@@ -17,4 +17,6 @@ ThemeProvider.propTypes = {
   children: PropTypes.node
 };
 
+ThemeProvider.whyDidYouRender = true;
+
 export default ThemeProvider;

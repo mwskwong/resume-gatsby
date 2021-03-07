@@ -6,4 +6,6 @@ const BgOverlay = () => {
   return <Box sx={sx.root} />;
 };
 
+BgOverlay.whyDidYouRender = true;
+
 export default BgOverlay;

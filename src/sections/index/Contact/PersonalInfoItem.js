@@ -25,5 +25,6 @@ PersonalInfoItem.propTypes = {
   value: PropTypes.string.isRequired
 };
 
+PersonalInfoItem.whyDidYouRender = true;
 
 export default PersonalInfoItem;

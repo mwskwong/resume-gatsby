@@ -7,5 +7,6 @@ const HotCup = props => (
 );
 
 HotCup.muiName = SvgIcon.muiName;
+HotCup.whyDidYouRender = true;
 
 export default HotCup;

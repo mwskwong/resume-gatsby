@@ -10,11 +10,14 @@ import nav from "contents/nav";
 import { useInView } from "react-intersection-observer";
 import useSx from "./useContactSx";
 
+const contactFormFallback = <ContactFormFallback />;
+const personalInfoFallback = <PersonalInfoFallback />;
+
 const ContactForm = loadable(() => import(/* webpackPrefetch: true */ "./ContactForm"), {
-  fallback: <ContactFormFallback />
+  fallback: contactFormFallback
 });
 const PersonalInfo = loadable(() => import(/* webpackPrefetch: true */ "./PersonalInfo"), {
-  fallback: <PersonalInfoFallback />
+  fallback: personalInfoFallback
 });
 
 const Contact = () => {
@@ -34,15 +37,17 @@ const Contact = () => {
       <Box ref={ref} sx={sx.gridContainer}>
         <Grid container spacing={2}>
           <Grid item md={4} xs={12}>
-            {inView ? <PersonalInfo /> : <PersonalInfoFallback />}
+            {inView ? <PersonalInfo /> : personalInfoFallback}
           </Grid>
           <Grid item md xs={12}>
-            {inView ? <ContactForm /> : <ContactFormFallback />}
+            {inView ? <ContactForm /> : contactFormFallback}
           </Grid>
         </Grid>
       </Box>
     </Container>
   );
 };
+
+Contact.whyDidYouRender = true;
 
 export default Contact;

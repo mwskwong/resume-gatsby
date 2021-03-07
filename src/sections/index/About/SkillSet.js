@@ -2,6 +2,7 @@ import { Box, Grid } from "@material-ui/core";
 
 import SkillRating from "./SkillRating";
 import data from "contents/data";
+import { memo } from "react";
 import useSx from "./useSkillSetSx";
 
 const SkillSet = () => {
@@ -34,4 +35,6 @@ const SkillSet = () => {
   );
 };
 
-export default SkillSet;
+SkillSet.whyDidYouRender = true;
+
+export default memo(SkillSet);

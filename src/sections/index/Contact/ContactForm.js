@@ -114,4 +114,6 @@ const ContactForm = () => {
   );
 };
 
+ContactForm.whyDidYouRender = true;
+
 export default ContactForm;

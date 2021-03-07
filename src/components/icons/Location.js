@@ -7,5 +7,6 @@ const Location = props => (
 );
 
 Location.muiName = SvgIcon.muiName;
+Location.whyDidYouRender = true;
 
 export default Location;

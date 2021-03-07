@@ -7,5 +7,6 @@ const User = props => (
 );
 
 User.muiName = SvgIcon.muiName;
+User.whyDidYouRender = true;
 
 export default User;

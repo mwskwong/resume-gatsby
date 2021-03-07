@@ -7,5 +7,6 @@ const Gift = props => (
 );
 
 Gift.muiName = SvgIcon.muiName;
+Gift.whyDidYouRender = true;
 
 export default Gift;

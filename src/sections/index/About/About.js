@@ -10,8 +10,9 @@ import loadable from "@loadable/component";
 import nav from "contents/nav";
 import { useInView } from "react-intersection-observer";
 
+const languageFallback = <LanguagesFallback />;
 const Languages = loadable(() => import(/* webpackPrefetch: true */ "./Languages"), {
-  fallback: <LanguagesFallback />
+  fallback: languageFallback
 });
 
 const About = () => {
@@ -28,11 +29,13 @@ const About = () => {
       />
       <Message />
       <Box ref={ref}>
-        {inView ? <Languages /> : <LanguagesFallback />}
+        {inView ? <Languages /> : languageFallback}
       </Box>
       <SkillSet />
     </Container>
   );
 };
+
+About.whyDidYouRender = true;
 
 export default About;

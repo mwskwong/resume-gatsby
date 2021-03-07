@@ -61,4 +61,6 @@ const Home = () => {
   );
 };
 
+Home.whyDidYouRender = true;
+
 export default Home;

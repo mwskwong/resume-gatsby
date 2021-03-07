@@ -28,4 +28,6 @@ const CopyrightStatement = () => {
   );
 };
 
+CopyrightStatement.whyDidYouRender = true;
+
 export default CopyrightStatement;

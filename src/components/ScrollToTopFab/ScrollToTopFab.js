@@ -27,4 +27,6 @@ const ScrollToTopFab = () => {
   );
 };
 
+ScrollToTopFab.whyDidYouRender = true;
+
 export default ScrollToTopFab;

@@ -7,5 +7,6 @@ const Heart = props => (
 );
 
 Heart.muiName = SvgIcon.muiName;
+Heart.whyDidYouRender = true;
 
 export default Heart;

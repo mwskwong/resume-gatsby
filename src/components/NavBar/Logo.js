@@ -23,4 +23,6 @@ Logo.propTypes = {
   sx: PropTypes.object
 };
 
+Logo.whyDidYouRender = true;
+
 export default memo(Logo);

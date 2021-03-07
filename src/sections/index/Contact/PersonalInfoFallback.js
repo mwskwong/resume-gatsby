@@ -1,5 +1,6 @@
 import { Box, Skeleton, Typography } from "@material-ui/core";
 
+import { memo } from "react";
 import useSx from "./usePersonalInfoFallbackSx";
 
 const PersonalInfoFallback = () => {
@@ -30,4 +31,6 @@ const PersonalInfoItemFallback = () => {
   );
 };
 
-export default PersonalInfoFallback;
+PersonalInfoFallback.whyDidYouRender = true;
+
+export default memo(PersonalInfoFallback);

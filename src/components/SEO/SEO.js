@@ -64,4 +64,6 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object)
 };
 
+SEO.whyDidYouRender = true;
+
 export default SEO;
