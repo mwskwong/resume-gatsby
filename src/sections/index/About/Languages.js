@@ -15,7 +15,7 @@ const Languages = () => {
     <Box sx={sx.root}>
       <ResponsiveRadar
         data={data.about.languages}
-        indexBy='name'
+        indexBy="name"
         keys={keys}
         colors={theme.palette.primary.main}
         isInteractive={false}

@@ -18,8 +18,8 @@ const SkillRating = ({ name, rating }) => {
       </Box>
       <LinearProgress
         sx={sx.rating}
-        variant='determinate'
-        color='primary'
+        variant="determinate"
+        color="primary"
         value={rating}
       />
     </Box>

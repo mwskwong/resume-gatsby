@@ -11,7 +11,7 @@ const Message = () => {
 
   return (
     <Box sx={sx.root}>
-      <Typography sx={sx.hello} variant='h5' component='h1' gutterBottom>
+      <Typography sx={sx.hello} variant="h5" component="h1" gutterBottom>
         {constants.helloPrefix}
         {data.firstName + " " + data.lastName}
         {constants.helloSuffix}
@@ -20,7 +20,7 @@ const Message = () => {
         {data.occupations.map((occupation, index) => (
           <Fragment key={occupation}>
             {index !== 0 && <CircleSmall sx={sx.dot} />}
-            <Typography sx={sx.occupation} variant='h6' component='h2'>
+            <Typography sx={sx.occupation} variant="h6" component="h2">
               {occupation}
             </Typography>
           </Fragment>
