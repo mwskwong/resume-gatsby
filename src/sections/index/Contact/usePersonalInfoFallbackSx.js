@@ -12,6 +12,10 @@ const useSx = () => useMemo(() => ({
       my: 3
     }
   },
+  icon: {
+    width: 35,
+    height: 35
+  },
   personalInfoItemTitle: {
     mt: 2,
     width: 80

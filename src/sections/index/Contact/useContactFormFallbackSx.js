@@ -1,10 +1,6 @@
 import { useMemo } from "react";
 
 const useSx = () => useMemo(() => ({
-  icon: {
-    width: 35,
-    height: 35
-  },
   textField: {
     height: 56
   },

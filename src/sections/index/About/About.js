@@ -21,7 +21,7 @@ const About = () => {
   });
 
   return (
-    <Container component="section" id={nav.about.id}>
+    <Container component='section' id={nav.about.id}>
       <SectionHeader
         heading={constants.aboutMe}
         Icon={HexagonSlice1}
