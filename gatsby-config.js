@@ -58,6 +58,7 @@ module.exports = {
       },
       __key: "images"
     },
-    "gatsby-plugin-webpack-bundle-analyser-v2"
+    "gatsby-plugin-webpack-bundle-analyser-v2",
+    "gatsby-plugin-loadable-components-ssr"
   ]
 };

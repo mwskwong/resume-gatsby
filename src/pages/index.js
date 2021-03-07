@@ -1,3 +1,4 @@
+import About from "components/About";
 import { Box } from "@material-ui/core";
 import Footer from "components/Footer";
 import Home from "components/Home";
@@ -11,6 +12,7 @@ const Index = () => {
       <SEO />
       <NavBar />
       <Home />
+      <About />
       <div style={{ height: 2000 }} />
       <Footer />
       <ScrollToTopFab />
