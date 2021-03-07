@@ -2,7 +2,6 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
-import thumbnail from "images/thumbnail.jpg";
 
 const SEO = ({ title: titleProp, description: descriptionProp, meta = [] }) => {
   const { site } = useStaticQuery(graphql`
@@ -21,11 +20,13 @@ const SEO = ({ title: titleProp, description: descriptionProp, meta = [] }) => {
 
   const title = titleProp || site.siteMetadata?.title;
   const description = descriptionProp || site.siteMetadata?.description;
+  const htmlAttributes = { lang: "en" };
 
   return (
     <Helmet
       title={title}
       titleTemplate={titleProp ? `%s | ${site.siteMetadata?.shortTitle}` : null}
+      htmlAttributes={htmlAttributes}
       meta={[
         {
           name: "description",
@@ -49,7 +50,7 @@ const SEO = ({ title: titleProp, description: descriptionProp, meta = [] }) => {
         },
         {
           property: "og:image",
-          content: `${site.siteMetadata?.siteUrl}/${thumbnail}`
+          content: `${site.siteMetadata?.siteUrl}/thumbnail.jpg`
         },
         ...meta
       ]}
