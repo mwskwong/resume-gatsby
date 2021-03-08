@@ -18,6 +18,7 @@ const SkillRating = ({ name, rating }) => {
         </Typography>
       </Box>
       <LinearProgress
+        aria-hidden
         sx={sx.rating}
         variant="determinate"
         color="primary"
