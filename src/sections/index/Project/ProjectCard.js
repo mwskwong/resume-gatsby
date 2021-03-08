@@ -4,7 +4,6 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import PropTypes from "prop-types";
 import data from "contents/data";
-import { memo } from "react";
 import useSx from "./useProjectCardSx";
 
 const ProjectCard = ({ project }) => {
@@ -60,4 +59,4 @@ ProjectCard.propTypes = {
 
 ProjectCard.whyDidYouRender = true;
 
-export default memo(ProjectCard);
+export default ProjectCard;

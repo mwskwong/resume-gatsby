@@ -1,5 +1,4 @@
 import { Skeleton } from "@material-ui/core";
-import { memo } from "react";
 import useSx from "./useLanguageFallbackSx";
 
 const LanguagesFallback = () => {
@@ -10,4 +9,4 @@ const LanguagesFallback = () => {
 
 LanguagesFallback.whyDidYouRender = true;
 
-export default memo(LanguagesFallback);
+export default LanguagesFallback;
