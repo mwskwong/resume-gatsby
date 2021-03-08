@@ -18,8 +18,6 @@ const NavListItem = ({ label, id, active }) => {
   );
 };
 
-NavListItem.muiName = ListItem.muiName;
-
 NavListItem.propTypes = {
   label: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,

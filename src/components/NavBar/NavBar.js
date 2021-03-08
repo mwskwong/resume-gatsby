@@ -1,4 +1,4 @@
-import { AppBar, Collapse, IconButton, List, Toolbar, useScrollTrigger, useTheme } from "@material-ui/core";
+import { AppBar, Box, Collapse, IconButton, List, Toolbar, useScrollTrigger, useTheme } from "@material-ui/core";
 import { Fragment, memo, useCallback, useMemo, useState } from "react";
 
 import { Hidden } from "@material-ui/core";
@@ -39,7 +39,7 @@ const NavBar = () => {
     <Fragment>
       <Logo sx={sx.logo} />
       <Hidden mdDown implementation="css">
-        <nav>
+        <Box component="nav">
           {Object.values(nav).filter(({ id }) => id !== nav.home.id).map(({ id, name }) => (
             <NavButton
               key={id}
@@ -48,9 +48,9 @@ const NavBar = () => {
               active={activeSectionId === id}
             />
           ))}
-        </nav>
+        </Box>
       </Hidden>
-      <Hidden mdUp>
+      <Hidden mdUp implementation="css">
         <IconButton onClick={handleMenuToggle} aria-label="toggle menu">
           <Menu />
         </IconButton>

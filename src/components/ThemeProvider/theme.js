@@ -206,45 +206,5 @@ const createTheme = mode => responsiveFontSizes(createMuiTheme({
   shadows
 }));
 
-export const createBackground = ({ webp, jpg, placeholder }) => {
-  const overlay = alpha("#000", .7);
-
-  const getBgImageCSS = bg => `
-    linear-gradient(${overlay}, ${overlay}),
-    url(${bg}),
-    url(${placeholder})
-  `;
-
-  return {
-    ".no-webp &": {
-      backgroundImage: {
-        xs: getBgImageCSS(jpg.xs),
-        sm: getBgImageCSS(jpg.sm),
-        md: getBgImageCSS(jpg.md),
-        lg: getBgImageCSS(jpg.lgUp)
-      }
-    },
-    ".webp &": {
-      backgroundImage: {
-        xs: getBgImageCSS(webp.xs),
-        sm: getBgImageCSS(webp.sm),
-        md: getBgImageCSS(webp.md),
-        lg: getBgImageCSS(webp.lgUp)
-      }
-    },
-    backgroundImage: `
-      linear-gradient(${overlay}, ${overlay}),
-      url(${placeholder})
-    `,
-    backgroundAttachment: "fixed",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    "@supports (-webkit-touch-callout: inherit)": {
-      backgroundAttachment: "scroll"
-    }
-  };
-};
-
 export const lightTheme = createTheme("light");
 export const darkTheme = createTheme("dark");

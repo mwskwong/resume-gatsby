@@ -18,14 +18,14 @@ const Home = () => {
     query {
       mobileImage: file(relativePath: { eq: "home_xs.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 420) {
+          fluid(maxWidth: 420) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       desktopImage: file(relativePath: { eq: "home.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 2000) {
+          fluid(maxWidth: 2000) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
