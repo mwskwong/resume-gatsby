@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardMedia, Typography } from "@material-ui/core";
+import { Box, Card, CardContent, Typography } from "@material-ui/core";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
