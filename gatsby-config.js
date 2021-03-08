@@ -68,6 +68,12 @@ module.exports = {
       options: {
         features: ["smoothscroll"]
       }
+    },
+    {
+      resolve: "gatsby-plugin-preconnect",
+      options: {
+        domains: ["https://cdn.polyfill.io"]
+      }
     }
   ]
 };
