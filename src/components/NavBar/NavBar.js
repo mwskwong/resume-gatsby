@@ -42,7 +42,7 @@ const NavBar = () => {
           <Logo sx={sx.logo} />
           <Hidden mdDown implementation="css">
             <Box component="nav">
-              {Object.values(nav).filter(({ id }) => id !== nav.home.id).map(({ id, name }) => (
+              {Object.values(nav).map(({ id, name }) => (
                 <NavButton
                   key={id}
                   id={id}
@@ -67,7 +67,7 @@ const NavBar = () => {
           onExited={handleMenuExited}
         >
           <List sx={sx.navList} component="nav" aria-label="nav list">
-            {Object.values(nav).filter(({ id }) => id !== nav.home.id).map(({ id, name }) => (
+            {Object.values(nav).map(({ id, name }) => (
               <NavListItem
                 key={id}
                 id={id}
