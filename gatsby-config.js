@@ -61,6 +61,14 @@ module.exports = {
       },
       __key: "images"
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "documents",
+        path: `${__dirname}/src/documents`
+      },
+      __key: "documents"
+    },
     "gatsby-plugin-webpack-bundle-analyser-v2",
     "gatsby-plugin-loadable-components-ssr",
     {

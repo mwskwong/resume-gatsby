@@ -75,21 +75,21 @@
         "school": "Microsoft",
         "subject": "Administering a SQL Database Infrastructure",
         "description": "This short yet intensive training course allows me to gain hands-on experiences of Microsoft SQL Server administration, performance tuning and database security.",
-        "proof": "ms_sql_db.pdf"
+        "proof": "educations/ms_sql_db.pdf"
       },
       {
         "period": "2015 － 2019",
         "school": "The University of Hong Kong",
         "subject": "BEng in Computer Science",
         "description": "Throughout the 4-year degree program, I have gained both theoretical knowledge like algorithms and system architecture, and practical knowledge like software development.",
-        "proof": "hku_cs.pdf"
+        "proof": "educations/hku_cs.pdf"
       },
       {
         "period": "2009 － 2015",
         "school": "Evangel College",
         "subject": "Secondary 1 － Secondary 6",
         "description": "The fundamental knowledge of English, Information Technology, Physics and Mathematics lay the foundations of my career as a Database Administrator and Developer.",
-        "proof": "ec.pdf"
+        "proof": "educations/ec.pdf"
       }
     ]
   },
@@ -106,21 +106,21 @@
         "position": "Summer Internship (Software Development)",
         "company": "Versitech Limited",
         "description": "Versitech is a tech company that is closely related to HKU, the university I was studying. I tested E-Form Filler, an e-form editor which is customized according to the Hong Kong Government's specification to support varies of unique features. I also developed the installer for E-Form Filler using NSIS MUI2, which gave the installer a more professional look. Finally, I reworked a 3-year-old MPF cross-platform mobile application using React Native to give it a modern look and replace the outdated Apache Cordova framework.",
-        "proof": "versitech_intern.pdf"
+        "proof": "works/versitech_intern.pdf"
       },
       {
         "period": "Jul － Sep 2017",
         "position": "Student Research Assistant",
         "company": "School of Public Health, HKU",
         "description": "Under Dr Tommy Lam, I created a JavaFX to visualize his research result. His research is related to DNA mutations and my program are required to display a large number of DNA sequences. This is the first time I was being introduced to the concept of UI virtualization.",
-        "proof": "hku_med_ra.pdf"
+        "proof": "works/hku_med_ra.pdf"
       },
       {
         "period": "Jan － Apr 2017",
         "position": "Teaching Assistant",
         "company": "Faculty of Engineering, HKU",
         "description": "After completing a compulsory C++ course, I was being invited by the instructor to be a volunteer teaching assistant of that course. I assisted her during the tutorial section, answering students questions.",
-        "proof": "hku_eng_ta.pdf"
+        "proof": "works/hku_eng_ta.pdf"
       }
     ],
     "company": {
