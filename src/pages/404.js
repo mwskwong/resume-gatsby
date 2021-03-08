@@ -43,4 +43,6 @@ const NoMatch = () => {
   );
 };
 
+NoMatch.whyDidYouRender = true;
+
 export default NoMatch;

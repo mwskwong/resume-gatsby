@@ -1,6 +1,8 @@
 import { Fab, Zoom, useScrollTrigger } from "@material-ui/core";
 
 import ArrowUp from "components/icons/ArrowUp";
+import { memo } from "react";
+import nav from "contents/nav";
 import useSx from "./useScrollToTopFabSx";
 
 const ScrollToTopFab = () => {
@@ -10,16 +12,15 @@ const ScrollToTopFab = () => {
     threshold: 100
   });
 
-  const handleScrollToTop = () => window.scroll({ top: 0, left: 0, behavior: "smooth" });
-
   return (
     <Zoom in={trigger}>
       <Fab
         sx={sx.fab}
         size="small"
         color="primary"
-        onClick={handleScrollToTop}
+        component="a"
         aria-label="scroll to top"
+        href={`#${nav.home.id}`}
       >
         <ArrowUp sx={sx.icon} />
       </Fab>
@@ -29,4 +30,4 @@ const ScrollToTopFab = () => {
 
 ScrollToTopFab.whyDidYouRender = true;
 
-export default ScrollToTopFab;
+export default memo(ScrollToTopFab);

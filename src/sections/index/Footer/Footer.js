@@ -2,6 +2,7 @@ import { Container, Divider, Grid } from "@material-ui/core";
 
 import CopyrightStatement from "./CopyrightStatement";
 import SocialMedia from "components/SocialMedia";
+import { memo } from "react";
 import useSx from "./useFooterSx";
 
 const Footer = () => {
@@ -26,4 +27,4 @@ const Footer = () => {
 
 Footer.whyDidYouRender = true;
 
-export default Footer;
+export default memo(Footer);

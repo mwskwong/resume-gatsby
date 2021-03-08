@@ -7,6 +7,7 @@ import DownloadResumeButton from "./DownloadResumeButton";
 import SocialMedia from "components/SocialMedia";
 import ThemeProvider from "components/ThemeProvider";
 import Title from "./Title";
+import { memo } from "react";
 import nav from "contents/nav";
 import useSx from "./useHomeSx";
 
@@ -63,4 +64,4 @@ const Home = () => {
 
 Home.whyDidYouRender = true;
 
-export default Home;
+export default memo(Home);

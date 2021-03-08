@@ -6,6 +6,7 @@ import PersonalInfoFallback from "./PersonalInfoFallback";
 import SectionHeader from "components/SectionHeader";
 import constants from "contents/constants";
 import loadable from "@loadable/component";
+import { memo } from "react";
 import nav from "contents/nav";
 import { useInView } from "react-intersection-observer";
 import useSx from "./useContactSx";
@@ -50,4 +51,4 @@ const Contact = () => {
 
 Contact.whyDidYouRender = true;
 
-export default Contact;
+export default memo(Contact);

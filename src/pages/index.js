@@ -22,4 +22,6 @@ const Index = () => {
   );
 };
 
+Index.whyDidYouRender = true;
+
 export default Index;

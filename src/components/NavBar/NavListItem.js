@@ -6,14 +6,10 @@ import useSx from "./useNavListItemSx";
 
 const NavListItem = ({ label, id, active }) => {
   const sx = useSx({ active });
-  const section = typeof document === "undefined" ? null : document.getElementById(id);
-
   const primaryTypographyProps = { sx: sx.textPrimary };
 
-  const handleScrollToSection = () => section.scrollIntoView({ behavior: "smooth" });
-
   return (
-    <ListItem button onClick={handleScrollToSection}>
+    <ListItem button component="a" href={`#${id}`}>
       <ListItemText
         primary={label}
         primaryTypographyProps={primaryTypographyProps}

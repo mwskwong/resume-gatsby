@@ -7,6 +7,7 @@ import SectionHeader from "components/SectionHeader";
 import SkillSet from "./SkillSet";
 import constants from "contents/constants";
 import loadable from "@loadable/component";
+import { memo } from "react";
 import nav from "contents/nav";
 import { useInView } from "react-intersection-observer";
 
@@ -38,4 +39,4 @@ const About = () => {
 
 About.whyDidYouRender = true;
 
-export default About;
+export default memo(About);
