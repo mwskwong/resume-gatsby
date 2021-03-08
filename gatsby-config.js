@@ -22,6 +22,7 @@ module.exports = {
         reducers: `${__dirname}/src/reducers`,
         sections: `${__dirname}/src/sections`,
         selectors: `${__dirname}/src/selectors`,
+        styles: `${__dirname}/src/styles`,
         utils: `${__dirname}/src/utils`,
         store: `${__dirname}/src/store`
       }

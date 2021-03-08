@@ -142,27 +142,32 @@
     "mysql": {
       "title": "MySQL",
       "date": "July 2019",
-      "description": "Maintaining 2 system architectures: source-replica replication and MySQL InnoDB Cluster. Provide guidance and suggestions to project teams accordingly."
+      "description": "Maintaining 2 system architectures: source-replica replication and MySQL InnoDB Cluster. Provide guidance and suggestions to project teams accordingly.",
+      "image": "mysql.png"
     },
     "delphix": {
       "title": "Delphix",
       "date": "March 2020",
-      "description": "A test run of the data virtualization platform. Analyze, install and maintain the system and incorporate it into existing systems based on the requirements and limitations."
+      "description": "A test run of the data virtualization platform. Analyze, install and maintain the system and incorporate it into existing systems based on the requirements and limitations.",
+      "image": "delphix.png"
     },
     "dbPwdManager": {
       "title": "Database Password Manager",
       "date": "December 2020",
-      "description": "A simple Java program that allows users to update database user passwords in a centralized manner. So far, it supports SAP ASE, Oracle Database, MS SQL and MySQL."
+      "description": "A simple Java program that allows users to update database user passwords in a centralized manner. So far, it supports SAP ASE, Oracle Database, MS SQL and MySQL.",
+      "image": "db_pwd_manager.png"
     },
     "tsis": {
       "title": "TSIS",
       "date": "January 2021",
-      "description": "A complete overhaul of a decade-old web application using React, Express and MySQL. This web portal displays info of databases instances managed by our team."
+      "description": "A complete overhaul of a decade-old web application using React, Express and MySQL. This web portal displays info of databases instances managed by our team.",
+      "image": "tsis.png"
     },
     "timeOffApplication": {
       "title": "Time Off Application System",
       "date": "January 2021",
-      "description": "A QoL web application developed using React, Express and MySQL to minimize the manual procedures while team mates apply for time-offs."
+      "description": "A QoL web application developed using React, Express and MySQL to minimize the manual procedures while team mates apply for time-offs.",
+      "image": "time_off_application.png"
     }
   },
   "testimonial": {

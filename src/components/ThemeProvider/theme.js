@@ -3,11 +3,9 @@ import "@fontsource/rubik/400.css";
 import "@fontsource/rubik/500.css";
 import "@fontsource/rubik/700.css";
 import "@fontsource/rubik/variable.css";
+import "styles/azonix.css";
 
 import { alpha, createMuiTheme, responsiveFontSizes } from "@material-ui/core";
-
-import azonix from "fonts/azonix.woff";
-import azonix2 from "fonts/azonix.woff2";
 
 const initTheme = createMuiTheme();
 
@@ -67,18 +65,6 @@ const createTheme = mode => responsiveFontSizes(createMuiTheme({
     },
     MuiCssBaseline: {
       styleOverrides: {
-        "@font-face": {
-          fontFamily: "Azonix",
-          fontStyle: "normal",
-          fontWeight: 400,
-          fontDisplay: "swap",
-          src: `
-            local("Azonix"),
-            local("Azonix-Regular"),
-            url("${azonix2}") format("woff2"),
-            url("${azonix}") format("woff")
-          `
-        },
         "::selection": {
           background: "rgba(166, 175, 189, .3)"
         },
