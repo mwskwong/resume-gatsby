@@ -68,7 +68,6 @@ module.exports = {
       options: {
         features: ["smoothscroll"]
       }
-    },
-    "gatsby-plugin-preact"
+    }
   ]
 };
