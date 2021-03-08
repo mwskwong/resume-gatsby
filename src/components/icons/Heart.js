@@ -1,4 +1,5 @@
 import { SvgIcon } from "@material-ui/core";
+import { memo } from "react";
 
 const Heart = props => (
   <SvgIcon {...props}>
@@ -9,4 +10,4 @@ const Heart = props => (
 Heart.muiName = SvgIcon.muiName;
 Heart.whyDidYouRender = true;
 
-export default Heart;
+export default memo(Heart);

@@ -27,7 +27,8 @@ export const onClientEntry = () => {
     const whyDidYouRender = require("@welldone-software/why-did-you-render");
     const React = require("react");
     whyDidYouRender(React, {
-      trackAllPureComponents: true
+      trackAllPureComponents: true,
+      exclude: [/RadarShapes/]
     });
   }
 };

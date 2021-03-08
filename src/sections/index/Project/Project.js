@@ -12,7 +12,7 @@ const Project = () => {
   const sx = useSx();
 
   return (
-    <Container component='section' id={nav.project.id}>
+    <Container component="section" id={nav.project.id}>
       <SectionHeader
         heading={constants.myProject}
         Icon={HexagonSlice4}

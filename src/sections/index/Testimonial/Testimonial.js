@@ -1,6 +1,5 @@
 import { Box, Container } from "@material-ui/core";
 import { graphql, useStaticQuery } from "gatsby";
-import { memo, useMemo } from "react";
 
 import BackgroundImage from "gatsby-background-image";
 import BgOverlay from "components/BgOverlay";
@@ -10,6 +9,7 @@ import SectionHeader from "components/SectionHeader";
 import ThemeProvider from "components/ThemeProvider";
 import constants from "contents/constants";
 import loadable from "@loadable/component";
+import { memo } from "react";
 import nav from "contents/nav";
 import { useInView } from "react-intersection-observer";
 import useSx from "./useTestimonialSx";
@@ -33,7 +33,6 @@ const Testimonial = () => {
         childImageSharp {
           fluid(maxWidth: 420) {
             ...GatsbyImageSharpFluid_withWebp
-            ...GatsbyImageSharpFluidLimitPresentationSize
           }
         }
       }
@@ -41,7 +40,6 @@ const Testimonial = () => {
         childImageSharp {
           fluid(maxWidth: 2000) {
             ...GatsbyImageSharpFluid_withWebp
-            ...GatsbyImageSharpFluidLimitPresentationSize
           }
         }
       }
@@ -56,20 +54,6 @@ const Testimonial = () => {
     }
   ];
 
-  const content = useMemo(() => (
-    <ThemeProvider mode="dark">
-      <Container>
-        <SectionHeader
-          heading={constants.whatPeopleSay}
-          Icon={HexagonSlice5}
-        />
-        <Box ref={ref}>
-          {inView ? <Carousel /> : endorsementFallback}
-        </Box>
-      </Container>
-    </ThemeProvider>
-  ), [inView, ref]);
-
   return (
     <Box
       component={BackgroundImage}
@@ -79,7 +63,17 @@ const Testimonial = () => {
       fluid={images}
     >
       <BgOverlay />
-      {content}
+      <ThemeProvider mode="dark">
+        <Container>
+          <SectionHeader
+            heading={constants.whatPeopleSay}
+            Icon={HexagonSlice5}
+          />
+          <Box ref={ref}>
+            {inView ? <Carousel /> : endorsementFallback}
+          </Box>
+        </Container>
+      </ThemeProvider>
     </Box>
   );
 };

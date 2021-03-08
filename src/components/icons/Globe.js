@@ -1,4 +1,5 @@
 import { SvgIcon } from "@material-ui/core";
+import { memo } from "react";
 
 const Globe = props => (
   <SvgIcon {...props}>
@@ -9,4 +10,4 @@ const Globe = props => (
 Globe.muiName = SvgIcon.muiName;
 Globe.whyDidYouRender = true;
 
-export default Globe;
+export default memo(Globe);

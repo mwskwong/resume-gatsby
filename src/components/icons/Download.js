@@ -1,4 +1,5 @@
 import { SvgIcon } from "@material-ui/core";
+import { memo } from "react";
 
 const Download = props => (
   <SvgIcon {...props}>
@@ -9,4 +10,4 @@ const Download = props => (
 Download.muiName = SvgIcon.muiName;
 Download.whyDidYouRender = true;
 
-export default Download;
+export default memo(Download);

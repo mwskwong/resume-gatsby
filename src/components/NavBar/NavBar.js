@@ -1,5 +1,5 @@
 import { AppBar, Box, Collapse, IconButton, List, Toolbar, useScrollTrigger, useTheme } from "@material-ui/core";
-import { Fragment, memo, useCallback, useMemo, useState } from "react";
+import { memo, useCallback, useState } from "react";
 
 import { Hidden } from "@material-ui/core";
 import Logo from "./Logo";
@@ -35,34 +35,28 @@ const NavBar = () => {
   const handleMenuEnter = () => setMenuEnter(true);
   const handleMenuExited = () => setMenuEnter(false);
 
-  const toolbarContent = useMemo(() => (
-    <Fragment>
-      <Logo sx={sx.logo} />
-      <Hidden mdDown implementation="css">
-        <Box component="nav">
-          {Object.values(nav).filter(({ id }) => id !== nav.home.id).map(({ id, name }) => (
-            <NavButton
-              key={id}
-              id={id}
-              label={name}
-              active={activeSectionId === id}
-            />
-          ))}
-        </Box>
-      </Hidden>
-      <Hidden mdUp implementation="css">
-        <IconButton onClick={handleMenuToggle} aria-label="toggle menu">
-          <Menu />
-        </IconButton>
-      </Hidden>
-    </Fragment>
-  ), [activeSectionId, handleMenuToggle, sx.logo]);
-
   return (
     <AppBar color={color} elevation={elevation}>
       <Toolbar>
         <ThemeProvider mode={trigger || menuEnter ? "light" : "dark"}>
-          {toolbarContent}
+          <Logo sx={sx.logo} />
+          <Hidden mdDown implementation="css">
+            <Box component="nav">
+              {Object.values(nav).filter(({ id }) => id !== nav.home.id).map(({ id, name }) => (
+                <NavButton
+                  key={id}
+                  id={id}
+                  label={name}
+                  active={activeSectionId === id}
+                />
+              ))}
+            </Box>
+          </Hidden>
+          <Hidden mdUp implementation="css">
+            <IconButton onClick={handleMenuToggle} aria-label="toggle menu">
+              <Menu />
+            </IconButton>
+          </Hidden>
         </ThemeProvider>
       </Toolbar>
       <Hidden mdUp implementation="css">

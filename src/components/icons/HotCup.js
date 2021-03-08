@@ -1,4 +1,5 @@
 import { SvgIcon } from "@material-ui/core";
+import { memo } from "react";
 
 const HotCup = props => (
   <SvgIcon {...props}>
@@ -9,4 +10,4 @@ const HotCup = props => (
 HotCup.muiName = SvgIcon.muiName;
 HotCup.whyDidYouRender = true;
 
-export default HotCup;
+export default memo(HotCup);

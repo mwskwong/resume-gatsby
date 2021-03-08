@@ -13,8 +13,7 @@ const ProjectCard = ({ project }) => {
     query {
       images: allFile(filter: {
         sourceInstanceName: {eq: "images"}, 
-        extension: {eq: "png"}, 
-        name: {ne: "icon"}
+        relativeDirectory: {eq: "projects"}
       }) {
         edges {
           node {
@@ -41,7 +40,7 @@ const ProjectCard = ({ project }) => {
         alt={title}
       />
       <CardContent>
-        <Typography sx={sx.title} variant='h5' gutterBottom>
+        <Typography sx={sx.title} variant="h5" gutterBottom>
           {title}
         </Typography>
         <Typography sx={sx.date} gutterBottom>
