@@ -47,10 +47,18 @@ module.exports = {
         ],
         description: "Matthew's Personal Resume Website",
         display: "standalone",
-        lang: "en"
+        lang: "en",
+        cache_busting_mode: "none"
       }
     },
-    "gatsby-plugin-offline",
+    {
+      resolve: "gatsby-plugin-offline",
+      options: {
+        workboxConfig: {
+          globPatterns: ["**/icon-*"]
+        }
+      }
+    },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
