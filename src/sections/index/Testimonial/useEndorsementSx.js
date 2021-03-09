@@ -7,7 +7,7 @@ const useSx = () => useMemo(() => ({
     alignItems: "center",
     py: 3
   },
-  userIcon: {
+  quoteIcon: {
     fontSize: 60
   },
   name: {

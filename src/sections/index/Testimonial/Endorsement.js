@@ -1,7 +1,7 @@
 import { Box, Typography } from "@material-ui/core";
 
 import PropTypes from "prop-types";
-import User from "components/icons/User";
+import Quote from "components/icons/Quote";
 import { memo } from "react";
 import useSx from "./useEndorsementSx";
 
@@ -10,7 +10,7 @@ const Endorsement = ({ name, company, comment }) => {
 
   return (
     <Box sx={sx.root}>
-      <User sx={sx.userIcon} />
+      <Quote sx={sx.quoteIcon} />
       <Typography sx={sx.name} variant="h6">
         {name}
       </Typography>
