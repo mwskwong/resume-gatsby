@@ -6,7 +6,8 @@ const useSx = () => useMemo(() => ({
     display: "flex",
     flexDirection: "column",
     p: 0,
-    height: "100vh"
+    height: "100vh",
+    bgcolor: "#afb8c6"
   },
   container: {
     display: "flex",

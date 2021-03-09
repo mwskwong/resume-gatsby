@@ -2,7 +2,8 @@ import { useMemo } from "react";
 
 const useSx = () => useMemo(() => ({
   root: {
-    position: "relative"
+    position: "relative",
+    bgcolor: "#818fa0"
   },
   carouselContainer: {
     minHeight: 350
