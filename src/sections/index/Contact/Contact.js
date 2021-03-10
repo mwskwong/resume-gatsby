@@ -14,10 +14,10 @@ import useSx from "./useContactSx";
 const contactFormFallback = <ContactFormFallback />;
 const personalInfoFallback = <PersonalInfoFallback />;
 
-const ContactForm = loadable(() => import(/* webpackPrefetch: true */ "./ContactForm"), {
+const ContactForm = loadable(() => import(/* webpackPreload: true */ "./ContactForm"), {
   fallback: contactFormFallback
 });
-const PersonalInfo = loadable(() => import(/* webpackPrefetch: true */ "./PersonalInfo"), {
+const PersonalInfo = loadable(() => import(/* webpackPreload: true */ "./PersonalInfo"), {
   fallback: personalInfoFallback
 });
 
