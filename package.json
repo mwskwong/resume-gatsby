@@ -46,7 +46,6 @@
     "react-swipeable-views": "^0.13.9",
     "react-swipeable-views-utils": "^0.14.0-alpha.0",
     "redux": "^4.0.5",
-    "scroll-behavior-polyfill": "^2.0.13",
     "typewriter-effect": "^2.17.0"
   },
   "devDependencies": {

@@ -6,10 +6,6 @@ import ThemeProvider from "components/ThemeProvider";
 import store from "store";
 import { swUpdateReady } from "actions";
 
-if (!("scrollBehavior" in document.documentElement.style)) {
-  import("scroll-behavior-polyfill");
-}
-
 export const wrapRootElement = ({ element }) => (
   <StrictMode>
     <Provider store={store}>

@@ -70,7 +70,7 @@ const createTheme = mode => responsiveFontSizes(createMuiTheme({
         },
         html: {
           scrollBehavior: "smooth",
-          "@media screen and (prefers-reduced-motion: reduce)": {
+          "@media (prefers-reduced-motion)": {
             scrollBehavior: "auto"
           }
         },
