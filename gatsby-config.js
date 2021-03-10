@@ -78,18 +78,6 @@ module.exports = {
       __key: "documents"
     },
     "gatsby-plugin-webpack-bundle-analyser-v2",
-    "gatsby-plugin-loadable-components-ssr",
-    {
-      resolve: "gatsby-plugin-polyfill-io",
-      options: {
-        features: ["smoothscroll"]
-      }
-    },
-    {
-      resolve: "gatsby-plugin-preconnect",
-      options: {
-        domains: ["https://cdn.polyfill.io"]
-      }
-    }
+    "gatsby-plugin-loadable-components-ssr"
   ]
 };
