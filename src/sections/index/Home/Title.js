@@ -22,7 +22,7 @@ const Title = () => {
   }, []);
 
   return (
-    <Box display="flex" flexDirection="column" alignItems="center">
+    <Box sx={sx.root}>
       <Typography sx={sx.greetings} variant="h5" gutterBottom>
         {constants.greetings}
       </Typography>

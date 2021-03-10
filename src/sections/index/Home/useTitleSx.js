@@ -1,6 +1,12 @@
 import { useMemo } from "react";
 
 const useSx = () => useMemo(() => ({
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    zIndex: 1
+  },
   greetings: {
     textTransform: "capitalize",
     color: "text.primary"

@@ -22,7 +22,7 @@ const Carousel = () => {
         index={index}
         onChangeIndex={handleChangeIndex}
         resistance
-        interval={10000}
+        interval={15000}
       >
         {data.testimonial.references.map(({ name, company, comment }) => (
           <Endorsement
