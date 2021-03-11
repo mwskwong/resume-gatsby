@@ -6,12 +6,10 @@ import SectionHeader from "components/SectionHeader";
 import constants from "contents/constants";
 import { memo } from "react";
 import nav from "contents/nav";
-import useSx from "./useEducationSx";
 
 const Education = () => {
-  const sx = useSx();
   return (
-    <Box sx={sx.root} component="section" id={nav.education.id}>
+    <Box component="section" id={nav.education.id}>
       <Container>
         <SectionHeader
           heading={constants.education}

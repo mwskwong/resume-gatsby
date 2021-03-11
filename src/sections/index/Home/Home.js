@@ -14,7 +14,7 @@ import useSx from "./useHomeSx";
 const Home = () => {
   const sx = useSx();
 
-  const layers = [{ children: <Bg />, amount: .2 }];
+  const layers = [{ children: <Bg />, amount: .5 }];
 
   return (
     <Box component="section" sx={sx.root} id={nav.home.id}>

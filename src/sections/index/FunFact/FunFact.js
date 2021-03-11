@@ -19,7 +19,7 @@ const FunFact = () => {
   const sx = useSx();
   const [ref, inView] = useInView({ triggerOnce: true });
 
-  const layers = [{ children: <Bg />, amount: .2 }];
+  const layers = [{ children: <Bg />, amount: .5 }];
 
   return (
     <Box component="section" sx={sx.root}>

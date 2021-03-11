@@ -10,7 +10,6 @@ import loadable from "@loadable/component";
 import { memo } from "react";
 import nav from "contents/nav";
 import { useInView } from "react-intersection-observer";
-import useSx from "./useAboutSx";
 
 const languageFallback = <LanguagesFallback />;
 const Languages = loadable(() => import(/* webpackPreload: true */ "./Languages"), {
@@ -18,14 +17,13 @@ const Languages = loadable(() => import(/* webpackPreload: true */ "./Languages"
 });
 
 const About = () => {
-  const sx = useSx();
   const { ref, inView } = useInView({
     rootMargin: "50%",
     triggerOnce: true
   });
 
   return (
-    <Box component="section" sx={sx.root} id={nav.about.id}>
+    <Box component="section" id={nav.about.id}>
       <Container>
         <SectionHeader
           heading={constants.aboutMe}
