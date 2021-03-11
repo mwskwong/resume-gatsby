@@ -108,12 +108,6 @@ const createTheme = mode => responsiveFontSizes(createMuiTheme({
         },
         ".Typewriter__cursor": {
           fontWeight: initTheme.typography.h2.fontWeight
-        },
-        ".parallax-banner": {
-          height: "unset !important"
-        },
-        ".parallax-outer": {
-          zIndex: -1
         }
       }
     },

@@ -17,7 +17,7 @@ const useSx = () => useMemo(() => ({
     "@media (max-width: 520px)": {
       height: theme => `${theme.typography.h2.lineHeight * 2}em`
     },
-    "@media (max-width: 287px)": {
+    "@media (max-width: 300px)": {
       height: theme => `${theme.typography.h2.lineHeight * 3}em`
     }
   },

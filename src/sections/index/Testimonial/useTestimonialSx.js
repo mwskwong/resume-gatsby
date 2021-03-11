@@ -2,6 +2,7 @@ import { useMemo } from "react";
 
 const useSx = () => useMemo(() => ({
   root: {
+    bgcolor: "#818fa0",
     py: 0
   },
   bgOverlay: {

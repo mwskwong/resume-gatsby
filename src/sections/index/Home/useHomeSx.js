@@ -2,20 +2,18 @@ import { useMemo } from "react";
 
 const useSx = () => useMemo(() => ({
   root: {
-    p: 0,
-    height: "100vh"
-  },
-  bgOverlay: {
     display: "flex",
     flexDirection: "column",
-    height: "100vh"
+    p: 0,
+    height: "100vh",
+    bgcolor: "#afb8c6"
   },
   container: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    flex: 1
+    height: "100%"
   },
   socialMedia: {
     mt: 3

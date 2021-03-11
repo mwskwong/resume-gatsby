@@ -6,7 +6,6 @@ import Footer from "sections/index/Footer";
 import FunFact from "sections/index/FunFact";
 import Home from "sections/index/Home";
 import NavBar from "components/NavBar";
-import ParallaxCache from "components/ParallaxCache";
 import Project from "sections/index/Project";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
@@ -14,10 +13,8 @@ import Testimonial from "sections/index/Testimonial";
 import Work from "sections/index/Work";
 
 const Index = () => {
-
   return (
     <Box component="main">
-      {typeof window !== "undefined" && <ParallaxCache />}
       <SEO />
       <NavBar />
       <Home />
