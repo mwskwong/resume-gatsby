@@ -2,7 +2,6 @@ import { useMemo } from "react";
 
 const useSx = () => useMemo(() => ({
   root: {
-    position: "relative",
     display: "flex",
     flexDirection: "column",
     p: 0,
@@ -14,7 +13,7 @@ const useSx = () => useMemo(() => ({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    flex: 1
+    height: "100%"
   },
   socialMedia: {
     mt: 3

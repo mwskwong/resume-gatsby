@@ -49,15 +49,16 @@ const Home = () => {
       Tag="section"
       fluid={images}
     >
-      <BgOverlay />
-      <Toolbar />
-      <ThemeProvider mode="dark">
-        <Container sx={sx.container}>
-          <Title />
-          <SocialMedia sx={sx.socialMedia} />
-          <DownloadResumeButton sx={sx.downloadResumeButton} />
-        </Container>
-      </ThemeProvider>
+      <BgOverlay>
+        <Toolbar />
+        <ThemeProvider mode="dark">
+          <Container sx={sx.container}>
+            <Title />
+            <SocialMedia sx={sx.socialMedia} />
+            <DownloadResumeButton sx={sx.downloadResumeButton} />
+          </Container>
+        </ThemeProvider>
+      </BgOverlay>
     </Box>
   );
 };

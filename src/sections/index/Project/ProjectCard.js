@@ -18,7 +18,11 @@ const ProjectCard = ({ project }) => {
           node {
             relativePath
             childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+              gatsbyImageData(
+                layout: FULL_WIDTH
+                placeholder: BLURRED                
+                formats: [AUTO, WEBP, AVIF]
+              )
             }
           }
         }

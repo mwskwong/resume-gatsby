@@ -54,20 +54,6 @@ const Testimonial = () => {
     }
   ];
 
-  const content = useMemo(() => (
-    <ThemeProvider mode="dark">
-      <Container>
-        <SectionHeader
-          heading={constants.whatPeopleSay}
-          Icon={HexagonSlice5}
-        />
-        <Box ref={ref}>
-          {inView ? <Carousel /> : endorsementFallback}
-        </Box>
-      </Container>
-    </ThemeProvider>
-  ), [inView, ref]);
-
   return (
     <Box
       component={BackgroundImage}
@@ -76,8 +62,19 @@ const Testimonial = () => {
       Tag="section"
       fluid={images}
     >
-      <BgOverlay />
-      {content}
+      <BgOverlay sx={sx.bgOverlay}>
+        <ThemeProvider mode="dark">
+          <Container>
+            <SectionHeader
+              heading={constants.whatPeopleSay}
+              Icon={HexagonSlice5}
+            />
+            <Box ref={ref}>
+              {inView ? <Carousel /> : endorsementFallback}
+            </Box>
+          </Container>
+        </ThemeProvider>
+      </BgOverlay>
     </Box>
   );
 };

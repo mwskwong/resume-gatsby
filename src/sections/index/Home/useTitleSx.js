@@ -4,8 +4,7 @@ const useSx = () => useMemo(() => ({
   root: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
-    zIndex: 1
+    alignItems: "center"
   },
   greetings: {
     textTransform: "capitalize",

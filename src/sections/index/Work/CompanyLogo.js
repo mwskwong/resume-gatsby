@@ -21,6 +21,7 @@ const CompanyLogo = ({ company }) => {
               gatsbyImageData(
                 layout: FIXED
                 placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
                 transformOptions: {grayscale: true}
                 height: 100
               )
