@@ -1,4 +1,5 @@
 import { CssBaseline } from "@material-ui/core";
+import { ParallaxProvider } from "react-scroll-parallax";
 import { Provider } from "react-redux";
 import { StrictMode } from "react";
 import SwSnackbar from "components/SwSnackbar";
@@ -8,7 +9,9 @@ import store from "store";
 export const wrapRootElement = ({ element }) => (
   <StrictMode>
     <Provider store={store}>
-      {element}
+      <ParallaxProvider>
+        {element}
+      </ParallaxProvider>
     </Provider>
   </StrictMode>
 );
