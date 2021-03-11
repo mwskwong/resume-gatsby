@@ -78,6 +78,7 @@ module.exports = {
       __key: "documents"
     },
     "gatsby-plugin-webpack-bundle-analyser-v2",
-    "gatsby-plugin-loadable-components-ssr"
+    "gatsby-plugin-loadable-components-ssr",
+    "gatsby-plugin-robots-txt"
   ]
 };

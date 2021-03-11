@@ -1,6 +1,5 @@
 import { Box, Container } from "@material-ui/core";
 import { graphql, useStaticQuery } from "gatsby";
-import { memo, useMemo } from "react";
 
 import BackgroundImage from "gatsby-background-image";
 import BgOverlay from "components/BgOverlay";
@@ -10,6 +9,7 @@ import SectionHeader from "components/SectionHeader";
 import ThemeProvider from "components/ThemeProvider";
 import constants from "contents/constants";
 import loadable from "@loadable/component";
+import { memo } from "react";
 import nav from "contents/nav";
 import { useInView } from "react-intersection-observer";
 import useSx from "./useTestimonialSx";
