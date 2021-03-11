@@ -23,19 +23,17 @@ const About = () => {
   });
 
   return (
-    <Box component="section" id={nav.about.id}>
-      <Container>
-        <SectionHeader
-          heading={constants.aboutMe}
-          Icon={HexagonSlice1}
-        />
-        <Message />
-        <Box ref={ref}>
-          {inView ? <Languages /> : languageFallback}
-        </Box>
-        <SkillSet />
-      </Container>
-    </Box>
+    <Container component="section" id={nav.about.id}>
+      <SectionHeader
+        heading={constants.aboutMe}
+        Icon={HexagonSlice1}
+      />
+      <Message />
+      <Box ref={ref}>
+        {inView ? <Languages /> : languageFallback}
+      </Box>
+      <SkillSet />
+    </Container>
   );
 };
 
