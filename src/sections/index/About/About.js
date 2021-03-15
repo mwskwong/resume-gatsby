@@ -17,10 +17,7 @@ const Languages = loadable(() => import(/* webpackPrefetch: true */ "./Languages
 });
 
 const About = () => {
-  const { ref, inView } = useInView({
-    rootMargin: "50%",
-    triggerOnce: true
-  });
+  const { ref, inView } = useInView({ triggerOnce: true });
 
   return (
     <Container component="section" id={nav.about.id}>

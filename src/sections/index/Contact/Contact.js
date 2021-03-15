@@ -24,10 +24,7 @@ const PersonalInfo = loadable(() => import(/* webpackPrefetch: true */ "./Person
 const Contact = () => {
   const sx = useSx();
 
-  const { ref, inView } = useInView({
-    rootMargin: "50%",
-    triggerOnce: true
-  });
+  const { ref, inView } = useInView({ triggerOnce: true });
 
   return (
     <Container component="section" id={nav.contact.id}>

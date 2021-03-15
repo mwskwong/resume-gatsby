@@ -23,10 +23,7 @@ const Carousel = loadable(() => import("./Carousel"), {
 
 const Testimonial = () => {
   const sx = useSx();
-  const { ref, inView } = useInView({
-    rootMargin: "50%",
-    triggerOnce: true
-  });
+  const { ref, inView } = useInView({ triggerOnce: true });
 
   const { bg, bgXs } = useStaticQuery(graphql`
     query {     
