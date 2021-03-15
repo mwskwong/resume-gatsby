@@ -1,53 +1,58 @@
 import { Box, Container, Toolbar } from "@material-ui/core";
 import { graphql, useStaticQuery } from "gatsby";
 
-import BackgroundImage from "gatsby-background-image";
+import { BgImage } from "gbimage-bridge";
 import BgOverlay from "components/BgOverlay";
 import DownloadResumeButton from "./DownloadResumeButton";
 import SocialMedia from "components/SocialMedia";
 import ThemeProvider from "components/ThemeProvider";
 import Title from "./Title";
+import { getImage } from "gatsby-plugin-image";
 import { memo } from "react";
 import nav from "contents/nav";
 import useSx from "./useHomeSx";
 
 const Home = () => {
   const sx = useSx();
-
-  const { mobileImage, desktopImage } = useStaticQuery(graphql`
-    query {
-      mobileImage: file(relativePath: { eq: "home_xs.jpg" }) {
+  const { bg, bgXs } = useStaticQuery(graphql`
+    query {     
+      bg: file(relativePath: { eq: "home.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 420) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(
+            placeholder: BLURRED
+            formats: [AUTO, WEBP, AVIF],
+            breakpoints: [960, 1280, 2000]
+          )
         }
       }
-      desktopImage: file(relativePath: { eq: "home.jpg" }) {
+      bgXs: file(relativePath: { eq: "home_xs.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2000) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(
+            placeholder: BLURRED
+            formats: [AUTO, WEBP, AVIF],
+            breakpoints: [120, 160, 240, 320, 420]
+          )
         }
       }
     }
   `);
 
-  const images = [
-    mobileImage.childImageSharp.fluid,
+  const bgs = [
+    { ...getImage(bg) },
     {
-      ...desktopImage.childImageSharp.fluid,
-      media: "(min-width: 421px)"
+      media: "(max-width: 600px)",
+      ...getImage(bgXs)
     }
   ];
 
   return (
     <Box
-      component={BackgroundImage}
+      component={BgImage}
       sx={sx.root}
       id={nav.home.id}
       Tag="section"
-      fluid={images}
+      // fluid={images}
+      image={bgs}
     >
       <BgOverlay>
         <Toolbar />
