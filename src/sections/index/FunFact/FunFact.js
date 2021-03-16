@@ -51,12 +51,7 @@ const FunFact = () => {
   ];
 
   return (
-    <Box
-      component={BgImage}
-      sx={sx.root}
-      Tag="section"
-      image={bgs}
-    >
+    <Box component={BgImage} sx={sx.root} Tag="section" image={bgs}>
       <BgOverlay sx={sx.bgOverlay}>
         <ThemeProvider mode="dark">
           <Container ref={ref}>

@@ -57,13 +57,7 @@ const Testimonial = () => {
   ];
 
   return (
-    <Box
-      component={BgImage}
-      sx={sx.root}
-      id={nav.testimonial.id}
-      Tag="section"
-      image={bgs}
-    >
+    <Box component={BgImage} sx={sx.root} id={nav.testimonial.id} Tag="section" image={bgs}>
       <BgOverlay sx={sx.bgOverlay}>
         <ThemeProvider mode="dark">
           <Container>
