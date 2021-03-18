@@ -49,8 +49,12 @@ const SEO = ({ title: titleProp, description: descriptionProp, meta: metaProp = 
       content: `${site.siteMetadata?.siteUrl}/thumbnail.jpg`
     },
     {
+      property: "apple-mobile-web-app-capable",
+      content: "yes"
+    },
+    {
       property: "apple-mobile-web-app-status-bar-style",
-      content: "black-translucent"
+      content: "default"
     },
     ...metaProp
   ];
