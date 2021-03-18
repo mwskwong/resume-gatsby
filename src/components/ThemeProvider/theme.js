@@ -16,6 +16,11 @@ const createTheme = mode => responsiveFontSizes(createMuiTheme({
         color: "transparent",
         elevation: 0,
         position: "fixed"
+      },
+      styleOverrides: {
+        root: {
+          paddingTop: "env(safe-area-inset-top)"
+        }
       }
     },
     MuiButton: {
@@ -27,6 +32,9 @@ const createTheme = mode => responsiveFontSizes(createMuiTheme({
       styleOverrides: {
         "::selection": {
           background: "rgba(166, 175, 189, .3)"
+        },
+        footer: {
+          paddingBottom: "env(safe-area-inset-bottom)"
         },
         html: {
           scrollBehavior: "smooth",

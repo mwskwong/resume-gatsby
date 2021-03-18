@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer>
       <Divider variant="middle" />
-      <Container sx={sx.container}>
+      <Container>
         <Grid sx={sx.gridContainer} container>
           <Grid item sm="auto" xs={12}>
             <CopyrightStatement />
