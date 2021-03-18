@@ -46,7 +46,7 @@ module.exports = {
           "personalization"
         ],
         description: "Matthew's Personal Resume Website",
-        display: "fullscreen",
+        display: "standalone",
         lang: "en",
         cache_busting_mode: "none"
       }
