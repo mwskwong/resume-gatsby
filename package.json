@@ -19,6 +19,7 @@
     "@emotion/styled": "^11.1.5",
     "@fontsource/rubik": "^4.2.2",
     "@loadable/component": "^5.14.1",
+    "@loadable/server": "^5.14.2",
     "@material-ui/core": "^5.0.0-alpha.27",
     "@material-ui/lab": "^5.0.0-alpha.27",
     "@nivo/core": "^0.67.0",
@@ -28,7 +29,6 @@
     "gatsby-background-image": "^1.5.0",
     "gatsby-plugin-emotion": "^6.1.0",
     "gatsby-plugin-image": "^1.1.2",
-    "gatsby-plugin-loadable-components-ssr": "^2.1.0",
     "gatsby-plugin-manifest": "^3.1.0",
     "gatsby-plugin-offline": "^4.1.0",
     "gatsby-plugin-react-helmet": "^4.1.0",
@@ -51,6 +51,8 @@
     "typewriter-effect": "^2.17.0"
   },
   "devDependencies": {
+    "@loadable/babel-plugin": "^5.13.2",
+    "@loadable/webpack-plugin": "^5.14.2",
     "@welldone-software/why-did-you-render": "^6.1.1",
     "eslint": "^7.22.0",
     "eslint-config-react-app": "^6.0.0",

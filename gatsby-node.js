@@ -1,5 +1,8 @@
+const LoadablePlugin = require("@loadable/webpack-plugin");
+
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
+    plugins: [new LoadablePlugin()],
     module: {
       rules: [
         {
@@ -9,4 +12,8 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       ]
     }
   });
+};
+
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPlugin({ name: "@loadable/babel-plugin" });
 };
