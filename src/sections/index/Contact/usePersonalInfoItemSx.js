@@ -4,10 +4,7 @@ const useSx = () => useMemo(() => ({
   root: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
-    "&:not(:first-of-type):not(:last-of-type)": {
-      my: 3
-    }
+    alignItems: "center"
   },
   title: {
     fontWeight: 500,

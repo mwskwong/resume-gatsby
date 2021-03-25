@@ -7,10 +7,7 @@ const useSx = () => useMemo(() => ({
   personalInfoItemContainer: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
-    "&:not(:first-of-type):not(:last-of-type)": {
-      my: 3
-    }
+    alignItems: "center"
   },
   icon: {
     width: 35,

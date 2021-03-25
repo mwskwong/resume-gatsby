@@ -1,11 +1,6 @@
 import { useMemo } from "react";
 
 const useSx = () => useMemo(() => ({
-  root: {
-    "&:not(:first-of-type):not(:last-of-type)": {
-      my: 6
-    }
-  },
   ratingContainer: {
     display: "flex"
   },

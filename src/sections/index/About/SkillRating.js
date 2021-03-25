@@ -7,7 +7,7 @@ const SkillRating = ({ name, rating }) => {
   const sx = useSx();
 
   return (
-    <Box sx={sx.root}>
+    <Box>
       <Box sx={sx.ratingContainer}>
         <Typography sx={sx.skillName}>
           {name}

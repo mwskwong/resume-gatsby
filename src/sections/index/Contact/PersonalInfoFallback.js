@@ -1,4 +1,4 @@
-import { Box, Skeleton, Typography } from "@material-ui/core";
+import { Box, Skeleton, Stack, Typography } from "@material-ui/core";
 
 import useSx from "./usePersonalInfoFallbackSx";
 
@@ -6,11 +6,11 @@ const PersonalInfoFallback = () => {
   const sx = useSx();
 
   return (
-    <Box sx={sx.personalInfoContainer}>
+    <Stack spacing={3} sx={sx.personalInfoContainer}>
       <PersonalInfoItemFallback />
       <PersonalInfoItemFallback />
       <PersonalInfoItemFallback />
-    </Box>
+    </Stack>
   );
 };
 

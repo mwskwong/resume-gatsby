@@ -1,5 +1,5 @@
-import { Box, IconButton } from "@material-ui/core";
 import { Facebook, Github, Linkedin } from "mdi-material-ui";
+import { IconButton, Stack } from "@material-ui/core";
 
 import PropTypes from "prop-types";
 import data from "contents/data";
@@ -10,7 +10,7 @@ const SocialMedia = ({ sx: sxProp }) => {
   const rootSx = { ...sx.root, ...sxProp };
 
   return (
-    <Box sx={rootSx}>
+    <Stack spacing={.5} direction="row" sx={rootSx}>
       <IconButton
         sx={sx.iconButton}
         href={data.socialMedia.facebookHref}
@@ -38,7 +38,7 @@ const SocialMedia = ({ sx: sxProp }) => {
       >
         <Github />
       </IconButton>
-    </Box>
+    </Stack>
   );
 };
 

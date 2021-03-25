@@ -1,8 +1,8 @@
-import { Box } from "@material-ui/core";
 import Email from "components/icons/Email";
 import Location from "components/icons/Location";
 import Mobile from "components/icons/Mobile";
 import PersonalInfoItem from "./PersonalInfoItem";
+import { Stack } from "@material-ui/core";
 import constants from "contents/constants";
 import data from "contents/data";
 import useSx from "./usePersonalInfoSx";
@@ -10,7 +10,7 @@ import useSx from "./usePersonalInfoSx";
 const PersonalInfo = () => {
   const sx = useSx();
   return (
-    <Box sx={sx.root}>
+    <Stack spacing={3} sx={sx.root}>
       <PersonalInfoItem
         Icon={Mobile}
         title={constants.callMe}
@@ -26,7 +26,7 @@ const PersonalInfo = () => {
         title={constants.findMe}
         value={data.contact.address}
       />
-    </Box>
+    </Stack>
   );
 };
 
