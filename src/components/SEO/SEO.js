@@ -6,7 +6,7 @@ import { memo } from "react";
 
 const SEO = ({ title: titleProp, description: descriptionProp, meta: metaProp = [] }) => {
   const { site } = useStaticQuery(graphql`
-    query SEOQuery {
+    query {
       site {
         siteMetadata {
           title
