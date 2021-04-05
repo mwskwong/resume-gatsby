@@ -8,7 +8,7 @@ const NavButton = ({ label, id, active }) => {
   const sx = useSx();
 
   return (
-    <Button sx={sx.root} component="a" href={`#${id}`}>
+    <Button component="a" href={`#${id}`}>
       {label}
       {
         active

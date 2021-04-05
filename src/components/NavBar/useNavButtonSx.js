@@ -1,12 +1,6 @@
 import { useMemo } from "react";
 
-// TODO: Migrate to Stack
 const useSx = () => useMemo(() => ({
-  root: {
-    "&:not(:first-of-type):not(:last-of-type)": {
-      mx: 1
-    }
-  },
   active: {
     height: 3,
     width: 16,

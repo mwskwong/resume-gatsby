@@ -1,4 +1,4 @@
-import { AppBar, Box, Collapse, IconButton, List, Toolbar, useScrollTrigger, useTheme } from "@material-ui/core";
+import { AppBar, Collapse, IconButton, List, Stack, Toolbar, useScrollTrigger, useTheme } from "@material-ui/core";
 import { memo, useCallback, useState } from "react";
 
 import { Hidden } from "@material-ui/core";
@@ -41,7 +41,7 @@ const NavBar = () => {
         <ThemeProvider mode={trigger || menuEnter ? "light" : "dark"}>
           <Logo sx={sx.logo} />
           <Hidden mdDown implementation="css">
-            <Box component="nav">
+            <Stack component="nav" spacing={1} direction="row">
               {Object.values(nav).map(({ id, name }) => (
                 <NavButton
                   key={id}
@@ -50,7 +50,7 @@ const NavBar = () => {
                   active={activeSectionId === id}
                 />
               ))}
-            </Box>
+            </Stack>
           </Hidden>
           <Hidden mdUp implementation="css">
             <IconButton onClick={handleMenuToggle} aria-label="toggle menu">
@@ -78,7 +78,7 @@ const NavBar = () => {
           </List>
         </Collapse>
       </Hidden>
-    </AppBar>
+    </AppBar >
   );
 };
 
