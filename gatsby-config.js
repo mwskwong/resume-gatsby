@@ -1,16 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: "Matthew Kwong - System DBA & Front-End Developer",
-    shortTitle: "Matthew Kwong",
-    themeColor: "#ffffff",
     description: "Matthew's Personal Resume Website",
-    siteUrl: "https://mwskwong.com"
+    shortTitle: "Matthew Kwong",
+    siteUrl: "https://mwskwong.com",
+    themeColor: "#ffffff",
+    title: "Matthew Kwong - System DBA & Front-End Developer"
   },
   plugins: [
     {
       resolve: "gatsby-plugin-root-import",
       options: {
-        src: `${__dirname}/src`,
         actions: `${__dirname}/src/actions`,
         components: `${__dirname}/src/components`,
         contents: `${__dirname}/src/contents`,
@@ -22,9 +21,10 @@ module.exports = {
         reducers: `${__dirname}/src/reducers`,
         sections: `${__dirname}/src/sections`,
         selectors: `${__dirname}/src/selectors`,
+        src: `${__dirname}/src`,
+        store: `${__dirname}/src/store`,
         styles: `${__dirname}/src/styles`,
-        utils: `${__dirname}/src/utils`,
-        store: `${__dirname}/src/store`
+        utils: `${__dirname}/src/utils`
       }
     },
     "gatsby-plugin-emotion",
@@ -35,49 +35,47 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "Matthew's Resume",
-        short_name: "Matthew",
-        icon: "src/images/icon.png",
-        start_url: ".",
-        theme_color: "#ffffff",
         background_color: "#fbfbfc",
-        categories: [
-          "resume",
-          "personalization"
-        ],
+        cache_busting_mode: "none",
+        categories: ["resume", "personalization"],
         description: "Matthew's Personal Resume Website",
         display: "standalone",
+        icon: "src/images/icon.png",
         lang: "en",
-        cache_busting_mode: "none"
+        name: "Matthew's Resume",
+        short_name: "Matthew",
+        start_url: ".",
+        theme_color: "#ffffff"
       }
     },
     {
-      resolve: "gatsby-plugin-offline",
       options: {
         workboxConfig: {
           globPatterns: ["**/icon-*"]
         }
-      }
+      },
+      resolve: "gatsby-plugin-offline"
     },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
+      __key: "images",
       options: {
         name: "images",
         path: `${__dirname}/src/images`
-      },
-      __key: "images"
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
+      __key: "documents",
       options: {
         name: "documents",
         path: `${__dirname}/src/documents`
-      },
-      __key: "documents"
+      }
     },
     "gatsby-plugin-webpack-bundle-analyser-v2",
-    "gatsby-plugin-robots-txt"
+    "gatsby-plugin-robots-txt",
+    "gatsby-plugin-preact"
   ]
 };
