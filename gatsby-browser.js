@@ -1,4 +1,4 @@
-import { hydrate, render } from "react-dom";
+import { hydrate } from "react-dom";
 
 import { CssBaseline } from "@material-ui/core";
 import { Provider } from "react-redux";
@@ -41,12 +41,9 @@ export const onServiceWorkerUpdateReady = () => {
   store.dispatch(swUpdateReady());
 };
 
-export const replaceHydrateFunction = (_, { useHydrate }) => (element, container, callback) => {
+
+export const replaceHydrateFunction = () => (element, container, callback) => {
   loadableReady(() => {
-    if (useHydrate && process.env.NODE_ENV === "production") {
-      hydrate(element, container, callback);
-    } else {
-      render(element, container, callback);
-    }
+    hydrate(element, container, callback);
   });
 };
