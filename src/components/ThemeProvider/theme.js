@@ -1,8 +1,7 @@
-import "@fontsource/rubik/300.css";
-import "@fontsource/rubik/400.css";
-import "@fontsource/rubik/500.css";
-import "@fontsource/rubik/700.css";
-import "@fontsource/rubik/variable.css";
+import "@fontsource/rubik/latin-300.css";
+import "@fontsource/rubik/latin-400.css";
+import "@fontsource/rubik/latin-500.css";
+import "@fontsource/rubik/latin-700.css";
 import "styles/azonix.css";
 
 import { alpha, createMuiTheme, responsiveFontSizes } from "@material-ui/core";
