@@ -122,10 +122,9 @@ const createTheme = mode => responsiveFontSizes(createMuiTheme({
     MuiTimelineItem: {
       styleOverrides: {
         alignLeft: {
-          "&$missingOppositeContent": {
-            "&::before": {
-              flex: 0,
-              padding: 0
+          "&.MuiTimelineItem-missingOppositeContent": {
+            "&:before": {
+              display: "none"
             }
           }
         }
