@@ -111,11 +111,6 @@ const createTheme = mode => responsiveFontSizes(createMuiTheme({
         htmlColor: mode === "dark" ? "#fff" : undefined
       }
     },
-    MuiTextField: {
-      defaultProps: {
-        variant: "outlined"
-      }
-    },
     MuiTimeline: {
       styleOverrides: {
         root: {
