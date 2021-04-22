@@ -43,13 +43,11 @@ export const onServiceWorkerUpdateReady = () => {
 
 
 export const replaceHydrateFunction = () => (element, container, callback) => {
-  console.log(process.env.NODE_ENV);
   loadableReady(() => {
     if (process.env.NODE_ENV === "development") {
       render(element, container, callback);
     } else {
       hydrate(element, container, callback);
     }
-
   });
 };
