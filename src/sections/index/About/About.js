@@ -12,7 +12,7 @@ import nav from "contents/nav";
 import { useInView } from "react-intersection-observer";
 
 const languageFallback = <LanguagesFallback />;
-const Languages = loadable(() => import(/* webpackPrefetch: true */ "./Languages"), {
+const Languages = loadable(() => import("./Languages"), {
   fallback: languageFallback
 });
 
