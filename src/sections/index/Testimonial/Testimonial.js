@@ -17,7 +17,7 @@ import useSx from "./useTestimonialSx";
 
 const endorsementFallback = <EndorsementFallback />;
 
-const Carousel = loadable(() => import("./Carousel"), {
+const Carousel = loadable(() => import(/* webpackPrefetch: true */ "./Carousel"), {
   fallback: endorsementFallback
 });
 

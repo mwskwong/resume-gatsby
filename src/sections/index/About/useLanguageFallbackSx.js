@@ -6,7 +6,7 @@ const useSx = () => useMemo(() => ({
     mt: 6,
     mx: "auto",
     width: "100%",
-    maxWidth: 400
+    maxWidth: 352.21
   }
 }), []);
 
