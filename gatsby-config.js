@@ -6,6 +6,7 @@ module.exports = {
     themeColor: "#ffffff",
     title: "Matthew Kwong - System DBA & Front-End Developer"
   },
+  flags: { PRESERVE_WEBPACK_CACHE: true },
   plugins: [
     {
       resolve: "gatsby-plugin-root-import",
