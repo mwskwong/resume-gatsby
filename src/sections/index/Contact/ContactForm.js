@@ -77,6 +77,7 @@ const ContactForm = () => {
         </Grid>
         <Grid item sm={6} xs={12}>
           <TextField
+            ref={emailInputRef}
             id="email"
             name="from"
             fullWidth

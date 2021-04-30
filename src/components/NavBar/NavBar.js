@@ -37,7 +37,7 @@ const NavBar = () => {
 
   return (
     <AppBar color={color} elevation={elevation}>
-      <Toolbar sx={sx.toolbar}>
+      <Toolbar>
         <ThemeProvider mode={trigger || menuEnter ? "light" : "dark"}>
           <Logo />
           <Box sx={sx.spacer} />

@@ -24,7 +24,15 @@ const createTheme = mode => responsiveFontSizes(createMuiTheme({
     },
     MuiButton: {
       defaultProps: {
-        color: mode === "light" ? "primary" : "secondary"
+        color: mode === "light" ? "primary" : "secondary",
+        disableElevation: true
+      }
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#fbfbfc"
+        }
       }
     },
     MuiCssBaseline: {
@@ -127,6 +135,16 @@ const createTheme = mode => responsiveFontSizes(createMuiTheme({
               display: "none"
             }
           }
+        }
+      }
+    },
+    MuiToolbar: {
+      styleOverrides: {
+        root: {
+          width: "100%",
+          maxWidth: 1440,
+          marginRight: "auto",
+          marginLeft: "auto"
         }
       }
     }
