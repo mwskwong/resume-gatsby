@@ -138,10 +138,6 @@ const createTheme = mode => responsiveFontSizes(createMuiTheme({
     secondary: {
       main: "#ffffff"
     },
-    background: {
-      default: "#fbfbfc",
-      paper: "#ffffff"
-    },
     text: {
       primary: mode === "light" ? "#2e3440" : "#fff"
     },

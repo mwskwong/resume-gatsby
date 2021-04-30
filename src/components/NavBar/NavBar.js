@@ -1,4 +1,4 @@
-import { AppBar, Collapse, IconButton, List, Stack, Toolbar, useScrollTrigger, useTheme } from "@material-ui/core";
+import { AppBar, Box, Collapse, IconButton, List, Stack, Toolbar, useScrollTrigger, useTheme } from "@material-ui/core";
 import { memo, useCallback, useState } from "react";
 
 import { Hidden } from "@material-ui/core";
@@ -37,9 +37,10 @@ const NavBar = () => {
 
   return (
     <AppBar color={color} elevation={elevation}>
-      <Toolbar>
+      <Toolbar sx={sx.toolbar}>
         <ThemeProvider mode={trigger || menuEnter ? "light" : "dark"}>
-          <Logo sx={sx.logo} />
+          <Logo />
+          <Box sx={sx.spacer} />
           <Hidden mdDown implementation="css">
             <Stack component="nav" spacing={1} direction="row">
               {Object.values(nav).map(({ id, name }) => (
@@ -78,7 +79,7 @@ const NavBar = () => {
           </List>
         </Collapse>
       </Hidden>
-    </AppBar >
+    </AppBar>
   );
 };
 
