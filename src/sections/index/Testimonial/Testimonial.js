@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import { BgImage } from "gbimage-bridge";
 import BgOverlay from "components/BgOverlay";
-import EndorsementFallback from "./EndorsementFallback";
 import { HexagonSlice5 } from "mdi-material-ui";
 import SectionHeader from "components/SectionHeader";
 import ThemeProvider from "components/ThemeProvider";
@@ -12,18 +11,12 @@ import { getImage } from "gatsby-plugin-image";
 import loadable from "@loadable/component";
 import { memo } from "react";
 import nav from "contents/nav";
-import { useInView } from "react-intersection-observer";
 import useSx from "./useTestimonialSx";
 
-const endorsementFallback = <EndorsementFallback />;
-
-const Carousel = loadable(() => import(/* webpackPrefetch: true */ "./Carousel"), {
-  fallback: endorsementFallback
-});
+const Carousel = loadable(() => import(/* webpackPrefetch: true */ "./Carousel"));
 
 const Testimonial = () => {
   const sx = useSx();
-  const { ref, inView } = useInView({ triggerOnce: true });
 
   const { bg, bgXs } = useStaticQuery(graphql`
     query {     
@@ -65,9 +58,7 @@ const Testimonial = () => {
               heading={constants.whatPeopleSay}
               Icon={HexagonSlice5}
             />
-            <Box ref={ref}>
-              {inView ? <Carousel /> : endorsementFallback}
-            </Box>
+            <Carousel />
           </Container>
         </ThemeProvider>
       </BgOverlay>

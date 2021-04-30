@@ -1,10 +1,9 @@
-import { hydrate, render } from "react-dom";
-
 import { CssBaseline } from "@material-ui/core";
 import { Provider } from "react-redux";
 import { StrictMode } from "react";
 import SwSnackbar from "components/SwSnackbar";
 import ThemeProvider from "components/ThemeProvider";
+import { hydrate } from "react-dom";
 import { loadableReady } from "@loadable/component";
 import store from "store";
 import { swUpdateReady } from "actions";
@@ -44,10 +43,11 @@ export const onServiceWorkerUpdateReady = () => {
 
 export const replaceHydrateFunction = () => (element, container, callback) => {
   loadableReady(() => {
-    if (process.env.NODE_ENV === "development") {
-      render(element, container, callback);
-    } else {
-      hydrate(element, container, callback);
-    }
+    hydrate(element, container, callback);
+    // if (process.env.NODE_ENV === "development") {
+    //   render(element, container, callback);
+    // } else {
+    //   hydrate(element, container, callback);
+    // }
   });
 };

@@ -1,9 +1,22 @@
 const LoadablePlugin = require("@loadable/webpack-plugin");
 
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    plugins: [new LoadablePlugin()]
-  });
+exports.onCreateWebpackConfig = ({ actions, stage }) => {
+  if (
+    stage === "build-javascript" ||
+    stage === "develop" ||
+    stage === "develop-html"
+  ) {
+    actions.setWebpackConfig({
+      plugins: [
+        new LoadablePlugin({
+          filename: stage === "develop"
+            ? "public/loadable-stats.json"
+            : "loadable-stats.json",
+          writeToDisk: true
+        })
+      ]
+    });
+  }
 };
 
 exports.onCreateBabelConfig = ({ actions }) => {
