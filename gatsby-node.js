@@ -1,11 +1,7 @@
 const LoadablePlugin = require("@loadable/webpack-plugin");
 
 exports.onCreateWebpackConfig = ({ actions, stage }) => {
-  if (
-    stage === "build-javascript" ||
-    stage === "develop" ||
-    stage === "develop-html"
-  ) {
+  if (stage === "build-javascript" || stage === "develop") {
     actions.setWebpackConfig({
       plugins: [
         new LoadablePlugin({
