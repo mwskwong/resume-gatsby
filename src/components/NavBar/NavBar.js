@@ -1,6 +1,7 @@
-import { AppBar, Box, Collapse, IconButton, List, Stack, Toolbar, useScrollTrigger, useTheme } from "@material-ui/core";
-import { memo, useCallback, useState } from "react";
+import { AppBar, Box, Dialog, IconButton, List, Stack, Toolbar, useScrollTrigger, useTheme } from "@material-ui/core";
+import { memo, useState } from "react";
 
+import Close from "components/icons/Close";
 import { Hidden } from "@material-ui/core";
 import Logo from "./Logo";
 import Menu from "components/icons/Menu";
@@ -26,19 +27,16 @@ const NavBar = () => {
 
   const activeSectionId = useActiveSectionId();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [menuEnter, setMenuEnter] = useState(false);
 
-  const color = trigger || menuEnter ? "secondary" : appBarDefaultProps.color;
-  const elevation = trigger || menuEnter ? 4 : appBarDefaultProps.elevation;
+  const color = trigger ? "secondary" : appBarDefaultProps.color;
+  const elevation = trigger ? 4 : appBarDefaultProps.elevation;
 
-  const handleMenuToggle = useCallback(() => setMenuOpen(!menuOpen), [menuOpen]);
-  const handleMenuEnter = () => setMenuEnter(true);
-  const handleMenuExited = () => setMenuEnter(false);
+  const handleMenuToggle = () => setMenuOpen(!menuOpen);
 
   return (
     <AppBar color={color} elevation={elevation}>
       <Toolbar>
-        <ThemeProvider mode={trigger || menuEnter ? "light" : "dark"}>
+        <ThemeProvider mode={trigger ? "light" : "dark"}>
           <Logo />
           <Box sx={sx.spacer} />
           <Hidden mdDown implementation="css">
@@ -60,25 +58,28 @@ const NavBar = () => {
           </Hidden>
         </ThemeProvider>
       </Toolbar>
-      <Hidden mdUp implementation="css">
-        <Collapse
-          in={menuOpen}
-          timeout="auto"
-          onEnter={handleMenuEnter}
-          onExited={handleMenuExited}
-        >
-          <List sx={sx.navList} component="nav" aria-label="nav list">
-            {Object.values(nav).map(({ id, name }) => (
-              <NavListItem
-                key={id}
-                id={id}
-                label={name}
-                active={activeSectionId === id}
-              />
-            ))}
-          </List>
-        </Collapse>
-      </Hidden>
+      <Dialog fullScreen open={menuOpen} onClose={handleMenuToggle}>
+        <AppBar color="secondary">
+          <Toolbar>
+            <Logo />
+            <Box sx={sx.spacer} />
+            <IconButton onClick={handleMenuToggle}>
+              <Close />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+        <Toolbar />
+        <List sx={sx.navList} component="nav" aria-label="nav list">
+          {Object.values(nav).map(({ id, name }) => (
+            <NavListItem
+              key={id}
+              id={id}
+              label={name}
+              active={activeSectionId === id}
+            />
+          ))}
+        </List>
+      </Dialog>
     </AppBar>
   );
 };

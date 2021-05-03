@@ -47,7 +47,7 @@ const Home = () => {
 
   return (
     <Box component={BgImage} sx={sx.root} id={nav.home.id} Tag="section" image={bgs}>
-      <BgOverlay>
+      <BgOverlay sx={sx.bgOverlay}>
         <Toolbar />
         <ThemeProvider mode="dark">
           <Container sx={sx.container}>
