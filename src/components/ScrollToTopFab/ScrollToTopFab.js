@@ -22,7 +22,7 @@ const ScrollToTopFab = () => {
         aria-label="scroll to top"
         href={`#${nav.home.id}`}
       >
-        <ArrowUp sx={sx.icon} />
+        <ArrowUp />
       </Fab>
     </Zoom>
   );

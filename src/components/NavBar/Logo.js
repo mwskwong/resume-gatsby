@@ -6,11 +6,11 @@ import { memo } from "react";
 import nav from "contents/nav";
 import useSx from "./useLogoSx";
 
-const Logo = ({ sx: sxProp }) => {
+const Logo = ({ sx: sxProp, onClick }) => {
   const sx = useSx();
 
   return (
-    <Button sx={sxProp} component="a" href={`#${nav.home.id}`}>
+    <Button sx={sxProp} component="a" href={`#${nav.home.id}`} onClick={onClick}>
       <Typography sx={sx.text} variant="h5">
         {data.firstName}
       </Typography>
@@ -19,7 +19,8 @@ const Logo = ({ sx: sxProp }) => {
 };
 
 Logo.propTypes = {
-  sx: PropTypes.object
+  sx: PropTypes.object,
+  onClick: PropTypes.func
 };
 
 Logo.whyDidYouRender = true;

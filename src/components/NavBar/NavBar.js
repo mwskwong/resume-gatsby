@@ -1,5 +1,15 @@
-import { AppBar, Box, Dialog, IconButton, List, Stack, Toolbar, useScrollTrigger, useTheme } from "@material-ui/core";
-import { memo, useState } from "react";
+import {
+  AppBar,
+  Box,
+  Dialog,
+  IconButton,
+  List,
+  Stack,
+  Toolbar,
+  useScrollTrigger,
+  useTheme
+} from "@material-ui/core";
+import { Fragment, memo, useCallback, useState } from "react";
 
 import Close from "components/icons/Close";
 import { Hidden } from "@material-ui/core";
@@ -31,37 +41,39 @@ const NavBar = () => {
   const color = trigger ? "secondary" : appBarDefaultProps.color;
   const elevation = trigger ? 4 : appBarDefaultProps.elevation;
 
-  const handleMenuToggle = () => setMenuOpen(!menuOpen);
+  const handleMenuToggle = useCallback(() => setMenuOpen(menuOpen => !menuOpen), []);
 
   return (
-    <AppBar color={color} elevation={elevation}>
-      <Toolbar>
-        <ThemeProvider mode={trigger ? "light" : "dark"}>
-          <Logo />
-          <Box sx={sx.spacer} />
-          <Hidden mdDown implementation="css">
-            <Stack component="nav" spacing={1} direction="row">
-              {Object.values(nav).map(({ id, name }) => (
-                <NavButton
-                  key={id}
-                  id={id}
-                  label={name}
-                  active={activeSectionId === id}
-                />
-              ))}
-            </Stack>
-          </Hidden>
-          <Hidden mdUp implementation="css">
-            <IconButton onClick={handleMenuToggle} aria-label="toggle menu">
-              <Menu />
-            </IconButton>
-          </Hidden>
-        </ThemeProvider>
-      </Toolbar>
+    <Fragment>
+      <AppBar color={color} elevation={elevation}>
+        <Toolbar>
+          <ThemeProvider mode={trigger ? "light" : "dark"}>
+            <Logo />
+            <Box sx={sx.spacer} />
+            <Hidden mdDown implementation="css">
+              <Stack component="nav" spacing={1} direction="row">
+                {Object.values(nav).map(({ id, name }) => (
+                  <NavButton
+                    key={id}
+                    id={id}
+                    label={name}
+                    active={activeSectionId === id}
+                  />
+                ))}
+              </Stack>
+            </Hidden>
+            <Hidden mdUp implementation="css">
+              <IconButton onClick={handleMenuToggle} aria-label="toggle menu">
+                <Menu />
+              </IconButton>
+            </Hidden>
+          </ThemeProvider>
+        </Toolbar>
+      </AppBar>
       <Dialog fullScreen open={menuOpen} onClose={handleMenuToggle}>
         <AppBar color="secondary">
           <Toolbar>
-            <Logo />
+            <Logo onClick={handleMenuToggle} />
             <Box sx={sx.spacer} />
             <IconButton onClick={handleMenuToggle}>
               <Close />
@@ -76,11 +88,12 @@ const NavBar = () => {
               id={id}
               label={name}
               active={activeSectionId === id}
+              onClick={handleMenuToggle}
             />
           ))}
         </List>
       </Dialog>
-    </AppBar>
+    </Fragment>
   );
 };
 
