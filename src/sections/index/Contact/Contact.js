@@ -1,6 +1,7 @@
 import { Box, Container, Grid } from "@material-ui/core";
 
 import { HexagonSlice6 } from "mdi-material-ui";
+import LazyHydrate from "react-lazy-hydration";
 import SectionHeader from "components/SectionHeader";
 import constants from "contents/constants";
 import loadable from "@loadable/component";
@@ -23,22 +24,24 @@ const Contact = () => {
   const sx = useSx();
 
   return (
-    <Container component="section" id={nav.contact.id}>
-      <SectionHeader
-        heading={constants.getInTouch}
-        Icon={HexagonSlice6}
-      />
-      <Box sx={sx.gridContainer}>
-        <Grid container spacing={2}>
-          <Grid item md={4} xs={12}>
-            <PersonalInfo />
+    <LazyHydrate whenVisible>
+      <Container component="section" id={nav.contact.id}>
+        <SectionHeader
+          heading={constants.getInTouch}
+          Icon={HexagonSlice6}
+        />
+        <Box sx={sx.gridContainer}>
+          <Grid container spacing={2}>
+            <Grid item md={4} xs={12}>
+              <PersonalInfo />
+            </Grid>
+            <Grid item md xs={12}>
+              <ContactForm />
+            </Grid>
           </Grid>
-          <Grid item md xs={12}>
-            <ContactForm />
-          </Grid>
-        </Grid>
-      </Box>
-    </Container>
+        </Box>
+      </Container>
+    </LazyHydrate>
   );
 };
 

@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { BgImage } from "gbimage-bridge";
 import BgOverlay from "components/BgOverlay";
 import { HexagonSlice5 } from "mdi-material-ui";
+import LazyHydrate from "react-lazy-hydration";
 import SectionHeader from "components/SectionHeader";
 import ThemeProvider from "components/ThemeProvider";
 import constants from "contents/constants";
@@ -50,19 +51,21 @@ const Testimonial = () => {
   ];
 
   return (
-    <Box component={BgImage} sx={sx.root} id={nav.testimonial.id} Tag="section" image={bgs}>
-      <BgOverlay sx={sx.bgOverlay}>
-        <ThemeProvider mode="dark">
-          <Container>
-            <SectionHeader
-              heading={constants.whatPeopleSay}
-              Icon={HexagonSlice5}
-            />
-            <Carousel />
-          </Container>
-        </ThemeProvider>
-      </BgOverlay>
-    </Box>
+    <LazyHydrate whenVisible>
+      <Box component={BgImage} sx={sx.root} id={nav.testimonial.id} Tag="section" image={bgs}>
+        <BgOverlay sx={sx.bgOverlay}>
+          <ThemeProvider mode="dark">
+            <Container>
+              <SectionHeader
+                heading={constants.whatPeopleSay}
+                Icon={HexagonSlice5}
+              />
+              <Carousel />
+            </Container>
+          </ThemeProvider>
+        </BgOverlay>
+      </Box>
+    </LazyHydrate>
   );
 };
 
