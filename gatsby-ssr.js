@@ -29,8 +29,7 @@ export const wrapPageElement = ({ element }) => (
   </ThemeProvider>
 );
 
-export const onRenderBody = ({ setPostBodyComponents, setHeadComponents }) => {
-  setHeadComponents(extractor.getLinkElements());
+export const onRenderBody = ({ setPostBodyComponents }) => {
   setPostBodyComponents([...extractor.getScriptElements(), ...extractor.getStyleElements()]);
   extractor.chunks = [];
 };
