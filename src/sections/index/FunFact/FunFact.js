@@ -9,16 +9,15 @@ import Gift from "components/icons/Gift";
 import Globe from "components/icons/Globe";
 import Heart from "components/icons/Heart";
 import HotCup from "components/icons/HotCup";
+import LazyHydrate from "react-lazy-hydration";
 import ThemeProvider from "components/ThemeProvider";
 import constants from "contents/constants";
 import data from "contents/data";
 import { getImage } from "gatsby-plugin-image";
-import { useInView } from "react-intersection-observer";
 import useSx from "./useFunFactSx";
 
 const FunFact = () => {
   const sx = useSx();
-  const [ref, inView] = useInView({ triggerOnce: true });
   const { bg, bgXs } = useStaticQuery(graphql`
     query {     
       bg: file(relativePath: { eq: "fun_fact.jpg" }) {
@@ -51,62 +50,48 @@ const FunFact = () => {
   ];
 
   return (
-    <Box component={BgImage} sx={sx.root} Tag="section" image={bgs}>
-      <ContentWrapper ref={ref} inView={inView} />
-    </Box>
+    <LazyHydrate whenVisible>
+      <Box component={BgImage} sx={sx.root} Tag="section" image={bgs}>
+        <BgOverlay sx={sx.bgOverlay}>
+          <ThemeProvider mode="dark">
+            <Container>
+              <Grid container spacing={4}>
+                <Grid item md={3} sm={6} xs={12}>
+                  <FactCard
+                    Icon={Globe}
+                    title={constants.completedCourses}
+                    value={data.funFact.completedCourses}
+                  />
+                </Grid>
+                <Grid item md={3} sm={6} xs={12}>
+                  <FactCard
+                    Icon={Gift}
+                    title={constants.completedProjects}
+                    value={data.funFact.completedProjects}
+                  />
+                </Grid>
+                <Grid item md={3} sm={6} xs={12}>
+                  <FactCard
+                    Icon={Heart}
+                    title={constants.happySupervisors}
+                    value={data.funFact.happySupervisors}
+                  />
+                </Grid>
+                <Grid item md={3} sm={6} xs={12}>
+                  <FactCard
+                    Icon={HotCup}
+                    title={constants.commitment}
+                    value={data.funFact.commitment}
+                  />
+                </Grid>
+              </Grid>
+            </Container>
+          </ThemeProvider>
+        </BgOverlay>
+      </Box>
+    </LazyHydrate>
   );
 };
-
-/** Performance optimization */
-// eslint-disable-next-line react/prop-types
-const ContentWrapper = memo(forwardRef(({ inView }, ref) => {
-  const sx = useSx();
-
-  return (
-    <BgOverlay sx={sx.bgOverlay}>
-      <ThemeProvider mode="dark">
-        <Container ref={ref}>
-          <Grid container spacing={4}>
-            <Grid item md={3} sm={6} xs={12}>
-              <FactCard
-                Icon={Globe}
-                title={constants.completedCourses}
-                value={data.funFact.completedCourses}
-                startCountUp={inView}
-              />
-            </Grid>
-            <Grid item md={3} sm={6} xs={12}>
-              <FactCard
-                Icon={Gift}
-                title={constants.completedProjects}
-                value={data.funFact.completedProjects}
-                startCountUp={inView}
-              />
-            </Grid>
-            <Grid item md={3} sm={6} xs={12}>
-              <FactCard
-                Icon={Heart}
-                title={constants.happySupervisors}
-                value={data.funFact.happySupervisors}
-                startCountUp={inView}
-              />
-            </Grid>
-            <Grid item md={3} sm={6} xs={12}>
-              <FactCard
-                Icon={HotCup}
-                title={constants.commitment}
-                value={data.funFact.commitment}
-                startCountUp={inView}
-              />
-            </Grid>
-          </Grid>
-        </Container>
-      </ThemeProvider>
-    </BgOverlay>
-  );
-}));
-ContentWrapper.displayName = "ContentWrapper";
-ContentWrapper.whyDidYouRender = true;
 
 FunFact.whyDidYouRender = true;
 

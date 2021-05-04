@@ -11,24 +11,22 @@ const defaultValue = {
   percentage: "0%"
 };
 
-const FactCard = ({ Icon, title, value = 0, startCountUp = false }) => {
+const FactCard = ({ Icon, title, value = 0 }) => {
   const sx = useSx();
   const countUpRef = useRef();
 
   useEffect(() => {
-    if (startCountUp) {
-      const countUp = new CountUp(
-        countUpRef.current,
-        parseInt(value, 10),
-        {
-          duration: 3,
-          suffix: isPercentage(value) ? "%" : ""
-        }
-      );
+    const countUp = new CountUp(
+      countUpRef.current,
+      parseInt(value, 10),
+      {
+        duration: 3,
+        suffix: isPercentage(value) ? "%" : ""
+      }
+    );
 
-      countUp.start();
-    }
-  }, [startCountUp, value]);
+    countUp.start();
+  }, [value]);
 
   return (
     <Card sx={sx.root} variant="outlined">
@@ -51,8 +49,7 @@ FactCard.propTypes = {
   value: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string
-  ]).isRequired,
-  startCountUp: PropTypes.bool
+  ]).isRequired
 };
 
 FactCard.whyDidYouRender = true;

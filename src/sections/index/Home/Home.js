@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { BgImage } from "gbimage-bridge";
 import BgOverlay from "components/BgOverlay";
 import DownloadResumeButton from "./DownloadResumeButton";
+import LazyHydrate from "react-lazy-hydration";
 import SocialMedia from "components/SocialMedia";
 import ThemeProvider from "components/ThemeProvider";
 import Title from "./Title";
@@ -46,18 +47,20 @@ const Home = () => {
   ];
 
   return (
-    <Box component={BgImage} sx={sx.root} id={nav.home.id} Tag="section" image={bgs}>
-      <BgOverlay sx={sx.bgOverlay}>
-        <Toolbar />
-        <ThemeProvider mode="dark">
-          <Container sx={sx.container}>
-            <Title />
-            <SocialMedia sx={sx.socialMedia} />
-            <DownloadResumeButton sx={sx.downloadResumeButton} />
-          </Container>
-        </ThemeProvider>
-      </BgOverlay>
-    </Box>
+    <LazyHydrate whenIdle>
+      <Box component={BgImage} sx={sx.root} id={nav.home.id} Tag="section" image={bgs}>
+        <BgOverlay sx={sx.bgOverlay}>
+          <Toolbar />
+          <ThemeProvider mode="dark">
+            <Container sx={sx.container}>
+              <Title />
+              <SocialMedia sx={sx.socialMedia} />
+              <DownloadResumeButton sx={sx.downloadResumeButton} />
+            </Container>
+          </ThemeProvider>
+        </BgOverlay>
+      </Box>
+    </LazyHydrate>
   );
 };
 
