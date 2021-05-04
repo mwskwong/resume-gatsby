@@ -13,7 +13,7 @@ import { memo } from "react";
 import nav from "contents/nav";
 import useSx from "./useTestimonialSx";
 
-const Carousel = loadable(() => import(/* webpackPrefetch: true */ "./Carousel"));
+const Carousel = loadable(() => import("./Carousel"));
 
 const Testimonial = () => {
   const sx = useSx();

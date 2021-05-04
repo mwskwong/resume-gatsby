@@ -8,7 +8,7 @@ import loadable from "@loadable/component";
 import { memo } from "react";
 import nav from "contents/nav";
 
-const Languages = loadable(() => import(/* webpackPrefetch: true */ "./Languages"));
+const Languages = loadable(() => import("./Languages"));
 
 const About = () => {
   return (
