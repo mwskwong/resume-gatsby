@@ -8,8 +8,8 @@ import { memo } from "react";
 import nav from "contents/nav";
 import useSx from "./useContactSx";
 
-const ContactForm = loadable(() => import(  /* webpackChunkName: "contact" */  "./ContactForm"));
-const PersonalInfo = loadable(() => import(  /* webpackChunkName: "contact" */  "./PersonalInfo"));
+const ContactForm = loadable(() => import(/* webpackChunkName: "contact" */ "./ContactForm"));
+const PersonalInfo = loadable(() => import(/* webpackChunkName: "contact" */ "./PersonalInfo"));
 
 const Contact = () => {
   const sx = useSx();
