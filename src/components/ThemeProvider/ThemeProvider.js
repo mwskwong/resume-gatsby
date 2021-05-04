@@ -2,6 +2,7 @@ import { darkTheme, lightTheme } from "./theme";
 
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core";
 import PropTypes from "prop-types";
+import { memo } from "react";
 
 const ThemeProvider = ({ mode = "light", children }) => {
   return (
@@ -19,4 +20,4 @@ ThemeProvider.propTypes = {
 
 ThemeProvider.whyDidYouRender = true;
 
-export default ThemeProvider;
+export default memo(ThemeProvider);

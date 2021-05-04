@@ -43,7 +43,7 @@ const NavBar = () => {
   const elevation = trigger ? 4 : appBarDefaultProps.elevation;
 
   const handleMenuToggle = useCallback(() => setMenuOpen(menuOpen => !menuOpen), []);
-  const handleNavListItemClick = useCallback(id => () => {
+  const handleNavListItemClick = useCallback(id => {
     handleMenuToggle();
     setId(id);
   }, [handleMenuToggle]);
@@ -57,27 +57,11 @@ const NavBar = () => {
     <Fragment>
       <AppBar color={color} elevation={elevation}>
         <Toolbar>
-          <ThemeProvider mode={trigger ? "light" : "dark"}>
-            <Logo />
-            <Box sx={sx.spacer} />
-            <Hidden mdDown implementation="css">
-              <Stack component="nav" spacing={1} direction="row">
-                {Object.values(nav).map(({ id, name }) => (
-                  <NavButton
-                    key={id}
-                    id={id}
-                    label={name}
-                    active={activeSectionId === id}
-                  />
-                ))}
-              </Stack>
-            </Hidden>
-            <Hidden mdUp implementation="css">
-              <IconButton onClick={handleMenuToggle} aria-label="toggle menu">
-                <Menu />
-              </IconButton>
-            </Hidden>
-          </ThemeProvider>
+          <AppBarContent
+            mode={trigger ? "light" : "dark"}
+            activeSectionId={activeSectionId}
+            onMenuToggle={handleMenuToggle}
+          />
         </Toolbar>
       </AppBar>
       <Dialog
@@ -100,9 +84,10 @@ const NavBar = () => {
           {Object.values(nav).map(({ id, name }) => (
             <NavListItem
               key={id}
+              id={id}
               label={name}
               active={activeSectionId === id}
-              onClick={handleNavListItemClick(id)}
+              onClick={handleNavListItemClick}
             />
           ))}
         </List>
@@ -110,6 +95,37 @@ const NavBar = () => {
     </Fragment>
   );
 };
+
+/** Performance optimization */
+// eslint-disable-next-line react/prop-types
+const AppBarContent = memo(({ activeSectionId, mode, onMenuToggle }) => {
+  const sx = useSx();
+  return (
+    <ThemeProvider mode={mode}>
+      <Logo />
+      <Box sx={sx.spacer} />
+      <Hidden mdDown implementation="css">
+        <Stack component="nav" spacing={1} direction="row">
+          {Object.values(nav).map(({ id, name }) => (
+            <NavButton
+              key={id}
+              id={id}
+              label={name}
+              active={activeSectionId === id}
+            />
+          ))}
+        </Stack>
+      </Hidden>
+      <Hidden mdUp implementation="css">
+        <IconButton onClick={onMenuToggle} aria-label="toggle menu">
+          <Menu />
+        </IconButton>
+      </Hidden>
+    </ThemeProvider>
+  );
+});
+AppBarContent.displayName = "AppBarContent";
+AppBarContent.whyDidYouRender = true;
 
 NavBar.whyDidYouRender = true;
 

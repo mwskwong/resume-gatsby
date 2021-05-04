@@ -4,12 +4,14 @@ import PropTypes from "prop-types";
 import { memo } from "react";
 import useSx from "./useNavListItemSx";
 
-const NavListItem = ({ label, active, onClick }) => {
+const NavListItem = ({ label, id, active, onClick }) => {
   const sx = useSx({ active });
   const primaryTypographyProps = { sx: sx.textPrimary };
 
+  const handleClick = () => onClick && onClick(id);
+
   return (
-    <ListItem button onClick={onClick}>
+    <ListItem button onClick={handleClick}>
       <ListItemText
         primary={label}
         primaryTypographyProps={primaryTypographyProps}
@@ -21,7 +23,8 @@ const NavListItem = ({ label, active, onClick }) => {
 NavListItem.propTypes = {
   label: PropTypes.string.isRequired,
   active: PropTypes.bool.isRequired,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  id: PropTypes.string
 };
 
 NavListItem.whyDidYouRender = true;
