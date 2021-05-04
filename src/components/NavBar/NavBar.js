@@ -37,11 +37,21 @@ const NavBar = () => {
 
   const activeSectionId = useActiveSectionId();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [id, setId] = useState(activeSectionId);
 
   const color = trigger ? "secondary" : appBarDefaultProps.color;
   const elevation = trigger ? 4 : appBarDefaultProps.elevation;
 
   const handleMenuToggle = useCallback(() => setMenuOpen(menuOpen => !menuOpen), []);
+  const handleNavListItemClick = useCallback(id => () => {
+    handleMenuToggle();
+    setId(id);
+  }, [handleMenuToggle]);
+  const handleNavMenuExited = () => window.location.hash = `#${id}`;
+
+  const TransitionProps = {
+    onExited: handleNavMenuExited
+  };
 
   return (
     <Fragment>
@@ -70,7 +80,12 @@ const NavBar = () => {
           </ThemeProvider>
         </Toolbar>
       </AppBar>
-      <Dialog fullScreen open={menuOpen} onClose={handleMenuToggle}>
+      <Dialog
+        fullScreen
+        open={menuOpen}
+        onClose={handleMenuToggle}
+        TransitionProps={TransitionProps}
+      >
         <AppBar color="secondary">
           <Toolbar>
             <Logo onClick={handleMenuToggle} />
@@ -85,10 +100,9 @@ const NavBar = () => {
           {Object.values(nav).map(({ id, name }) => (
             <NavListItem
               key={id}
-              id={id}
               label={name}
               active={activeSectionId === id}
-              onClick={handleMenuToggle}
+              onClick={handleNavListItemClick(id)}
             />
           ))}
         </List>
