@@ -9,11 +9,10 @@ import {
   useScrollTrigger,
   useTheme
 } from "@material-ui/core";
-import { memo, useCallback, useState } from "react";
+import { Fragment, memo, useCallback, useState } from "react";
 
 import Close from "components/icons/Close";
 import { Hidden } from "@material-ui/core";
-import LazyHydrate from "react-lazy-hydration";
 import Logo from "./Logo";
 import Menu from "components/icons/Menu";
 import NavButton from "./NavButton";
@@ -55,7 +54,7 @@ const NavBar = () => {
   };
 
   return (
-    <LazyHydrate whenIdle>
+    <Fragment>
       <AppBar color={color} elevation={elevation}>
         <Toolbar>
           <AppBarContent
@@ -93,7 +92,7 @@ const NavBar = () => {
           ))}
         </List>
       </Dialog>
-    </LazyHydrate>
+    </Fragment>
   );
 };
 
