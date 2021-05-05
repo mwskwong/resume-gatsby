@@ -1,5 +1,4 @@
 import { Box, Container, Grid } from "@material-ui/core";
-import { forwardRef, memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { BgImage } from "gbimage-bridge";
@@ -13,12 +12,11 @@ import ThemeProvider from "components/ThemeProvider";
 import constants from "contents/constants";
 import data from "contents/data";
 import { getImage } from "gatsby-plugin-image";
-import { useInView } from "react-intersection-observer";
+import { memo } from "react";
 import useSx from "./useFunFactSx";
 
 const FunFact = () => {
   const sx = useSx();
-  const [ref, inView] = useInView({ triggerOnce: true });
   const { bg, bgXs } = useStaticQuery(graphql`
     query {     
       bg: file(relativePath: { eq: "fun_fact.jpg" }) {
@@ -52,61 +50,45 @@ const FunFact = () => {
 
   return (
     <Box component={BgImage} sx={sx.root} Tag="section" image={bgs}>
-      <ContentWrapper ref={ref} inView={inView} />
+      <BgOverlay sx={sx.bgOverlay}>
+        <ThemeProvider mode="dark">
+          <Container>
+            <Grid container spacing={4}>
+              <Grid item md={3} sm={6} xs={12}>
+                <FactCard
+                  Icon={Globe}
+                  title={constants.completedCourses}
+                  value={data.funFact.completedCourses}
+                />
+              </Grid>
+              <Grid item md={3} sm={6} xs={12}>
+                <FactCard
+                  Icon={Gift}
+                  title={constants.completedProjects}
+                  value={data.funFact.completedProjects}
+                />
+              </Grid>
+              <Grid item md={3} sm={6} xs={12}>
+                <FactCard
+                  Icon={Heart}
+                  title={constants.happySupervisors}
+                  value={data.funFact.happySupervisors}
+                />
+              </Grid>
+              <Grid item md={3} sm={6} xs={12}>
+                <FactCard
+                  Icon={HotCup}
+                  title={constants.commitment}
+                  value={data.funFact.commitment}
+                />
+              </Grid>
+            </Grid>
+          </Container>
+        </ThemeProvider>
+      </BgOverlay>
     </Box>
   );
 };
-
-/** Performance optimization */
-// eslint-disable-next-line react/prop-types
-const ContentWrapper = memo(forwardRef(({ inView }, ref) => {
-  const sx = useSx();
-
-  return (
-    <BgOverlay sx={sx.bgOverlay}>
-      <ThemeProvider mode="dark">
-        <Container ref={ref}>
-          <Grid container spacing={4}>
-            <Grid item md={3} sm={6} xs={12}>
-              <FactCard
-                Icon={Globe}
-                title={constants.completedCourses}
-                value={data.funFact.completedCourses}
-                startCountUp={inView}
-              />
-            </Grid>
-            <Grid item md={3} sm={6} xs={12}>
-              <FactCard
-                Icon={Gift}
-                title={constants.completedProjects}
-                value={data.funFact.completedProjects}
-                startCountUp={inView}
-              />
-            </Grid>
-            <Grid item md={3} sm={6} xs={12}>
-              <FactCard
-                Icon={Heart}
-                title={constants.happySupervisors}
-                value={data.funFact.happySupervisors}
-                startCountUp={inView}
-              />
-            </Grid>
-            <Grid item md={3} sm={6} xs={12}>
-              <FactCard
-                Icon={HotCup}
-                title={constants.commitment}
-                value={data.funFact.commitment}
-                startCountUp={inView}
-              />
-            </Grid>
-          </Grid>
-        </Container>
-      </ThemeProvider>
-    </BgOverlay>
-  );
-}));
-ContentWrapper.displayName = "ContentWrapper";
-ContentWrapper.whyDidYouRender = true;
 
 FunFact.whyDidYouRender = true;
 
