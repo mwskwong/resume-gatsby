@@ -1,13 +1,13 @@
 import { Box, Container } from "@material-ui/core";
+import { getImage, withArtDirection } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
-import { BgImage } from "gbimage-bridge";
+import Bg from "components/Bg";
 import BgOverlay from "components/BgOverlay";
 import { HexagonSlice5 } from "mdi-material-ui";
 import SectionHeader from "components/SectionHeader";
 import ThemeProvider from "components/ThemeProvider";
 import constants from "contents/constants";
-import { getImage } from "gatsby-plugin-image";
 import loadable from "@loadable/component";
 import { memo } from "react";
 import nav from "contents/nav";
@@ -41,16 +41,16 @@ const Testimonial = () => {
     }
   `);
 
-  const bgs = [
-    { ...getImage(bg) },
+  const bgs = withArtDirection(getImage(bg), [
     {
       media: "(max-width: 600px)",
-      ...getImage(bgXs)
+      image: getImage(bgXs)
     }
-  ];
+  ]);
 
   return (
-    <Box component={BgImage} sx={sx.root} id={nav.testimonial.id} Tag="section" image={bgs}>
+    <Box component="section" sx={sx.root} id={nav.testimonial.id}>
+      <Bg image={bgs} />
       <BgOverlay sx={sx.bgOverlay}>
         <ThemeProvider mode="dark">
           <Container>

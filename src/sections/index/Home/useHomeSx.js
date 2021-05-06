@@ -2,6 +2,7 @@ import { useMemo } from "react";
 
 const useSx = () => useMemo(() => ({
   root: {
+    position: "relative",
     p: 0,
     height: "100vh",
     bgcolor: "#afb8c6"
