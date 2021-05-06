@@ -1,7 +1,8 @@
 import { Box, Container, Grid } from "@material-ui/core";
+import { getImage, withArtDirection } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
-import { BgImage } from "gbimage-bridge";
+import Bg from "components/Bg";
 import BgOverlay from "components/BgOverlay";
 import FactCard from "./FactCard";
 import Gift from "components/icons/Gift";
@@ -11,7 +12,6 @@ import HotCup from "components/icons/HotCup";
 import ThemeProvider from "components/ThemeProvider";
 import constants from "contents/constants";
 import data from "contents/data";
-import { getImage } from "gatsby-plugin-image";
 import { memo } from "react";
 import useSx from "./useFunFactSx";
 
@@ -40,16 +40,16 @@ const FunFact = () => {
     }
   `);
 
-  const bgs = [
-    { ...getImage(bg) },
+  const bgs = withArtDirection(getImage(bg), [
     {
       media: "(max-width: 600px)",
-      ...getImage(bgXs)
+      image: getImage(bgXs)
     }
-  ];
+  ]);
 
   return (
-    <Box component={BgImage} sx={sx.root} Tag="section" image={bgs}>
+    <Box component="section" sx={sx.root}>
+      <Bg image={bgs} />
       <BgOverlay sx={sx.bgOverlay}>
         <ThemeProvider mode="dark">
           <Container>

@@ -32,7 +32,6 @@ module.exports = {
       }
     },
     "gatsby-plugin-emotion",
-    "gatsby-background-image",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",

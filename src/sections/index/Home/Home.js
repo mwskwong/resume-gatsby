@@ -1,13 +1,13 @@
 import { Box, Container, Toolbar } from "@material-ui/core";
+import { getImage, withArtDirection } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
-import { BgImage } from "gbimage-bridge";
+import Bg from "components/Bg";
 import BgOverlay from "components/BgOverlay";
 import DownloadResumeButton from "./DownloadResumeButton";
 import SocialMedia from "components/SocialMedia";
 import ThemeProvider from "components/ThemeProvider";
 import Title from "./Title";
-import { getImage } from "gatsby-plugin-image";
 import { memo } from "react";
 import nav from "contents/nav";
 import useSx from "./useHomeSx";
@@ -37,16 +37,16 @@ const Home = () => {
     }
   `);
 
-  const bgs = [
-    { ...getImage(bg) },
+  const bgs = withArtDirection(getImage(bg), [
     {
       media: "(max-width: 600px)",
-      ...getImage(bgXs)
+      image: getImage(bgXs)
     }
-  ];
+  ]);
 
   return (
-    <Box component={BgImage} sx={sx.root} id={nav.home.id} Tag="section" image={bgs}>
+    <Box component="section" sx={sx.root} id={nav.home.id}>
+      <Bg image={bgs} />
       <BgOverlay sx={sx.bgOverlay}>
         <Toolbar />
         <ThemeProvider mode="dark">

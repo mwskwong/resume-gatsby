@@ -2,12 +2,12 @@ import { useMemo } from "react";
 
 const useSx = () => useMemo(() => ({
   root: {
-    position: "relative",
-    bgcolor: "#7d90a4",
-    py: 0
+    position: "absolute",
+    width: "100%",
+    height: "100%"
   },
-  bgOverlay: {
-    py: 10
+  img: {
+
   }
 }), []);
 
