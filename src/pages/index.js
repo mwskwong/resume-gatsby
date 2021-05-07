@@ -17,7 +17,7 @@ import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
 
 const Index = () => {
-  const contactHydrate = "click";
+  const contactHydrate = ["touchstart", "mouseover", "scroll"];
   const sectionHydrate = { rootMargin: "0px" };
 
   return (
