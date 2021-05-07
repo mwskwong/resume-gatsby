@@ -129,4 +129,4 @@ AppBarContent.whyDidYouRender = true;
 
 NavBar.whyDidYouRender = true;
 
-export default memo(NavBar);
+export default NavBar;

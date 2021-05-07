@@ -1,5 +1,5 @@
 import { Snackbar, useScrollTrigger } from "@material-ui/core";
-import { memo, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import ReloadButton from "./ReloadButton";
 import constants from "contents/constants";
@@ -33,4 +33,4 @@ const SwSnackbar = () => {
 
 SwSnackbar.whyDidYouRender = true;
 
-export default memo(SwSnackbar);
+export default SwSnackbar;
