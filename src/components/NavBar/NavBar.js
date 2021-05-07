@@ -57,7 +57,7 @@ const NavBar = () => {
     <Fragment>
       <AppBar color={color} elevation={elevation}>
         <Toolbar>
-          <AppBarContent
+          <AppBarContentWrapper
             mode={trigger ? "light" : "dark"}
             activeSectionId={activeSectionId}
             onMenuToggle={handleMenuToggle}
@@ -98,8 +98,9 @@ const NavBar = () => {
 
 /** Performance optimization */
 // eslint-disable-next-line react/prop-types
-const AppBarContent = memo(({ activeSectionId, mode, onMenuToggle }) => {
+const AppBarContentWrapper = memo(({ activeSectionId, mode, onMenuToggle }) => {
   const sx = useSx();
+
   return (
     <ThemeProvider mode={mode}>
       <Logo />
@@ -124,8 +125,8 @@ const AppBarContent = memo(({ activeSectionId, mode, onMenuToggle }) => {
     </ThemeProvider>
   );
 });
-AppBarContent.displayName = "AppBarContent";
-AppBarContent.whyDidYouRender = true;
+AppBarContentWrapper.displayName = "AppBarContent";
+AppBarContentWrapper.whyDidYouRender = true;
 
 NavBar.whyDidYouRender = true;
 
