@@ -4,13 +4,12 @@ import { memo } from "react";
 import useSx from "./useBgSx";
 
 const Bg = ({ sx: sxProp, ...props }) => {
-  const sx = useSx();
+  const sx = useSx({ sxProp });
 
-  const rootSx = { ...sx.root, ...sxProp };
   return (
     <GatsbyImage
       {...props}
-      style={rootSx}
+      style={sx.root}
       imgStyle={sx.img}
       alt=""
     />

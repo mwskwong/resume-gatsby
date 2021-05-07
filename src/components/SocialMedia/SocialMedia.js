@@ -6,11 +6,10 @@ import data from "contents/data";
 import useSx from "./useSocialMediaSx";
 
 const SocialMedia = ({ sx: sxProp }) => {
-  const sx = useSx();
-  const rootSx = { ...sx.root, ...sxProp };
+  const sx = useSx({ sxProp });
 
   return (
-    <Stack spacing={.5} direction="row" sx={rootSx}>
+    <Stack spacing={.5} direction="row" sx={sx.root}>
       <IconButton
         sx={sx.iconButton}
         href={data.socialMedia.facebookHref}

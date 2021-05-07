@@ -1,9 +1,10 @@
 import { useMemo } from "react";
 
-const useSx = () => useMemo(() => ({
+const useSx = ({ sxProp }) => useMemo(() => ({
   root: {
-    justifyContent: "center"
+    justifyContent: "center",
+    ...sxProp
   }
-}), []);
+}), [sxProp]);
 
 export default useSx;
