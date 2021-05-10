@@ -6,7 +6,7 @@ const useSx = () => useMemo(() => ({
     p: 0,
     height: "100vh"
   },
-  bgOverlay: {
+  bg: {
     display: "flex",
     flexDirection: "column"
   },

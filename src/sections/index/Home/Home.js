@@ -3,7 +3,6 @@ import { getImage, withArtDirection } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
 import Bg from "components/Bg";
-import BgOverlay from "components/BgOverlay";
 import DownloadResumeButton from "./DownloadResumeButton";
 import SocialMedia from "components/SocialMedia";
 import ThemeProvider from "components/ThemeProvider";
@@ -46,8 +45,7 @@ const Home = () => {
 
   return (
     <Box component="section" sx={sx.root} id={nav.home.id}>
-      <Bg image={bgs} backgroundColor="#afb8c6" />
-      <BgOverlay sx={sx.bgOverlay}>
+      <Bg image={bgs} backgroundColor="#afb8c6" sx={sx.bg}>
         <Toolbar />
         <ThemeProvider mode="dark">
           <Container sx={sx.container}>
@@ -56,7 +54,7 @@ const Home = () => {
             <DownloadResumeButton sx={sx.downloadResumeButton} />
           </Container>
         </ThemeProvider>
-      </BgOverlay>
+      </Bg>
     </Box>
   );
 };

@@ -1,17 +1,24 @@
+import { Fragment, memo } from "react";
+
+import { Box } from "@material-ui/core";
 import { GatsbyImage } from "gatsby-plugin-image";
 import PropTypes from "prop-types";
-import { memo } from "react";
 import useSx from "./useBgSx";
 
-const Bg = ({ sx: sxProp, ...props }) => {
+const Bg = ({ children, sx: sxProp, ...props }) => {
   const sx = useSx({ sx: sxProp });
 
   return (
-    <GatsbyImage
-      {...props}
-      style={sx.root}
-      alt=""
-    />
+    <Fragment>
+      <GatsbyImage
+        {...props}
+        style={sx.root}
+        alt=""
+      />
+      <Box sx={sx.wrapper}>
+        {children}
+      </Box>
+    </Fragment>
   );
 };
 

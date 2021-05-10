@@ -3,7 +3,6 @@ import { getImage, withArtDirection } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
 import Bg from "components/Bg";
-import BgOverlay from "components/BgOverlay";
 import FactCard from "./FactCard";
 import Gift from "components/icons/Gift";
 import Globe from "components/icons/Globe";
@@ -49,8 +48,7 @@ const FunFact = () => {
 
   return (
     <Box component="section" sx={sx.root}>
-      <Bg image={bgs} backgroundColor="#7d90a4" />
-      <BgOverlay sx={sx.bgOverlay}>
+      <Bg image={bgs} backgroundColor="#7d90a4" sx={sx.bg}>
         <ThemeProvider mode="dark">
           <Container>
             <Grid container spacing={4}>
@@ -85,7 +83,7 @@ const FunFact = () => {
             </Grid>
           </Container>
         </ThemeProvider>
-      </BgOverlay>
+      </Bg>
     </Box>
   );
 };

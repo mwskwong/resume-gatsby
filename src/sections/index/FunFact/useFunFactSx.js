@@ -5,7 +5,7 @@ const useSx = () => useMemo(() => ({
     position: "relative",
     py: 0
   },
-  bgOverlay: {
+  bg: {
     py: 10
   }
 }), []);

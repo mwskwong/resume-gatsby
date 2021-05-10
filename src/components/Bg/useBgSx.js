@@ -5,7 +5,13 @@ const useSx = ({ sx }) => useMemo(() => ({
     position: "absolute",
     width: "100%",
     height: "100%",
-    filter: "brightness(30%)",
+    filter: "brightness(30%)"
+  },
+  wrapper: {
+    position: "relative",
+    zIndex: 1,
+    width: "100%",
+    height: "100%",
     ...sx
   }
 }), [sx]);
