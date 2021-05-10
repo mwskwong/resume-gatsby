@@ -38,7 +38,7 @@ const NavBar = () => {
   const [menuExited, setMenuExited] = useState(true);
 
   const color = trigger || !menuExited ? "secondary" : appBarDefaultProps.color;
-  const elevation = trigger ? 4 : appBarDefaultProps.elevation;
+  const elevation = trigger || !menuExited ? 4 : appBarDefaultProps.elevation;
 
   const handleMenuToggle = useCallback(() => {
     setMenuOpen(menuOpen => !menuOpen);
@@ -47,7 +47,7 @@ const NavBar = () => {
   const handleMenuExited = () => setMenuExited(true);
 
   const appBarContent = useMemo(() => (
-    <ThemeProvider mode={trigger || !menuExited ? "light" : "dark"}>
+    <Fragment>
       <Logo />
       <Box sx={sx.spacer} />
       <Stack
@@ -72,22 +72,22 @@ const NavBar = () => {
       >
         <Menu />
       </IconButton>
-    </ThemeProvider>
+    </Fragment>
   ), [
     activeSectionId,
     handleMenuToggle,
-    menuExited,
     sx.menuButton,
     sx.navButtonContainer,
-    sx.spacer,
-    trigger
+    sx.spacer
   ]);
 
   return (
     <Fragment>
       <AppBar color={color} elevation={elevation}>
         <Toolbar>
-          {appBarContent}
+          <ThemeProvider mode={trigger || !menuExited ? "light" : "dark"}>
+            {appBarContent}
+          </ThemeProvider>
         </Toolbar>
         <Collapse in={menuOpen} timeout="auto" unmountOnExit onExited={handleMenuExited}>
           <List sx={sx.navList} component="nav" aria-label="nav list">
