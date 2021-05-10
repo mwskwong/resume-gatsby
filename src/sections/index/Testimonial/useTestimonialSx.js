@@ -3,7 +3,6 @@ import { useMemo } from "react";
 const useSx = () => useMemo(() => ({
   root: {
     position: "relative",
-    bgcolor: "#818fa0",
     py: 0
   },
   bgOverlay: {

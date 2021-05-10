@@ -50,7 +50,7 @@ const Testimonial = () => {
 
   return (
     <Box component="section" sx={sx.root} id={nav.testimonial.id}>
-      <Bg image={bgs} />
+      <Bg image={bgs} backgroundColor="#818fa0" />
       <BgOverlay sx={sx.bgOverlay}>
         <ThemeProvider mode="dark">
           <Container>
@@ -61,8 +61,8 @@ const Testimonial = () => {
             <Carousel />
           </Container>
         </ThemeProvider>
-      </BgOverlay>
-    </Box>
+      </BgOverlay >
+    </Box >
   );
 };
 

@@ -4,8 +4,7 @@ const useSx = () => useMemo(() => ({
   root: {
     position: "relative",
     p: 0,
-    height: "100vh",
-    bgcolor: "#afb8c6"
+    height: "100vh"
   },
   bgOverlay: {
     display: "flex",

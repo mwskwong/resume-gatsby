@@ -46,7 +46,7 @@ const Home = () => {
 
   return (
     <Box component="section" sx={sx.root} id={nav.home.id}>
-      <Bg image={bgs} />
+      <Bg image={bgs} backgroundColor="#afb8c6" />
       <BgOverlay sx={sx.bgOverlay}>
         <Toolbar />
         <ThemeProvider mode="dark">

@@ -49,7 +49,7 @@ const FunFact = () => {
 
   return (
     <Box component="section" sx={sx.root}>
-      <Bg image={bgs} />
+      <Bg image={bgs} backgroundColor="#7d90a4" />
       <BgOverlay sx={sx.bgOverlay}>
         <ThemeProvider mode="dark">
           <Container>
