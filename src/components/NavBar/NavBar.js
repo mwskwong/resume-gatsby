@@ -1,7 +1,7 @@
 import {
   AppBar,
   Box,
-  Dialog,
+  Collapse,
   IconButton,
   List,
   Stack,
@@ -9,9 +9,8 @@ import {
   useScrollTrigger,
   useTheme
 } from "@material-ui/core";
-import { Fragment, memo, useCallback, useState } from "react";
+import { Fragment, memo, useCallback, useMemo, useState } from "react";
 
-import Close from "components/icons/Close";
 import Logo from "./Logo";
 import Menu from "components/icons/Menu";
 import NavButton from "./NavButton";
@@ -36,72 +35,19 @@ const NavBar = () => {
 
   const activeSectionId = useActiveSectionId();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [id, setId] = useState(activeSectionId);
+  const [menuExited, setMenuExited] = useState(true);
 
-  const color = trigger ? "secondary" : appBarDefaultProps.color;
+  const color = trigger || !menuExited ? "secondary" : appBarDefaultProps.color;
   const elevation = trigger ? 4 : appBarDefaultProps.elevation;
 
-  const handleMenuToggle = useCallback(() => setMenuOpen(menuOpen => !menuOpen), []);
-  const handleNavListItemClick = useCallback(id => {
-    handleMenuToggle();
-    setId(id);
-  }, [handleMenuToggle]);
-  const handleNavMenuExited = () => window.location.hash = `#${id}`;
+  const handleMenuToggle = useCallback(() => {
+    setMenuOpen(menuOpen => !menuOpen);
+    setMenuExited(false);
+  }, []);
+  const handleMenuExited = () => setMenuExited(true);
 
-  const TransitionProps = {
-    onExited: handleNavMenuExited
-  };
-
-  return (
-    <Fragment>
-      <AppBar color={color} elevation={elevation}>
-        <Toolbar>
-          <AppBarContentWrapper
-            mode={trigger ? "light" : "dark"}
-            activeSectionId={activeSectionId}
-            onMenuToggle={handleMenuToggle}
-          />
-        </Toolbar>
-      </AppBar>
-      <Dialog
-        fullScreen
-        open={menuOpen}
-        onClose={handleMenuToggle}
-        TransitionProps={TransitionProps}
-      >
-        <AppBar color="secondary">
-          <Toolbar>
-            <Logo onClick={handleMenuToggle} />
-            <Box sx={sx.spacer} />
-            <IconButton onClick={handleMenuToggle}>
-              <Close />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
-        <Toolbar />
-        <List sx={sx.navList} component="nav" aria-label="nav list">
-          {Object.values(nav).map(({ id, name }) => (
-            <NavListItem
-              key={id}
-              id={id}
-              label={name}
-              active={activeSectionId === id}
-              onClick={handleNavListItemClick}
-            />
-          ))}
-        </List>
-      </Dialog>
-    </Fragment>
-  );
-};
-
-/** Performance optimization */
-// eslint-disable-next-line react/prop-types
-const AppBarContentWrapper = memo(({ activeSectionId, mode, onMenuToggle }) => {
-  const sx = useSx();
-
-  return (
-    <ThemeProvider mode={mode}>
+  const appBarContent = useMemo(() => (
+    <ThemeProvider mode={trigger || !menuExited ? "light" : "dark"}>
       <Logo />
       <Box sx={sx.spacer} />
       <Stack
@@ -121,17 +67,45 @@ const AppBarContentWrapper = memo(({ activeSectionId, mode, onMenuToggle }) => {
       </Stack>
       <IconButton
         sx={sx.menuButton}
-        onClick={onMenuToggle}
+        onClick={handleMenuToggle}
         aria-label="toggle menu"
       >
         <Menu />
       </IconButton>
     </ThemeProvider>
+  ), [
+    activeSectionId,
+    handleMenuToggle,
+    menuExited,
+    sx.menuButton,
+    sx.navButtonContainer,
+    sx.spacer,
+    trigger
+  ]);
+
+  return (
+    <Fragment>
+      <AppBar color={color} elevation={elevation}>
+        <Toolbar>
+          {appBarContent}
+        </Toolbar>
+        <Collapse in={menuOpen} timeout="auto" unmountOnExit onExited={handleMenuExited}>
+          <List sx={sx.navList} component="nav" aria-label="nav list">
+            {Object.values(nav).map(({ id, name }) => (
+              <NavListItem
+                key={id}
+                id={id}
+                label={name}
+                active={activeSectionId === id}
+              />
+            ))}
+          </List>
+        </Collapse>
+      </AppBar>
+    </Fragment>
   );
-});
-AppBarContentWrapper.displayName = "AppBarContent";
-AppBarContentWrapper.whyDidYouRender = true;
+};
 
 NavBar.whyDidYouRender = true;
 
-export default NavBar;
+export default memo(NavBar);

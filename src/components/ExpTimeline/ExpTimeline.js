@@ -7,7 +7,7 @@ const ExpTimeline = ({ data = [] }) => {
   const mdDown = useMediaQuery(theme => theme.breakpoints.down("md"));
 
   return (
-    <Timeline position={mdDown ? "left" : "alternate"}>
+    <Timeline position={mdDown ? "right" : "alternate"}>
       {data.map(({ period, title, subheader, description, file }, idx) => (
         <ExpTimelineItem
           key={idx}
