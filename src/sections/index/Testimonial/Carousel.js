@@ -1,11 +1,10 @@
-import { memo, useState } from "react";
-
 import { Box } from "@material-ui/core";
 import Endorsement from "./Endorsement";
 import Pagination from "./Pagination";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import data from "contents/data";
+import { useState } from "react";
 import useSx from "./useCarouselSx";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -44,4 +43,4 @@ const Carousel = () => {
 
 Carousel.whyDidYouRender = true;
 
-export default memo(Carousel);
+export default Carousel;

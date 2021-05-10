@@ -8,7 +8,9 @@ module.exports = {
   },
   flags: {
     FAST_DEV: true,
-    DEV_SSR: true
+    DEV_SSR: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PRESERVE_WEBPACK_CACHE: true
   },
   plugins: [
     {

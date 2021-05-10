@@ -4,11 +4,10 @@ import { memo } from "react";
 import useSx from "./useBgOverlaySx";
 
 const BgOverlay = ({ children, sx: sxProp, ...props }) => {
-  const sx = useSx();
+  const sx = useSx({ sxProp });
 
-  const rootSx = { ...sx.root, ...sxProp };
   return (
-    <Box sx={rootSx} {...props}>
+    <Box sx={sx.root} {...props}>
       {children}
     </Box>
   );
