@@ -12,7 +12,6 @@ import {
 import { Fragment, memo, useCallback, useState } from "react";
 
 import Close from "components/icons/Close";
-import { Hidden } from "@material-ui/core";
 import Logo from "./Logo";
 import Menu from "components/icons/Menu";
 import NavButton from "./NavButton";
@@ -105,23 +104,28 @@ const AppBarContentWrapper = memo(({ activeSectionId, mode, onMenuToggle }) => {
     <ThemeProvider mode={mode}>
       <Logo />
       <Box sx={sx.spacer} />
-      <Hidden mdDown implementation="css">
-        <Stack component="nav" spacing={1} direction="row">
-          {Object.values(nav).map(({ id, name }) => (
-            <NavButton
-              key={id}
-              id={id}
-              label={name}
-              active={activeSectionId === id}
-            />
-          ))}
-        </Stack>
-      </Hidden>
-      <Hidden mdUp implementation="css">
-        <IconButton onClick={onMenuToggle} aria-label="toggle menu">
-          <Menu />
-        </IconButton>
-      </Hidden>
+      <Stack
+        sx={sx.navButtonContainer}
+        component="nav"
+        spacing={1}
+        direction="row"
+      >
+        {Object.values(nav).map(({ id, name }) => (
+          <NavButton
+            key={id}
+            id={id}
+            label={name}
+            active={activeSectionId === id}
+          />
+        ))}
+      </Stack>
+      <IconButton
+        sx={sx.menuButton}
+        onClick={onMenuToggle}
+        aria-label="toggle menu"
+      >
+        <Menu />
+      </IconButton>
     </ThemeProvider>
   );
 });

@@ -4,11 +4,11 @@ import "@fontsource/rubik/latin-500.css";
 import "@fontsource/rubik/latin-700.css";
 import "styles/azonix.css";
 
-import { alpha, createMuiTheme, responsiveFontSizes } from "@material-ui/core";
+import { alpha, createTheme, responsiveFontSizes } from "@material-ui/core";
 
-const initTheme = createMuiTheme();
+const initTheme = createTheme();
 
-const createTheme = mode => responsiveFontSizes(createMuiTheme({
+const createCustomTheme = mode => responsiveFontSizes(createTheme({
   components: {
     MuiAppBar: {
       defaultProps: {
@@ -169,5 +169,5 @@ const createTheme = mode => responsiveFontSizes(createMuiTheme({
   }
 }));
 
-export const lightTheme = createTheme("light");
-export const darkTheme = createTheme("dark");
+export const lightTheme = createCustomTheme("light");
+export const darkTheme = createCustomTheme("dark");
