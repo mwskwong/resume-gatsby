@@ -1,15 +1,19 @@
 import { useMemo } from "react";
 
-const useSx = ({ sxProp }) => useMemo(() => ({
+const useSx = ({ sx }) => useMemo(() => ({
   root: {
     position: "absolute",
     width: "100%",
     height: "100%",
-    ...sxProp
+    filter: "brightness(30%)"
   },
-  img: {
-
+  wrapper: {
+    position: "relative",
+    zIndex: 1,
+    width: "100%",
+    height: "100%",
+    ...sx
   }
-}), [sxProp]);
+}), [sx]);
 
 export default useSx;

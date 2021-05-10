@@ -3,7 +3,6 @@ import { getImage, withArtDirection } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
 import Bg from "components/Bg";
-import BgOverlay from "components/BgOverlay";
 import { HexagonSlice5 } from "mdi-material-ui";
 import SectionHeader from "components/SectionHeader";
 import ThemeProvider from "components/ThemeProvider";
@@ -50,8 +49,7 @@ const Testimonial = () => {
 
   return (
     <Box component="section" sx={sx.root} id={nav.testimonial.id}>
-      <Bg image={bgs} />
-      <BgOverlay sx={sx.bgOverlay}>
+      <Bg image={bgs} backgroundColor="#818fa0" sx={sx.bg}>
         <ThemeProvider mode="dark">
           <Container>
             <SectionHeader
@@ -61,7 +59,7 @@ const Testimonial = () => {
             <Carousel />
           </Container>
         </ThemeProvider>
-      </BgOverlay>
+      </Bg>
     </Box>
   );
 };
