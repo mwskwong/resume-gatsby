@@ -9,7 +9,7 @@ const useSx = ({ sx }) => useMemo(() => ({
   },
   wrapper: {
     position: "relative",
-    zIndex: 1,
+    zIndex: 9,
     width: "100%",
     height: "100%",
     ...sx
