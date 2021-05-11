@@ -125,9 +125,7 @@ module.exports = {
             policy: [{ userAgent: "*", allow: "/" }]
           },
           preview: {
-            policy: [{ userAgent: "*", disallow: ["/"] }],
-            sitemap: null,
-            host: null
+            policy: [{ userAgent: "*", disallow: "/" }]
           }
         }
       }
