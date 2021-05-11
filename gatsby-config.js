@@ -71,9 +71,6 @@ module.exports = {
           allSitePage: { nodes: allPages },
           allFile: { edges: allPDFs }
         }) => {
-          console.log(allPages);
-          console.log(allPDFs);
-          console.log(allPDFs.map(({ node: { publicURL } }) => ({ path: publicURL })));
           return [
             ...allPages,
             ...(allPDFs.map(({ node: { publicURL } }) => ({ path: publicURL })))
