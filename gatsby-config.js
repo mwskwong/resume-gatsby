@@ -1,11 +1,20 @@
+// const {
+//   NODE_ENV,
+//   URL: NETLIFY_SITE_URL = "https://mwskwong.com",
+//   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+//   CONTEXT: NETLIFY_ENV = NODE_ENV
+// } = process.env;
+
 const {
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = "https://mwskwong.com",
-  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
-  CONTEXT: NETLIFY_ENV = NODE_ENV
+  URL = "https://mwskwong.com",
+  DEPLOY_PRIME_URL = URL,
+  CONTEXT = NODE_ENV
 } = process.env;
-const isNetlifyProduction = NETLIFY_ENV === "production";
-const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+const siteUrl = CONTEXT === "production" ? URL : DEPLOY_PRIME_URL;
+
+console.log("process.env");
+console.log(process.env);
 
 module.exports = {
   siteMetadata: {
@@ -48,7 +57,39 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
-        resolveSiteUrl: () => siteUrl
+        query: `
+          {
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+            allFile(filter: {extension: {eq: "pdf"}}) {
+              nodes {
+                relativePath
+              }
+            }
+          }
+        `,
+        resolveSiteUrl: () => siteUrl,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          allFile: { nodes: allFiles }
+        }) => {
+          console.log(allPages);
+          console.log(allFiles);
+          const documentNodeMap = allFiles.reduce((acc, node) => {
+            const { uri } = node;
+            acc[uri] = node;
+
+            return acc;
+          }, {});
+
+          return allPages.map(page => ({
+            ...page,
+            ...documentNodeMap[page.path]
+          }));
+        }
       }
     },
     {
@@ -98,8 +139,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         sitemap: `${siteUrl}/sitemap/sitemap-index.xml`,
-        host: siteUrl,
-        resolveEnv: () => NETLIFY_ENV,
+        resolveEnv: () => CONTEXT,
         env: {
           production: {
             policy: [{ userAgent: "*", allow: "/" }]
