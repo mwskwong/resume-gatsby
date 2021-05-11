@@ -49,7 +49,6 @@ const Home = () => {
         <Toolbar />
         <ThemeProvider mode="dark">
           <Container sx={sx.container}>
-            This is the next branch
             <Title />
             <SocialMedia sx={sx.socialMedia} />
             <DownloadResumeButton sx={sx.downloadResumeButton} />
