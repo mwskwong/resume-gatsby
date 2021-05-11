@@ -1,13 +1,4 @@
-const {
-  NODE_ENV,
-  URL = "https://mwskwong.com",
-  DEPLOY_PRIME_URL = URL,
-  CONTEXT = NODE_ENV
-} = process.env;
-const siteUrl = CONTEXT === "production" ? URL : DEPLOY_PRIME_URL;
-
-console.log("process.env");
-console.log(process.env);
+const { URL: siteUrl = "https://mwskwong.com", APP_ENV } = process.env;
 
 module.exports = {
   siteMetadata: {
@@ -125,17 +116,12 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         sitemap: `${siteUrl}/sitemap/sitemap-index.xml`,
-        resolveEnv: () => CONTEXT,
+        resolveEnv: () => APP_ENV,
         env: {
           production: {
             policy: [{ userAgent: "*", allow: "/" }]
           },
-          "branch-deploy": {
-            policy: [{ userAgent: "*", disallow: ["/"] }],
-            sitemap: null,
-            host: null
-          },
-          "deploy-preview": {
+          preview: {
             policy: [{ userAgent: "*", disallow: ["/"] }],
             sitemap: null,
             host: null
