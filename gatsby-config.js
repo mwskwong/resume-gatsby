@@ -45,6 +45,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
+        out: "/",
         query: `
           {
             site {
@@ -123,7 +124,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        sitemap: `${siteUrl}/sitemap/sitemap-index.xml`,
+        sitemap: `${siteUrl}/sitemap-index.xml`,
         resolveEnv: () => APP_ENV,
         env: {
           production: {
