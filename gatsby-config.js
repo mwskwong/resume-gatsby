@@ -1,8 +1,13 @@
+const {
+  APP_ENV = "production",
+  URL: siteUrl = "https://mwskwong.com"
+} = process.env;
+
 module.exports = {
   siteMetadata: {
     description: "Matthew's Personal Resume Website",
     shortTitle: "Matthew Kwong",
-    siteUrl: "https://mwskwong.com",
+    siteUrl,
     themeColor: "#ffffff",
     title: "Matthew Kwong - System DBA & Front-End Developer"
   },
@@ -10,7 +15,8 @@ module.exports = {
     FAST_DEV: true,
     DEV_SSR: true,
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
-    PRESERVE_WEBPACK_CACHE: true
+    PRESERVE_WEBPACK_CACHE: true,
+    PARALLEL_SOURCING: true
   },
   plugins: [
     {
@@ -36,7 +42,41 @@ module.exports = {
     "gatsby-plugin-emotion",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+            allFile(filter: {extension: {eq: "pdf"}}) {
+              edges {
+                node {
+                  publicURL
+                }
+              }
+            }
+          }
+        `,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          allFile: { edges: allPDFs }
+        }) => {
+          return [
+            ...allPages,
+            ...(allPDFs.map(({ node: { publicURL } }) => ({ path: publicURL })))
+          ];
+        }
+      }
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -80,6 +120,20 @@ module.exports = {
       }
     },
     "gatsby-plugin-webpack-bundle-analyser-v2",
-    "gatsby-plugin-robots-txt"
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        sitemap: `${siteUrl}/sitemap/sitemap-index.xml`,
+        resolveEnv: () => APP_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: "*", allow: "/" }]
+          },
+          preview: {
+            policy: [{ userAgent: "*", disallow: "/" }]
+          }
+        }
+      }
+    }
   ]
 };
