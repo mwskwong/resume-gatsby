@@ -1,5 +1,8 @@
 const { URL: siteUrl = "https://mwskwong.com", APP_ENV } = process.env;
 
+console.log(process.env);
+console.log(siteUrl);
+
 module.exports = {
   siteMetadata: {
     description: "Matthew's Personal Resume Website",
