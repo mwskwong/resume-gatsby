@@ -1,8 +1,17 @@
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = "https://mwskwong.com",
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV
+} = process.env;
+const isNetlifyProduction = NETLIFY_ENV === "production";
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+
 module.exports = {
   siteMetadata: {
     description: "Matthew's Personal Resume Website",
     shortTitle: "Matthew Kwong",
-    siteUrl: "https://mwskwong.com",
+    siteUrl,
     themeColor: "#ffffff",
     title: "Matthew Kwong - System DBA & Front-End Developer"
   },
@@ -36,7 +45,12 @@ module.exports = {
     "gatsby-plugin-emotion",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        resolveSiteUrl: () => siteUrl
+      }
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -80,6 +94,28 @@ module.exports = {
       }
     },
     "gatsby-plugin-webpack-bundle-analyser-v2",
-    "gatsby-plugin-robots-txt"
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        sitemap: `${siteUrl}/sitemap/sitemap-index.xml`,
+        host: siteUrl,
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: "*", allow: "/" }]
+          },
+          "branch-deploy": {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
+            sitemap: null,
+            host: null
+          },
+          "deploy-preview": {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
+            sitemap: null,
+            host: null
+          }
+        }
+      }
+    }
   ]
 };
