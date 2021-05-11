@@ -1,7 +1,7 @@
-const { URL: siteUrl = "https://mwskwong.com", APP_ENV } = process.env;
-
-console.log(process.env);
-console.log(siteUrl);
+const {
+  APP_ENV = "production",
+  URL: siteUrl = "https://mwskwong.com"
+} = process.env;
 
 module.exports = {
   siteMetadata: {
@@ -15,7 +15,8 @@ module.exports = {
     FAST_DEV: true,
     DEV_SSR: true,
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
-    PRESERVE_WEBPACK_CACHE: true
+    PRESERVE_WEBPACK_CACHE: true,
+    PARALLEL_SOURCING: true
   },
   plugins: [
     {
@@ -46,6 +47,11 @@ module.exports = {
       options: {
         query: `
           {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
             allSitePage {
               nodes {
                 path
@@ -60,7 +66,6 @@ module.exports = {
             }
           }
         `,
-        resolveSiteUrl: () => siteUrl,
         resolvePages: ({
           allSitePage: { nodes: allPages },
           allFile: { edges: allPDFs }
