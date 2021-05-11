@@ -1,10 +1,3 @@
-// const {
-//   NODE_ENV,
-//   URL: NETLIFY_SITE_URL = "https://mwskwong.com",
-//   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
-//   CONTEXT: NETLIFY_ENV = NODE_ENV
-// } = process.env;
-
 const {
   NODE_ENV,
   URL = "https://mwskwong.com",
@@ -65,8 +58,10 @@ module.exports = {
               }
             }
             allFile(filter: {extension: {eq: "pdf"}}) {
-              nodes {
-                relativePath
+              edges {
+                node {
+                  publicURL
+                }
               }
             }
           }
@@ -74,21 +69,15 @@ module.exports = {
         resolveSiteUrl: () => siteUrl,
         resolvePages: ({
           allSitePage: { nodes: allPages },
-          allFile: { nodes: allFiles }
+          allFile: { edges: allPDFs }
         }) => {
           console.log(allPages);
-          console.log(allFiles);
-          const documentNodeMap = allFiles.reduce((acc, node) => {
-            const { uri } = node;
-            acc[uri] = node;
-
-            return acc;
-          }, {});
-
-          return allPages.map(page => ({
-            ...page,
-            ...documentNodeMap[page.path]
-          }));
+          console.log(allPDFs);
+          console.log(allPDFs.map(({ node: { publicURL } }) => ({ path: publicURL })));
+          return [
+            ...allPages,
+            ...(allPDFs.map(({ node: { publicURL } }) => ({ path: publicURL })))
+          ];
         }
       }
     },
