@@ -115,7 +115,6 @@ module.exports = {
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
-      __key: "images",
       options: {
         name: "images",
         path: `${__dirname}/src/images`
@@ -123,7 +122,6 @@ module.exports = {
     },
     {
       resolve: "gatsby-source-filesystem",
-      __key: "documents",
       options: {
         name: "documents",
         path: `${__dirname}/src/documents`
