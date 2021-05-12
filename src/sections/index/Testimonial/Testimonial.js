@@ -21,18 +21,12 @@ const Testimonial = () => {
     query {     
       bg: file(relativePath: { eq: "testimonial.jpg" }) {
         childImageSharp {
-          gatsbyImageData(
-            placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF],
-            breakpoints: [960, 1280, 2000]
-          )
+          gatsbyImageData
         }
       }
       bgXs: file(relativePath: { eq: "testimonial_xs.jpg" }) {
         childImageSharp {
           gatsbyImageData(
-            placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF],
             breakpoints: [120, 160, 240, 320, 420]
           )
         }

@@ -20,8 +20,6 @@ const CompanyLogo = ({ company }) => {
             childImageSharp {
               gatsbyImageData(
                 layout: FIXED
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
                 transformOptions: {grayscale: true}
                 height: 100
               )
@@ -39,8 +37,7 @@ const CompanyLogo = ({ company }) => {
   return (
     <Box sx={sx.root}>
       <a href={href} target='_blank' rel='noopener noreferrer'>
-        <Box
-          component={GatsbyImage}
+        <GatsbyImage
           image={image}
           alt={name}
         />

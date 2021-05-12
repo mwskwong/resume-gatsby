@@ -102,7 +102,16 @@ module.exports = {
       },
       resolve: "gatsby-plugin-offline"
     },
-    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        defaults: {
+          formats: ["auto", "webp", "avif"],
+          placeholder: "blurred",
+          breakpoints: [960, 1280, 2000]
+        }
+      }
+    },
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
