@@ -102,11 +102,19 @@ module.exports = {
       },
       resolve: "gatsby-plugin-offline"
     },
-    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        defaults: {
+          formats: ["auto", "webp", "avif"],
+          placeholder: "blurred",
+          breakpoints: [960, 1280, 2000]
+        }
+      }
+    },
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
-      __key: "images",
       options: {
         name: "images",
         path: `${__dirname}/src/images`
@@ -114,7 +122,6 @@ module.exports = {
     },
     {
       resolve: "gatsby-source-filesystem",
-      __key: "documents",
       options: {
         name: "documents",
         path: `${__dirname}/src/documents`

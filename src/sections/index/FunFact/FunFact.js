@@ -20,18 +20,12 @@ const FunFact = () => {
     query {     
       bg: file(relativePath: { eq: "fun_fact.jpg" }) {
         childImageSharp {
-          gatsbyImageData(
-            placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF],
-            breakpoints: [960, 1280, 2000]
-          )
+          gatsbyImageData
         }
       }
       bgXs: file(relativePath: { eq: "fun_fact_xs.jpg" }) {
         childImageSharp {
           gatsbyImageData(
-            placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF],
             breakpoints: [120, 160, 240, 320, 420]
           )
         }

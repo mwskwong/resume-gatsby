@@ -17,18 +17,12 @@ const Home = () => {
     query {     
       bg: file(relativePath: { eq: "home.jpg" }) {
         childImageSharp {
-          gatsbyImageData(
-            placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF],
-            breakpoints: [960, 1280, 2000]
-          )
+          gatsbyImageData
         }
       }
       bgXs: file(relativePath: { eq: "home_xs.jpg" }) {
         childImageSharp {
           gatsbyImageData(
-            placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF],
             breakpoints: [120, 160, 240, 320, 420]
           )
         }
