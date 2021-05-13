@@ -9,7 +9,10 @@ const Languages = () => {
   const theme = useTheme();
   const keys = ["rating"];
   const margin = { top: 24, right: 50, bottom: 0, left: 50 };
-  const nivoTheme = { fontFamily: theme.typography.fontFamily };
+  const nivoTheme = {
+    fontFamily: theme.typography.fontFamily,
+    textColor: theme.palette.text.primary
+  };
 
   return (
     <Box sx={sx.root}>
