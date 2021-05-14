@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import { StrictMode } from "react";
 import SwSnackbar from "components/SwSnackbar";
 import ThemeProvider from "components/ThemeProvider";
-import { unstable_createRoot as createRoot } from "react-dom";
+import { hydrate } from "react-dom";
 import { loadableReady } from "@loadable/component";
 import store from "store";
 import { swUpdateReady } from "actions";
@@ -43,9 +43,6 @@ export const onServiceWorkerUpdateReady = () => {
 
 export const replaceHydrateFunction = () => (element, container, callback) => {
   loadableReady(() => {
-    createRoot(container, {
-      hydrate: true,
-      hydrationOptions: { onHydrated: callback }
-    }).render(element);
+    hydrate(element, container, callback);
   });
 };
