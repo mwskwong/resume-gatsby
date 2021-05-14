@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import { StrictMode } from "react";
 import SwSnackbar from "components/SwSnackbar";
 import ThemeProvider from "components/ThemeProvider";
-import { unstable_createRoot as createRoot } from "react-dom";
+import { createRoot } from "react-dom";
 import { loadableReady } from "@loadable/component";
 import store from "store";
 import { swUpdateReady } from "actions";
