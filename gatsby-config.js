@@ -1,5 +1,5 @@
-const { APP_ENV = "main" } = process.env;
-const siteUrl = APP_ENV === "main" ? "https://mwskwong.com" : `https://${APP_ENV}.mwskwong.com`;
+const { BRANCH = "main" } = process.env;
+const siteUrl = BRANCH === "main" ? "https://mwskwong.com" : `https://${BRANCH}.mwskwong.com`;
 
 console.log(process.env);
 
@@ -132,7 +132,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         sitemap: `${siteUrl}/sitemap-index.xml`,
-        resolveEnv: () => APP_ENV,
+        resolveEnv: () => BRANCH,
         env: {
           main: {
             policy: [{ userAgent: "*", allow: "/" }]
