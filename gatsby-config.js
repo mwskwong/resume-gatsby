@@ -1,7 +1,7 @@
-const {
-  APP_ENV = "production",
-  URL: siteUrl = "https://mwskwong.com"
-} = process.env;
+const { APP_ENV = "main" } = process.env;
+const siteUrl = APP_ENV === "main" ? "https://mwskwong.com" : `https://${APP_ENV}.mwskwong.com`;
+
+console.log(process.env);
 
 module.exports = {
   siteMetadata: {
@@ -134,10 +134,10 @@ module.exports = {
         sitemap: `${siteUrl}/sitemap-index.xml`,
         resolveEnv: () => APP_ENV,
         env: {
-          production: {
+          main: {
             policy: [{ userAgent: "*", allow: "/" }]
           },
-          preview: {
+          next: {
             policy: [{ userAgent: "*", disallow: "/" }]
           }
         }
