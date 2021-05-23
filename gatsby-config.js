@@ -1,7 +1,5 @@
-const {
-  APP_ENV = "production",
-  URL: siteUrl = "https://mwskwong.com"
-} = process.env;
+const { BRANCH = "main" } = process.env;
+const siteUrl = BRANCH === "main" ? "https://mwskwong.com" : `https://${BRANCH}.mwskwong.com`;
 
 module.exports = {
   siteMetadata: {
@@ -132,12 +130,12 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         sitemap: `${siteUrl}/sitemap-index.xml`,
-        resolveEnv: () => APP_ENV,
+        resolveEnv: () => BRANCH,
         env: {
-          production: {
+          main: {
             policy: [{ userAgent: "*", allow: "/" }]
           },
-          preview: {
+          next: {
             policy: [{ userAgent: "*", disallow: "/" }]
           }
         }
