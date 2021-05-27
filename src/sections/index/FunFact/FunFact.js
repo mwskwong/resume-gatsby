@@ -1,4 +1,4 @@
-import { Box, Container, Grid } from "@material-ui/core";
+import { Box, Container, Grid, useTheme } from "@material-ui/core";
 import { getImage, withArtDirection } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -16,6 +16,7 @@ import useSx from "./useFunFactSx";
 
 const FunFact = () => {
   const sx = useSx();
+  const theme = useTheme();
   const { bg, bgXs } = useStaticQuery(graphql`
     query {     
       bg: file(relativePath: { eq: "fun_fact.jpg" }) {
@@ -26,7 +27,7 @@ const FunFact = () => {
       bgXs: file(relativePath: { eq: "fun_fact_xs.jpg" }) {
         childImageSharp {
           gatsbyImageData(
-            breakpoints: [120, 160, 240, 320, 420]
+            breakpoints: [240, 320, 420]
           )
         }
       }
@@ -35,7 +36,7 @@ const FunFact = () => {
 
   const bgs = withArtDirection(getImage(bg), [
     {
-      media: "(max-width: 600px)",
+      media: `(max-width: ${theme.breakpoints.values.xs}px)`,
       image: getImage(bgXs)
     }
   ]);

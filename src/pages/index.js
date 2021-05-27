@@ -17,39 +17,38 @@ import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
 
 const Index = () => {
-  const contactHydrate = ["touchstart", "mouseover", "scroll"];
-  const sectionHydrate = { rootMargin: "0px" };
-
   return (
     <Box component="main">
       <SEO />
       <NavBar />
       <Home />
-      <LazyHydrate whenVisible={sectionHydrate}>
+      <LazyHydrate whenVisible>
         <About />
       </LazyHydrate>
-      <LazyHydrate whenVisible={sectionHydrate}>
+      <LazyHydrate whenVisible>
         <FunFact />
       </LazyHydrate>
-      <LazyHydrate whenVisible={sectionHydrate}>
+      <LazyHydrate whenVisible>
         <Education />
       </LazyHydrate>
-      <LazyHydrate whenVisible={sectionHydrate}>
+      <LazyHydrate whenVisible>
         <Work />
       </LazyHydrate>
-      <LazyHydrate whenVisible={sectionHydrate}>
+      <LazyHydrate whenVisible>
         <Project />
       </LazyHydrate>
-      <LazyHydrate whenVisible={sectionHydrate}>
+      <LazyHydrate whenVisible>
         <Testimonial />
       </LazyHydrate>
-      <LazyHydrate on={contactHydrate}>
+      <LazyHydrate whenVisible>
         <Contact />
       </LazyHydrate>
-      <LazyHydrate ssrOnly>
+      <LazyHydrate whenVisible>
         <Footer />
       </LazyHydrate>
-      <ScrollToTopFab />
+      <LazyHydrate whenVisible>
+        <ScrollToTopFab />
+      </LazyHydrate>
     </Box >
   );
 };

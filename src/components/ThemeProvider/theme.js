@@ -53,7 +53,7 @@ const createCustomTheme = mode => responsiveFontSizes(createTheme({
           "@media (min-width: 0px) and (orientation: landscape)": {
             scrollMarginTop: "48px"
           },
-          "@media (min-width: 600px)": {
+          [`@media (min-width: ${initTheme.breakpoints.values.xs}px)`]: {
             scrollMarginTop: "64px"
           },
           scrollMarginTop: "56px",
@@ -76,7 +76,7 @@ const createCustomTheme = mode => responsiveFontSizes(createTheme({
           "@media (min-width: 0px) and (orientation: landscape)": {
             scrollMarginTop: 48 + parseInt(initTheme.spacing(3)) + "px"
           },
-          "@media (min-width: 600px)": {
+          [`@media (min-width: ${initTheme.breakpoints.values.xs}px)`]: {
             scrollMarginTop: 64 + parseInt(initTheme.spacing(3)) + "px"
           },
           scrollMarginTop: 56 + parseInt(initTheme.spacing(3)) + "px"
