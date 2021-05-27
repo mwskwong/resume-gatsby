@@ -27,7 +27,7 @@ const Testimonial = () => {
       bgXs: file(relativePath: { eq: "testimonial_xs.jpg" }) {
         childImageSharp {
           gatsbyImageData(
-            breakpoints: [120, 160, 240, 320, 420]
+            breakpoints: [240, 320, 420]
           )
         }
       }

@@ -17,40 +17,45 @@ import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
 
 const Index = () => {
-  const contactHydrate = ["touchstart", "mouseover", "scroll"];
-  const sectionHydrate = { rootMargin: "0px" };
+  // const sectionHydrate = { rootMargin: "0px" };
 
   return (
     <Box component="main">
       <SEO />
-      <NavBar />
-      <Home />
-      <LazyHydrate whenVisible={sectionHydrate}>
+      <LazyHydrate whenVisible whenIdle>
+        <NavBar />
+      </LazyHydrate>
+      <LazyHydrate whenVisible whenIdle>
+        <Home />
+      </LazyHydrate>
+      <LazyHydrate whenVisible whenIdle>
         <About />
       </LazyHydrate>
-      <LazyHydrate whenVisible={sectionHydrate}>
+      <LazyHydrate whenVisible whenIdle>
         <FunFact />
       </LazyHydrate>
-      <LazyHydrate whenVisible={sectionHydrate}>
+      <LazyHydrate whenVisible whenIdle>
         <Education />
       </LazyHydrate>
-      <LazyHydrate whenVisible={sectionHydrate}>
+      <LazyHydrate whenVisible whenIdle>
         <Work />
       </LazyHydrate>
-      <LazyHydrate whenVisible={sectionHydrate}>
+      <LazyHydrate whenVisible whenIdle>
         <Project />
       </LazyHydrate>
-      <LazyHydrate whenVisible={sectionHydrate}>
+      <LazyHydrate whenVisible whenIdle>
         <Testimonial />
       </LazyHydrate>
-      <LazyHydrate on={contactHydrate}>
+      <LazyHydrate whenVisible whenIdle>
         <Contact />
       </LazyHydrate>
-      <LazyHydrate ssrOnly>
+      <LazyHydrate whenVisible whenIdle>
         <Footer />
       </LazyHydrate>
-      <ScrollToTopFab />
-    </Box >
+      <LazyHydrate whenVisible whenIdle>
+        <ScrollToTopFab />
+      </LazyHydrate>
+    </Box>
   );
 };
 

@@ -13,7 +13,7 @@ const ScrollToTopFab = () => {
   });
 
   return (
-    <Zoom in={trigger}>
+    <Zoom in={trigger} mountOnEnter unmountOnExit>
       <Fab
         sx={sx.fab}
         size="small"
