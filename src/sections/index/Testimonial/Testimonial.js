@@ -1,4 +1,4 @@
-import { Box, Container } from "@material-ui/core";
+import { Box, Container, useTheme } from "@material-ui/core";
 import { getImage, withArtDirection } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -15,6 +15,7 @@ import useSx from "./useTestimonialSx";
 const Carousel = loadable(() => import("./Carousel"));
 
 const Testimonial = () => {
+  const theme = useTheme();
   const sx = useSx();
 
   const { bg, bgXs } = useStaticQuery(graphql`
@@ -36,7 +37,7 @@ const Testimonial = () => {
 
   const bgs = withArtDirection(getImage(bg), [
     {
-      media: "(max-width: 600px)",
+      media: `(max-width: ${theme.breakpoints.values.xs}px)`,
       image: getImage(bgXs)
     }
   ]);

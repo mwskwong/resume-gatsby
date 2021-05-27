@@ -1,4 +1,4 @@
-import { Box, Container, Toolbar } from "@material-ui/core";
+import { Box, Container, Toolbar, useTheme } from "@material-ui/core";
 import { getImage, withArtDirection } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -12,6 +12,7 @@ import nav from "contents/nav";
 import useSx from "./useHomeSx";
 
 const Home = () => {
+  const theme = useTheme();
   const sx = useSx();
   const { bg, bgXs } = useStaticQuery(graphql`
     query {     
@@ -32,7 +33,7 @@ const Home = () => {
 
   const bgs = withArtDirection(getImage(bg), [
     {
-      media: "(max-width: 600px)",
+      media: `(max-width: ${theme.breakpoints.values.xs}px)`,
       image: getImage(bgXs)
     }
   ]);
