@@ -22,31 +22,31 @@ const Index = () => {
       <SEO />
       <NavBar />
       <Home />
-      <LazyHydrate whenVisible whenIdle>
+      <LazyHydrate whenVisible>
         <About />
       </LazyHydrate>
       <LazyHydrate whenVisible>
         <FunFact />
       </LazyHydrate>
-      <LazyHydrate whenVisible whenIdle>
+      <LazyHydrate whenVisible>
         <Education />
       </LazyHydrate>
-      <LazyHydrate whenVisible whenIdle>
+      <LazyHydrate whenVisible>
         <Work />
       </LazyHydrate>
-      <LazyHydrate whenVisible whenIdle>
+      <LazyHydrate whenVisible>
         <Project />
       </LazyHydrate>
-      <LazyHydrate whenVisible whenIdle>
+      <LazyHydrate whenVisible>
         <Testimonial />
       </LazyHydrate>
-      <LazyHydrate whenVisible whenIdle>
+      <LazyHydrate whenVisible>
         <Contact />
       </LazyHydrate>
-      <LazyHydrate whenVisible whenIdle>
+      <LazyHydrate whenVisible>
         <Footer />
       </LazyHydrate>
-      <LazyHydrate whenVisible whenIdle>
+      <LazyHydrate whenVisible>
         <ScrollToTopFab />
       </LazyHydrate>
     </Box >
