@@ -11,7 +11,6 @@ import {
 
 import About from "sections/index/About";
 import { Box } from "@material-ui/core";
-import LazyHydrate from "react-lazy-hydration";
 import NavBar from "components/NavBar";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
@@ -22,34 +21,16 @@ const Index = () => {
       <SEO />
       <NavBar />
       <Home />
-      <LazyHydrate whenVisible>
-        <About />
-      </LazyHydrate>
-      <LazyHydrate whenVisible>
-        <FunFact />
-      </LazyHydrate>
-      <LazyHydrate whenVisible>
-        <Education />
-      </LazyHydrate>
-      <LazyHydrate whenVisible>
-        <Work />
-      </LazyHydrate>
-      <LazyHydrate whenVisible>
-        <Project />
-      </LazyHydrate>
-      <LazyHydrate whenVisible>
-        <Testimonial />
-      </LazyHydrate>
-      <LazyHydrate whenVisible>
-        <Contact />
-      </LazyHydrate>
-      <LazyHydrate whenVisible>
-        <Footer />
-      </LazyHydrate>
-      <LazyHydrate whenVisible>
-        <ScrollToTopFab />
-      </LazyHydrate>
-    </Box >
+      <About />
+      <FunFact />
+      <Education />
+      <Work />
+      <Project />
+      <Testimonial />
+      <Contact />
+      <Footer />
+      <ScrollToTopFab />
+    </Box>
   );
 };
 
