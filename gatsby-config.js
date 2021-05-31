@@ -13,8 +13,7 @@ module.exports = {
     FAST_DEV: true,
     DEV_SSR: true,
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
-    PRESERVE_WEBPACK_CACHE: true,
-    PARALLEL_SOURCING: true
+    PRESERVE_WEBPACK_CACHE: true
   },
   plugins: [
     {
