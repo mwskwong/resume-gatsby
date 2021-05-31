@@ -1,4 +1,5 @@
 import {
+  About,
   Contact,
   Education,
   Footer,
@@ -9,7 +10,6 @@ import {
   Work
 } from "sections/index";
 
-import About from "sections/index/About";
 import { Box } from "@material-ui/core";
 import LazyHydrate from "react-lazy-hydration";
 import NavBar from "components/NavBar";
@@ -49,7 +49,7 @@ const Index = () => {
       <LazyHydrate whenVisible>
         <ScrollToTopFab />
       </LazyHydrate>
-    </Box >
+    </Box>
   );
 };
 
