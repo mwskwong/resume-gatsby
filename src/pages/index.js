@@ -17,36 +17,37 @@ import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
 
 const Index = () => {
+  const options = { rootMargin: "0px" };
   return (
     <Box component="main">
       <SEO />
       <NavBar />
       <Home />
-      <LazyHydrate whenVisible>
+      <LazyHydrate whenVisible={options}>
         <About />
       </LazyHydrate>
-      <LazyHydrate whenVisible>
+      <LazyHydrate whenVisible={options}>
         <FunFact />
       </LazyHydrate>
-      <LazyHydrate whenVisible>
+      <LazyHydrate whenVisible={options}>
         <Education />
       </LazyHydrate>
-      <LazyHydrate whenVisible>
+      <LazyHydrate whenVisible={options}>
         <Work />
       </LazyHydrate>
-      <LazyHydrate whenVisible>
+      <LazyHydrate whenVisible={options}>
         <Project />
       </LazyHydrate>
-      <LazyHydrate whenVisible>
+      <LazyHydrate whenVisible={options}>
         <Testimonial />
       </LazyHydrate>
-      <LazyHydrate whenVisible>
+      <LazyHydrate whenVisible={options}>
         <Contact />
       </LazyHydrate>
-      <LazyHydrate whenVisible>
+      <LazyHydrate whenVisible={options}>
         <Footer />
       </LazyHydrate>
-      <LazyHydrate whenVisible>
+      <LazyHydrate whenVisible={options}>
         <ScrollToTopFab />
       </LazyHydrate>
     </Box>

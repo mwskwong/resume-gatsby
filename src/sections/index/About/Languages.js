@@ -21,6 +21,7 @@ const Languages = () => {
         indexBy="name"
         keys={keys}
         colors={theme.palette.primary.main}
+        animate={false}
         isInteractive={false}
         enableDots={false}
         borderWidth={0}
