@@ -30,7 +30,7 @@ export const wrapPageElement = ({ element }) => (
 );
 
 export const onRenderBody = ({ setPostBodyComponents, setHeadComponents }) => {
-  setHeadComponents(extractor.getLinkElements());
+  // setHeadComponents(extractor.getLinkElements());
   setPostBodyComponents([...extractor.getScriptElements(), ...extractor.getStyleElements()]);
   extractor.chunks = [];
 };
