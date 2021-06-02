@@ -2,6 +2,7 @@ import { Button, Grid, TextField } from "@material-ui/core";
 import { isEmailValid, isValueEmpty } from "utils";
 import { useRef, useState } from "react";
 
+import LazyHydrate from "react-lazy-hydration";
 import constants from "contents/constants";
 import data from "contents/data";
 import useSx from "./useContactFormSx";
@@ -63,57 +64,59 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmitMessage} noValidate>
-      <Grid container spacing={4}>
-        <Grid item sm={6} xs={12}>
-          <TextField
-            id="name"
-            name="name"
-            fullWidth
-            label={constants.name}
-            autoComplete="name"
-            onChange={handleChange}
-          />
+    <LazyHydrate whenVisible>
+      <form onSubmit={handleSubmitMessage} noValidate>
+        <Grid container spacing={4}>
+          <Grid item sm={6} xs={12}>
+            <TextField
+              id="name"
+              name="name"
+              fullWidth
+              label={constants.name}
+              autoComplete="name"
+              onChange={handleChange}
+            />
+          </Grid>
+          <Grid item sm={6} xs={12}>
+            <TextField
+              ref={emailInputRef}
+              id="email"
+              name="from"
+              fullWidth
+              required
+              label={constants.email}
+              autoComplete="email"
+              onChange={handleChange}
+              error={invalidEmail}
+              helperText={invalidEmail ? emailInputErrorMessage : constants.required}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              id="subject"
+              name="subject"
+              fullWidth
+              label={constants.subject}
+              onChange={handleChange}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              id="message"
+              name="body"
+              fullWidth
+              label={constants.message}
+              onChange={handleChange}
+              multiline
+              rows={9}
+            />
+          </Grid>
         </Grid>
-        <Grid item sm={6} xs={12}>
-          <TextField
-            ref={emailInputRef}
-            id="email"
-            name="from"
-            fullWidth
-            required
-            label={constants.email}
-            autoComplete="email"
-            onChange={handleChange}
-            error={invalidEmail}
-            helperText={invalidEmail ? emailInputErrorMessage : constants.required}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            id="subject"
-            name="subject"
-            fullWidth
-            label={constants.subject}
-            onChange={handleChange}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            id="message"
-            name="body"
-            fullWidth
-            label={constants.message}
-            onChange={handleChange}
-            multiline
-            rows={9}
-          />
-        </Grid>
-      </Grid>
-      <Button sx={sx.submitButton} type="submit" variant="contained" size="large">
-        {constants.sendMessage}
-      </Button>
-    </form>
+        <Button sx={sx.submitButton} type="submit" variant="contained" size="large">
+          {constants.sendMessage}
+        </Button>
+      </form>
+    </LazyHydrate>
   );
 };
 
