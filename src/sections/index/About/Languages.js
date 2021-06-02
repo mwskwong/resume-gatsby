@@ -10,14 +10,14 @@ const Languages = () => {
   const theme = useTheme();
   const keys = ["rating"];
   const margin = { top: 24, right: 50, bottom: 0, left: 50 };
+  const lazyHydrateOptions = { rootMargin: "0px" };
   const nivoTheme = {
     fontFamily: theme.typography.fontFamily,
     textColor: theme.palette.text.primary
   };
 
-
   return (
-    <LazyHydrate whenVisible>
+    <LazyHydrate whenVisible={lazyHydrateOptions}>
       <Box sx={sx.root}>
         <ResponsiveRadar
           data={data.about.languages}
