@@ -1,18 +1,12 @@
 import { CssBaseline } from "@material-ui/core";
-import { Provider } from "react-redux";
 import { StrictMode } from "react";
-import SwSnackbar from "components/SwSnackbar";
 import ThemeProvider from "components/ThemeProvider";
 import { hydrate } from "react-dom";
 import { loadableReady } from "@loadable/component";
-import store from "store";
-import { swUpdateReady } from "actions";
 
 export const wrapRootElement = ({ element }) => (
   <StrictMode>
-    <Provider store={store}>
-      {element}
-    </Provider>
+    {element}
   </StrictMode>
 );
 
@@ -20,7 +14,6 @@ export const wrapPageElement = ({ element }) => (
   <ThemeProvider>
     <CssBaseline />
     {element}
-    <SwSnackbar />
   </ThemeProvider>
 );
 
@@ -37,7 +30,7 @@ export const onClientEntry = () => {
 
 export const onServiceWorkerUpdateReady = () => {
   console.log("This application has been updated. Pending reload.");
-  store.dispatch(swUpdateReady());
+  location.reload();
 };
 
 

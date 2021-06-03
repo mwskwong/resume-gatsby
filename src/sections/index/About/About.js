@@ -4,8 +4,11 @@ import Message from "./Message";
 import SectionHeader from "components/SectionHeader";
 import SkillSet from "./SkillSet";
 import constants from "contents/constants";
+import loadable from "@loadable/component";
 import { memo } from "react";
 import nav from "contents/nav";
+
+const Languages = loadable(() => import("./Languages"));
 
 const About = () => {
   return (
@@ -15,6 +18,7 @@ const About = () => {
         Icon={HexagonSlice1}
       />
       <Message />
+      <Languages />
       <SkillSet />
     </Container>
   );
