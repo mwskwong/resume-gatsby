@@ -30,7 +30,7 @@ export const onClientEntry = () => {
 
 export const onServiceWorkerUpdateReady = () => {
   console.log("This application has been updated. Pending reload.");
-  location.reload();
+  window.location.reload();
 };
 
 
