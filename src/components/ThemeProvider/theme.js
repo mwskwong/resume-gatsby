@@ -18,7 +18,12 @@ const createCustomTheme = mode => responsiveFontSizes(createTheme({
       },
       styleOverrides: {
         root: {
-          paddingTop: "env(safe-area-inset-top)"
+          paddingTop: "env(safe-area-inset-top)",
+          transition: initTheme.transitions.create(
+            ["background-color", "box-shadow"],
+            {
+              duration: initTheme.transitions.duration.short
+            })
         }
       }
     },

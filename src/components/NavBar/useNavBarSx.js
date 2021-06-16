@@ -14,7 +14,11 @@ const useSx = () => useMemo(() => ({
     display: {
       xs: "inline-flex",
       md: "none"
-    }
+    },
+    transition: theme => theme.transitions.create(
+      ["background-color", "color"],
+      { duration: theme.transitions.duration.short }
+    )
   },
   navList: {
     bgcolor: "background.paper"

@@ -8,9 +8,10 @@ import useSx from "./useLogoSx";
 
 const Logo = ({ sx: sxProp, onClick }) => {
   const sx = useSx();
+  const rootSx = { ...sx.root, ...sxProp };
 
   return (
-    <Button sx={sxProp} component="a" href={`#${nav.home.id}`} onClick={onClick}>
+    <Button sx={rootSx} component="a" href={`#${nav.home.id}`} onClick={onClick}>
       <Typography sx={sx.text} variant="h5">
         {data.firstName}
       </Typography>
