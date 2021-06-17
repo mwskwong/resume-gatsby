@@ -13,7 +13,7 @@ const useSx = () => useMemo(() => ({
     color: "text.secondary"
   },
   rating: {
-    bgcolor: "#eceff4"
+    bgcolor: "divider"
   }
 }), []);
 

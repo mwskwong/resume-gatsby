@@ -18,12 +18,10 @@ const createCustomTheme = mode => responsiveFontSizes(createTheme({
       },
       styleOverrides: {
         root: {
-          paddingTop: "env(safe-area-inset-top)",
           transition: initTheme.transitions.create(
             ["background-color", "box-shadow"],
-            {
-              duration: initTheme.transitions.duration.short
-            })
+            { duration: initTheme.transitions.duration.short }
+          )
         }
       }
     },
@@ -33,20 +31,10 @@ const createCustomTheme = mode => responsiveFontSizes(createTheme({
         disableElevation: true
       }
     },
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          backgroundColor: "#fbfbfc"
-        }
-      }
-    },
     MuiCssBaseline: {
       styleOverrides: {
         "::selection": {
           background: "rgba(166, 175, 189, .3)"
-        },
-        footer: {
-          paddingBottom: "env(safe-area-inset-bottom)"
         },
         html: {
           scrollBehavior: "smooth",
@@ -63,19 +51,7 @@ const createCustomTheme = mode => responsiveFontSizes(createTheme({
           },
           scrollMarginTop: "56px",
           paddingTop: initTheme.spacing(10),
-          paddingBottom: initTheme.spacing(10),
-          "&::before": {
-            backgroundAttachment: "fixed",
-            "@supports (-webkit-touch-callout: inherit)": {
-              backgroundAttachment: "scroll"
-            }
-          },
-          "&::after": {
-            backgroundAttachment: "fixed",
-            "@supports (-webkit-touch-callout: inherit)": {
-              backgroundAttachment: "scroll"
-            }
-          }
+          paddingBottom: initTheme.spacing(10)
         },
         input: {
           "@media (min-width: 0px) and (orientation: landscape)": {
@@ -109,13 +85,6 @@ const createCustomTheme = mode => responsiveFontSizes(createTheme({
       styleOverrides: {
         root: {
           textTransform: "capitalize"
-        }
-      }
-    },
-    MuiSnackbarContent: {
-      styleOverrides: {
-        root: {
-          backgroundColor: "#2e3440"
         }
       }
     },
@@ -159,13 +128,13 @@ const createCustomTheme = mode => responsiveFontSizes(createTheme({
   },
   palette: {
     primary: {
-      main: "#2e3440"
+      main: "#212121"
     },
     secondary: {
       main: "#ffffff"
     },
     text: {
-      primary: mode === "light" ? "#2e3440" : "#fff"
+      primary: mode === "light" ? "#212121" : "#fff"
     },
     mode
   },
