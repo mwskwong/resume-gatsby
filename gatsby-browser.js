@@ -47,7 +47,6 @@ export const onServiceWorkerUpdateReady = () => {
   }
 };
 
-
 export const replaceHydrateFunction = () => (element, container, callback) => {
   loadableReady(() => {
     hydrate(element, container, callback);

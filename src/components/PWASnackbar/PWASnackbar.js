@@ -12,6 +12,10 @@ const PWASnackbar = () => {
   const [open, setOpen] = useState(false);
   const showScrollToTopFab = useShowScrollToTopFab();
   const sx = useSx({ showScrollToTopFab });
+  const TransitionProps = {
+    mountOnEnter: true,
+    unmountOnExit: true
+  };
 
   const handleReloadButtonClick = () => {
     setOpen(false);
@@ -23,6 +27,7 @@ const PWASnackbar = () => {
   return (
     <Snackbar
       sx={sx.root}
+      TransitionProps={TransitionProps}
       open={open}
       message={constants.swNewContentAvailMessage}
       action={
