@@ -4,10 +4,14 @@ import { useEffect, useState } from "react";
 import constants from "contents/constants";
 import isSWUpdateReadySelector from "selectors/isSWUpdateReady";
 import { useSelector } from "react-redux";
+import useShowScrollToTopFab from "hooks/useShowScrollToTopFab";
+import useSx from "./usePWASnackbarSx";
 
 const PWASnackbar = () => {
   const isSWUpdateReady = useSelector(isSWUpdateReadySelector);
   const [open, setOpen] = useState(false);
+  const showScrollToTopFab = useShowScrollToTopFab();
+  const sx = useSx({ showScrollToTopFab });
 
   const handleReloadButtonClick = () => {
     setOpen(false);
@@ -18,6 +22,7 @@ const PWASnackbar = () => {
 
   return (
     <Snackbar
+      sx={sx.root}
       open={open}
       message={constants.swNewContentAvailMessage}
       action={
