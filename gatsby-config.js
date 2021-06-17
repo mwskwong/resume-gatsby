@@ -19,6 +19,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-root-import",
       options: {
+        actions: `${__dirname}/src/actions`,
         components: `${__dirname}/src/components`,
         contents: `${__dirname}/src/contents`,
         documents: `${__dirname}/src/documents`,
@@ -27,7 +28,10 @@ module.exports = {
         images: `${__dirname}/src/images`,
         pages: `${__dirname}/src/pages`,
         sections: `${__dirname}/src/sections`,
+        selectors: `${__dirname}/src/selectors`,
+        slices: `${__dirname}/src/slices`,
         src: `${__dirname}/src`,
+        store: `${__dirname}/src/store`,
         styles: `${__dirname}/src/styles`,
         utils: `${__dirname}/src/utils`
       }

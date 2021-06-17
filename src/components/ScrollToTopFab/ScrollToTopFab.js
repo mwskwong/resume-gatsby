@@ -1,19 +1,17 @@
-import { Fab, Zoom, useScrollTrigger } from "@material-ui/core";
+import { Fab, Zoom } from "@material-ui/core";
 
 import ArrowUp from "components/icons/ArrowUp";
 import { memo } from "react";
 import nav from "contents/nav";
+import useShowScrollToTopFab from "hooks/useShowScrollToTopFab";
 import useSx from "./useScrollToTopFabSx";
 
 const ScrollToTopFab = () => {
   const sx = useSx();
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 100
-  });
+  const show = useShowScrollToTopFab();
 
   return (
-    <Zoom in={trigger} mountOnEnter unmountOnExit>
+    <Zoom in={show} mountOnEnter unmountOnExit>
       <Fab
         sx={sx.fab}
         size="small"

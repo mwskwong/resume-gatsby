@@ -1,20 +1,30 @@
+import { Fragment, StrictMode } from "react";
+
 import { CssBaseline } from "@material-ui/core";
-import { StrictMode } from "react";
+import PWASnackbar from "components/PWASnackbar";
+import { Provider } from "react-redux";
 import ThemeProvider from "components/ThemeProvider";
 import { hydrate } from "react-dom";
 import { loadableReady } from "@loadable/component";
+import store from "store";
+import { updateReady } from "slices/swUpdateReady";
 
 export const wrapRootElement = ({ element }) => (
   <StrictMode>
-    {element}
+    <Provider store={store}>
+      <ThemeProvider>
+        <CssBaseline />
+        {element}
+      </ThemeProvider>
+    </Provider>
   </StrictMode>
 );
 
 export const wrapPageElement = ({ element }) => (
-  <ThemeProvider>
-    <CssBaseline />
+  <Fragment>
     {element}
-  </ThemeProvider>
+    <PWASnackbar />
+  </Fragment>
 );
 
 export const onClientEntry = () => {
@@ -30,7 +40,11 @@ export const onClientEntry = () => {
 
 export const onServiceWorkerUpdateReady = () => {
   console.log("This application has been updated. Pending reload.");
-  window.location.reload();
+  try {
+    store.dispatch(updateReady());
+  } catch {
+    window.location.reload();
+  }
 };
 
 
