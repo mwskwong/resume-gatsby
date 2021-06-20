@@ -52,7 +52,7 @@
     "@loadable/babel-plugin": "^5.13.2",
     "@loadable/webpack-plugin": "^5.15.0",
     "@welldone-software/why-did-you-render": "^6.2.0",
-    "eslint": "^7.28.0",
+    "eslint": "^7.29.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
