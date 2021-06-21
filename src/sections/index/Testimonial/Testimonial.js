@@ -1,17 +1,16 @@
 import { Box, Container, useTheme } from "@material-ui/core";
-import { Suspense, lazy, memo } from "react";
 import { getImage, withArtDirection } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
 import Bg from "components/Bg";
+import Carousel from "./Carousel";
 import { HexagonSlice5 } from "mdi-material-ui";
 import SectionHeader from "components/SectionHeader";
 import ThemeProvider from "components/ThemeProvider";
 import constants from "contents/constants";
+import { memo } from "react";
 import nav from "contents/nav";
 import useSx from "./useTestimonialSx";
-
-const Carousel = lazy(() => import("./Carousel"));
 
 const Testimonial = () => {
   const theme = useTheme();
@@ -50,9 +49,7 @@ const Testimonial = () => {
               heading={constants.whatPeopleSay}
               Icon={HexagonSlice5}
             />
-            <Suspense fallback={null}>
-              <Carousel />
-            </Suspense>
+            <Carousel />
           </Container>
         </ThemeProvider>
       </Bg>

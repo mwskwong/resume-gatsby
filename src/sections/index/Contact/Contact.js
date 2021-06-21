@@ -1,14 +1,13 @@
 import { Box, Container, Grid } from "@material-ui/core";
-import { Suspense, lazy, memo } from "react";
 
+import ContactForm from "./ContactForm";
 import { HexagonSlice6 } from "mdi-material-ui";
+import PersonalInfo from "./PersonalInfo";
 import SectionHeader from "components/SectionHeader";
 import constants from "contents/constants";
+import { memo } from "react";
 import nav from "contents/nav";
 import useSx from "./useContactSx";
-
-const ContactForm = lazy(() => import(/* webpackChunkName: "contact" */ "./ContactForm"));
-const PersonalInfo = lazy(() => import(/* webpackChunkName: "contact" */ "./PersonalInfo"));
 
 const Contact = () => {
   const sx = useSx();
@@ -22,14 +21,10 @@ const Contact = () => {
       <Box sx={sx.gridContainer}>
         <Grid container spacing={2}>
           <Grid item md={4} xs={12}>
-            <Suspense fallback={null}>
-              <PersonalInfo />
-            </Suspense>
+            <PersonalInfo />
           </Grid>
           <Grid item md xs={12}>
-            <Suspense fallback={null}>
-              <ContactForm />
-            </Suspense>
+            <ContactForm />
           </Grid>
         </Grid>
       </Box>
