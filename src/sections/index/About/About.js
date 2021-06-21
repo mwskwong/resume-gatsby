@@ -1,12 +1,14 @@
+import { Suspense, lazy, memo } from "react";
+
 import { Container } from "@material-ui/core";
 import { HexagonSlice1 } from "mdi-material-ui";
-import Languages from "./Languages";
 import Message from "./Message";
 import SectionHeader from "components/SectionHeader";
 import SkillSet from "./SkillSet";
 import constants from "contents/constants";
-import { memo } from "react";
 import nav from "contents/nav";
+
+const Languages = lazy(() => import("./Languages"));
 
 const About = () => {
   return (
@@ -16,7 +18,9 @@ const About = () => {
         Icon={HexagonSlice1}
       />
       <Message />
-      <Languages />
+      <Suspense fallback={null}>
+        <Languages />
+      </Suspense>
       <SkillSet />
     </Container>
   );
