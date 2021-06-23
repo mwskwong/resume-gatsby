@@ -1,5 +1,7 @@
 const { BRANCH = "main" } = process.env;
-const siteUrl = BRANCH === "main" ? "https://mwskwong.com" : `https://${BRANCH}.mwskwong.com`;
+const siteUrl = BRANCH === "main"
+  ? "https://mwskwong.com"
+  : `https://${BRANCH}.mwskwong.com`;
 
 module.exports = {
   siteMetadata: {

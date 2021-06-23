@@ -11,13 +11,12 @@ const ContactForm = () => {
   const emailInputRef = useRef(null);
   const [emailInputErrorMessage, setEmailInputErrorMessage] = useState(null);
   const invalidEmail = Boolean(emailInputErrorMessage);
-
-  const [messageData, setMessageData] = useState(Object.freeze({
+  const [messageData, setMessageData] = useState({
     name: "",
     email: "",
     subject: "",
     message: ""
-  }));
+  });
 
   const validateEmail = value => {
     if (isValueEmpty(value)) {
