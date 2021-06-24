@@ -1,4 +1,4 @@
-import { ListItem, ListItemButton, ListItemText } from "@material-ui/core";
+import { ListItemButton, ListItemText } from "@material-ui/core";
 
 import PropTypes from "prop-types";
 import { memo } from "react";
@@ -9,14 +9,12 @@ const NavListItem = ({ label, id, active }) => {
   const primaryTypographyProps = { sx: sx.textPrimary };
 
   return (
-    <ListItem disablePadding>
-      <ListItemButton component="a" href={`#${id}`}>
-        <ListItemText
-          primary={label}
-          primaryTypographyProps={primaryTypographyProps}
-        />
-      </ListItemButton>
-    </ListItem >
+    <ListItemButton component="a" href={`#${id}`}>
+      <ListItemText
+        primary={label}
+        primaryTypographyProps={primaryTypographyProps}
+      />
+    </ListItemButton>
   );
 };
 
