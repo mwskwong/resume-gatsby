@@ -5,6 +5,6 @@
    font-display: "swap";
    src: local("Azonix"),
      local("Azonix-Regular"),
-     url("../fonts/azonix.woff2") format("woff2"),
-     url("../fonts/azonix.woff") format("woff");
+     url("../../fonts/azonix.woff2") format("woff2"),
+     url("../../fonts/azonix.woff2") format("woff");
  }

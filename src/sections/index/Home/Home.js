@@ -33,7 +33,7 @@ const Home = () => {
 
   const bgs = withArtDirection(getImage(bg), [
     {
-      media: `(max-width: ${theme.breakpoints.values.xs}px)`,
+      media: `(max-width: ${theme.breakpoints.values.sm}px)`,
       image: getImage(bgXs)
     }
   ]);

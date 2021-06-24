@@ -7,11 +7,10 @@ import nav from "contents/nav";
 import useSx from "./useLogoSx";
 
 const Logo = ({ sx: sxProp, onClick }) => {
-  const sx = useSx();
-  const rootSx = { ...sx.root, ...sxProp };
+  const sx = useSx({ sxProp });
 
   return (
-    <Button sx={rootSx} component="a" href={`#${nav.home.id}`} onClick={onClick}>
+    <Button sx={sx.root} component="a" href={`#${nav.home.id}`} onClick={onClick}>
       <Typography sx={sx.text} variant="h5">
         {data.firstName}
       </Typography>
