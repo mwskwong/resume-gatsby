@@ -2,7 +2,7 @@ import "@fontsource/rubik/latin-300.css";
 import "@fontsource/rubik/latin-400.css";
 import "@fontsource/rubik/latin-500.css";
 import "@fontsource/rubik/latin-700.css";
-import "styles/azonix.css";
+import "./azonix.css";
 
 import { alpha, createTheme, responsiveFontSizes } from "@material-ui/core";
 

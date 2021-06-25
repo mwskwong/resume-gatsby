@@ -106,7 +106,7 @@ module.exports = {
         defaults: {
           formats: ["auto", "webp", "avif"],
           placeholder: "blurred",
-          breakpoints: [960, 1280, 1920]
+          breakpoints: [900, 1200, 1536]
         }
       }
     },

@@ -9,7 +9,7 @@ const SocialMedia = ({ sx: sxProp }) => {
   const sx = useSx({ sxProp });
 
   return (
-    <Stack spacing={.5} direction="row" sx={sx.root}>
+    <Stack spacing={1} direction="row" sx={sx.root}>
       <IconButton
         sx={sx.iconButton}
         href={data.socialMedia.facebookHref}
@@ -22,7 +22,7 @@ const SocialMedia = ({ sx: sxProp }) => {
       <IconButton
         sx={sx.iconButton}
         href={data.socialMedia.linkedinHref}
-        aria-label="navigate to Linkedin profile"
+        aria-label="navigate to LinkedIn profile"
         target="_blank"
         rel="noopener noreferrer"
       >
