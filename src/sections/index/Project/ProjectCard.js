@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Typography } from "@material-ui/core";
+import { Card, CardContent, Typography } from "@material-ui/core";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -32,9 +32,8 @@ const ProjectCard = ({ project }) => {
 
   return (
     <Card sx={sx.card} elevation={0}>
-      <Box
-        component={GatsbyImage}
-        sx={sx.cardMedia}
+      <GatsbyImage
+        style={sx.cardMedia}
         image={image}
         alt={title}
       />
