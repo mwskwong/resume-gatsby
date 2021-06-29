@@ -129,7 +129,6 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        sitemap: `${siteUrl}/sitemap/sitemap-index.xml`,
         resolveEnv: () => BRANCH,
         env: {
           main: {
