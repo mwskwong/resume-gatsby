@@ -14,27 +14,43 @@ import useSx from "./useHomeSx";
 const Home = () => {
   const theme = useTheme();
   const sx = useSx();
-  const { bg, bgXs } = useStaticQuery(graphql`
-    query {     
-      bg: file(relativePath: { eq: "home.jpg" }) {
+  const { bgXs, bgMd, bgLg, bgXl } = useStaticQuery(graphql`
+    query {
+      bgXs: file(relativePath: {eq: "home.jpg"}) {
         childImageSharp {
-          gatsbyImageData
+          gatsbyImageData(aspectRatio: 0.5625)
         }
       }
-      bgXs: file(relativePath: { eq: "home_xs.jpg" }) {
+      bgMd: file(relativePath: {eq: "home.jpg"}) {
         childImageSharp {
-          gatsbyImageData(
-            breakpoints: [240, 320, 420]
-          )
+          gatsbyImageData(aspectRatio: 0.75)
+        }
+      }
+      bgLg: file(relativePath: {eq: "home.jpg"}) {
+        childImageSharp {
+          gatsbyImageData(aspectRatio: 1.25)
+        }
+      }
+      bgXl: file(relativePath: {eq: "home.jpg"}) {
+        childImageSharp {
+          gatsbyImageData
         }
       }
     }
   `);
 
-  const bgs = withArtDirection(getImage(bg), [
+  const bgs = withArtDirection(getImage(bgXl), [
     {
       media: `(max-width: ${theme.breakpoints.values.sm}px)`,
       image: getImage(bgXs)
+    },
+    {
+      media: `(max-width: ${theme.breakpoints.values.lg}px)`,
+      image: getImage(bgMd)
+    },
+    {
+      media: `(max-width: ${theme.breakpoints.values.xl}px)`,
+      image: getImage(bgLg)
     }
   ]);
 

@@ -2,10 +2,11 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
+import { getSrc } from "gatsby-plugin-image";
 import { memo } from "react";
 
 const SEO = ({ title: titleProp, description: descriptionProp, meta: metaProp = [] }) => {
-  const { site } = useStaticQuery(graphql`
+  const { site, ogImage } = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
@@ -16,6 +17,11 @@ const SEO = ({ title: titleProp, description: descriptionProp, meta: metaProp = 
           siteUrl
         }
       }
+      ogImage: file(relativePath: {eq: "ogImage.jpg"}) {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
     }
   ` );
 
@@ -23,6 +29,7 @@ const SEO = ({ title: titleProp, description: descriptionProp, meta: metaProp = 
   const titleTemplate = titleProp ? `%s | ${site.siteMetadata?.shortTitle}` : null;
   const description = descriptionProp || site.siteMetadata?.description;
   const htmlAttributes = { lang: "en" };
+  const ogImageSrc = getSrc(ogImage);
   const meta = [
     {
       name: "description",
@@ -42,11 +49,11 @@ const SEO = ({ title: titleProp, description: descriptionProp, meta: metaProp = 
     },
     {
       property: "og:url",
-      content: site.siteMetadata?.siteUrl
+      content: site.siteMetadata.siteUrl
     },
     {
       property: "og:image",
-      content: `${site.siteMetadata?.siteUrl}/thumbnail.jpg`
+      content: `${site.siteMetadata.siteUrl}${ogImageSrc}`
     },
     {
       property: "apple-mobile-web-app-capable",

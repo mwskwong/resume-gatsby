@@ -14,8 +14,7 @@ module.exports = {
   flags: {
     FAST_DEV: true,
     DEV_SSR: true,
-    PRESERVE_FILE_DOWNLOAD_CACHE: true,
-    PRESERVE_WEBPACK_CACHE: true
+    PRESERVE_FILE_DOWNLOAD_CACHE: true
   },
   plugins: [
     {
@@ -106,7 +105,7 @@ module.exports = {
         defaults: {
           formats: ["auto", "webp", "avif"],
           placeholder: "blurred",
-          breakpoints: [900, 1200, 1536]
+          breakpoints: [240, 320, 420, 600, 900, 1200, 1536]
         }
       }
     },
@@ -129,7 +128,6 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        sitemap: `${siteUrl}/sitemap/sitemap-index.xml`,
         resolveEnv: () => BRANCH,
         env: {
           main: {
