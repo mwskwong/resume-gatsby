@@ -1,15 +1,13 @@
 import { Box, Container, Grid } from "@material-ui/core";
 
+import ContactForm from "./ContactForm";
 import { HexagonSlice6 } from "mdi-material-ui";
+import PersonalInfo from "./PersonalInfo";
 import SectionHeader from "components/SectionHeader";
 import constants from "contents/constants";
-import loadable from "@loadable/component";
 import { memo } from "react";
 import nav from "contents/nav";
 import useSx from "./useContactSx";
-
-const ContactForm = loadable(() => import(/* webpackChunkName: "contact" */ "./ContactForm"));
-const PersonalInfo = loadable(() => import(/* webpackChunkName: "contact" */ "./PersonalInfo"));
 
 const Contact = () => {
   const sx = useSx();
