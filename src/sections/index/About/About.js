@@ -1,14 +1,12 @@
 import { Container } from "@material-ui/core";
 import { HexagonSlice1 } from "mdi-material-ui";
+import Languages from "./Languages";
 import Message from "./Message";
 import SectionHeader from "components/SectionHeader";
 import SkillSet from "./SkillSet";
 import constants from "contents/constants";
-import loadable from "@loadable/component";
 import { memo } from "react";
 import nav from "contents/nav";
-
-const Languages = loadable(() => import("./Languages"));
 
 const About = () => {
   return (

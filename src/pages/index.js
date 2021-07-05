@@ -1,53 +1,52 @@
-import {
-  About,
-  Contact,
-  Education,
-  Footer,
-  FunFact,
-  Home,
-  Project,
-  Testimonial,
-  Work
-} from "sections/index";
+import { Suspense, lazy } from "react";
 
 import { Box } from "@material-ui/core";
-import LazyHydrate from "react-lazy-hydration";
 import NavBar from "components/NavBar";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
 
-const Index = () => {
-  const lazyHydrateOptions = { rootMargin: "0px" };
+const About = lazy(() => import("sections/index/About"));
+const Contact = lazy(() => import("sections/index/Contact"));
+const Education = lazy(() => import("sections/index/Education"));
+const Footer = lazy(() => import("sections/index/Footer"));
+const FunFact = lazy(() => import("sections/index/FunFact"));
+const Home = lazy(() => import("sections/index/Home"));
+const Project = lazy(() => import("sections/index/Project"));
+const Testimonial = lazy(() => import("sections/index/Testimonial"));
+const Work = lazy(() => import("sections/index/Work"));
 
+const Index = () => {
   return (
     <Box component="main">
       <SEO />
       <NavBar />
-      <Home />
-      <LazyHydrate whenVisible={lazyHydrateOptions}>
+      <Suspense fallback={null}>
+        <Home />
+      </Suspense>
+      <Suspense fallback={null}>
         <About />
-      </LazyHydrate>
-      <LazyHydrate whenVisible={lazyHydrateOptions}>
+      </Suspense>
+      <Suspense fallback={null}>
         <FunFact />
-      </LazyHydrate>
-      <LazyHydrate whenVisible={lazyHydrateOptions}>
+      </Suspense>
+      <Suspense fallback={null}>
         <Education />
-      </LazyHydrate>
-      <LazyHydrate whenVisible={lazyHydrateOptions}>
+      </Suspense>
+      <Suspense fallback={null}>
         <Work />
-      </LazyHydrate>
-      <LazyHydrate whenVisible={lazyHydrateOptions}>
+      </Suspense>
+      <Suspense fallback={null}>
         <Project />
-      </LazyHydrate>
-      <LazyHydrate whenVisible={lazyHydrateOptions}>
+      </Suspense>
+      <Suspense fallback={null}>
         <Testimonial />
-      </LazyHydrate>
-      <LazyHydrate whenVisible={lazyHydrateOptions}>
+      </Suspense>
+      <Suspense fallback={null}>
         <Contact />
-      </LazyHydrate>
-      <LazyHydrate whenVisible={lazyHydrateOptions}>
+      </Suspense>
+      <Suspense fallback={null}>
         <Footer />
-      </LazyHydrate>
+      </Suspense>
       <ScrollToTopFab />
     </Box>
   );
