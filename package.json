@@ -25,7 +25,7 @@
     "@nivo/core": "^0.72.0",
     "@nivo/radar": "^0.72.0",
     "@reduxjs/toolkit": "^1.6.0",
-    "gatsby": "3.9.0-alpha-ssr.15",
+    "gatsby": "next",
     "gatsby-plugin-emotion": "next",
     "gatsby-plugin-image": "next",
     "gatsby-plugin-manifest": "next",
