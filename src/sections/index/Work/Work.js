@@ -8,7 +8,7 @@ import { memo } from "react";
 import nav from "contents/nav";
 
 const Work = () => (
-  <Container component='section' id={nav.work.id}>
+  <Container component="section" id={nav.work.id}>
     <SectionHeader
       heading={constants.workingExperience}
       Icon={HexagonSlice3}

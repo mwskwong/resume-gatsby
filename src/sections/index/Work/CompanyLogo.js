@@ -33,10 +33,15 @@ const CompanyLogo = ({ company }) => {
   const { name, href, image: imagePath } = data.work.company[company] || {};
   const imageData = images.find(({ node: { relativePath } }) => imagePath === relativePath);
   const image = getImage(imageData.node);
-
+  const label = name.split(".")[0];
   return (
     <Box sx={sx.root}>
-      <a href={href} target='_blank' rel='noopener noreferrer'>
+      <a
+        aria-label={label}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <GatsbyImage
           image={image}
           alt={name}
