@@ -36,7 +36,12 @@ const CompanyLogo = ({ company }) => {
 
   return (
     <Box sx={sx.root}>
-      <a href={href} target='_blank' rel='noopener noreferrer'>
+      <a
+        aria-label={company}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <GatsbyImage
           image={image}
           alt={name}

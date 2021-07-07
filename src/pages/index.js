@@ -22,29 +22,13 @@ const Index = () => {
       <NavBar />
       <Suspense fallback={null}>
         <Home />
-      </Suspense>
-      <Suspense fallback={null}>
         <About />
-      </Suspense>
-      <Suspense fallback={null}>
         <FunFact />
-      </Suspense>
-      <Suspense fallback={null}>
         <Education />
-      </Suspense>
-      <Suspense fallback={null}>
         <Work />
-      </Suspense>
-      <Suspense fallback={null}>
         <Project />
-      </Suspense>
-      <Suspense fallback={null}>
         <Testimonial />
-      </Suspense>
-      <Suspense fallback={null}>
         <Contact />
-      </Suspense>
-      <Suspense fallback={null}>
         <Footer />
       </Suspense>
       <ScrollToTopFab />

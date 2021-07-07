@@ -7,13 +7,13 @@ const Companies = () => {
 
   return (
     <Grid sx={sx.root} container spacing={6}>
-      <Grid item sm='auto' xs={12}>
+      <Grid item sm="auto" xs={12}>
         <CompanyLogo company="ha" />
       </Grid>
-      <Grid item sm='auto' xs={12}>
+      <Grid item sm="auto" xs={12}>
         <CompanyLogo company="hku" />
       </Grid>
-      <Grid item sm='auto' xs={12}>
+      <Grid item sm="auto" xs={12}>
         <CompanyLogo company="versitech" />
       </Grid>
     </Grid>
