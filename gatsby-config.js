@@ -1,7 +1,7 @@
-const { BRANCH = "main" } = process.env;
-const siteUrl = BRANCH === "main"
+const { CF_PAGES_BRANCH = "main" } = process.env;
+const siteUrl = CF_PAGES_BRANCH === "main" || CF_PAGES_BRANCH === "master"
   ? "https://mwskwong.com"
-  : `https://${BRANCH}.mwskwong.com`;
+  : `https://${CF_PAGES_BRANCH}.mwskwong.com`;
 
 module.exports = {
   siteMetadata: {
@@ -10,10 +10,6 @@ module.exports = {
     siteUrl,
     themeColor: "#ffffff",
     title: "Matthew Kwong - System DBA & Front-End Developer"
-  },
-  flags: {
-    FAST_DEV: true,
-    PRESERVE_FILE_DOWNLOAD_CACHE: true
   },
   plugins: [
     {
@@ -127,9 +123,12 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        resolveEnv: () => BRANCH,
+        resolveEnv: () => CF_PAGES_BRANCH,
         env: {
           main: {
+            policy: [{ userAgent: "*", allow: "/" }]
+          },
+          master: {
             policy: [{ userAgent: "*", allow: "/" }]
           },
           next: {
