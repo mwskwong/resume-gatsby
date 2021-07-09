@@ -1,6 +1,5 @@
 import { Suspense, lazy } from "react";
 
-import { Box } from "@material-ui/core";
 import NavBar from "components/NavBar";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
@@ -17,7 +16,7 @@ const Work = lazy(() => import("sections/index/Work"));
 
 const Index = () => {
   return (
-    <Box component="main">
+    <main>
       <SEO />
       <NavBar />
       <Suspense fallback={null}>
@@ -32,7 +31,7 @@ const Index = () => {
         <Footer />
       </Suspense>
       <ScrollToTopFab />
-    </Box>
+    </main>
   );
 };
 
