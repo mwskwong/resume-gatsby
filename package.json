@@ -23,7 +23,7 @@
     "@nivo/core": "^0.72.0",
     "@nivo/radar": "^0.72.0",
     "@reduxjs/toolkit": "^1.6.0",
-    "gatsby": "^3.9.0",
+    "gatsby": "^3.9.1",
     "gatsby-plugin-emotion": "^6.9.0",
     "gatsby-plugin-image": "^1.9.0",
     "gatsby-plugin-manifest": "^3.9.0",
