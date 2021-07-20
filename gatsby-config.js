@@ -11,6 +11,9 @@ module.exports = {
     themeColor: "#ffffff",
     title: "Matthew Kwong - System DBA & Front-End Developer"
   },
+  flags: {
+    FAST_DEV: true
+  },
   plugins: [
     {
       resolve: "gatsby-plugin-root-import",
