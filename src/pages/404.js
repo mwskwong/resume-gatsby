@@ -14,7 +14,7 @@ const useSx = () => useMemo(() => ({
     height: "100vh"
   },
   noMatch: {
-    fontFamily: "Azonix,  sans-serif",
+    fontFamily: "Azonix, sans-serif",
     textAlign: "center",
     mb: 4
   },
