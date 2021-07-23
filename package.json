@@ -41,13 +41,11 @@
     "react-redux": "^7.2.4",
     "react-swipeable-views": "^0.14.0",
     "react-swipeable-views-utils": "^0.14.0",
-    "redux": "^4.1.0",
     "typewriter-effect": "^2.18.0"
   },
   "devDependencies": {
     "@welldone-software/why-did-you-render": "^6.2.0",
     "eslint": "^7.31.0",
-    "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "gatsby-plugin-root-import": "^2.0.6",
