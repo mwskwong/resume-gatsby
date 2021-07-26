@@ -38,9 +38,5 @@ export const onClientEntry = () => {
 
 export const onServiceWorkerUpdateReady = () => {
   console.log("This application has been updated. Pending reload.");
-  try {
-    store.dispatch(updateReady());
-  } catch {
-    window.location.reload();
-  }
+  store.dispatch(updateReady());
 };
