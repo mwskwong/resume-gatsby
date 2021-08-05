@@ -12,9 +12,9 @@ module.exports = {
     title: "Matthew Kwong - System DBA & Front-End Developer"
   },
   flags: {
-    FAST_DEV: true
-    // PARALLEL_QUERY_RUNNING: true,
-    // PARALLEL_SOURCING: true
+    FAST_DEV: true,
+    PARALLEL_QUERY_RUNNING: true,
+    PARALLEL_SOURCING: true
   },
   plugins: [
     {
