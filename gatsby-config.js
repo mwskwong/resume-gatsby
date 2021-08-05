@@ -13,6 +13,8 @@ module.exports = {
   },
   flags: {
     FAST_DEV: true
+    // PARALLEL_QUERY_RUNNING: true,
+    // PARALLEL_SOURCING: true
   },
   plugins: [
     {
@@ -41,27 +43,25 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                siteUrl
-              }
+        query: `{
+          site {
+            siteMetadata {
+              siteUrl
             }
-            allSitePage {
-              nodes {
-                path
-              }
+          }
+          allSitePage {
+            nodes {
+              path
             }
-            allFile(filter: {extension: {eq: "pdf"}}) {
-              edges {
-                node {
-                  publicURL
-                }
+          }
+          allFile(filter: {extension: {eq: "pdf"}}) {
+            edges {
+              node {
+                publicURL
               }
             }
           }
-        `,
+        }`,
         resolvePages: ({
           allSitePage: { nodes: allPages },
           allFile: { edges: allPDFs }
