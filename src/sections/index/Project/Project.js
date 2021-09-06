@@ -1,4 +1,4 @@
-import { Box, Container, Grid } from "@material-ui/core";
+import { Box, Container, Grid } from "@mui/material";
 
 import { HexagonSlice4 } from "mdi-material-ui";
 import ProjectCard from "./ProjectCard";

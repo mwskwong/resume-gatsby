@@ -1,4 +1,4 @@
-import { Container } from "@material-ui/core";
+import { Container } from "@mui/material";
 import { HexagonSlice1 } from "mdi-material-ui";
 import Languages from "./Languages";
 import Message from "./Message";

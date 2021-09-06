@@ -1,5 +1,5 @@
 import { Facebook, Github, Linkedin } from "mdi-material-ui";
-import { IconButton, Stack } from "@material-ui/core";
+import { IconButton, Stack } from "@mui/material";
 
 import PropTypes from "prop-types";
 import data from "contents/data";

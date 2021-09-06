@@ -1,4 +1,4 @@
-import { Box, Typography } from "@material-ui/core";
+import { Box, Typography } from "@mui/material";
 import { useEffect, useRef } from "react";
 
 import Typewriter from "typewriter-effect/dist/core";

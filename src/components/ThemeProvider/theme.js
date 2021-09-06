@@ -4,7 +4,7 @@ import "@fontsource/rubik/latin-500.css";
 import "@fontsource/rubik/latin-700.css";
 import "./azonix.css";
 
-import { alpha, createTheme, responsiveFontSizes } from "@material-ui/core";
+import { alpha, createTheme, responsiveFontSizes } from "@mui/material";
 
 const initTheme = createTheme();
 

@@ -1,5 +1,5 @@
 import CompanyLogo from "./CompanyLogo";
-import { Grid } from "@material-ui/core";
+import { Grid } from "@mui/material";
 import useSx from "./useCompaniesSx";
 
 const Companies = () => {

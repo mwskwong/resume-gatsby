@@ -1,5 +1,5 @@
-import { Card, CardActions, CardContent, IconButton, Typography } from "@material-ui/core";
-import { TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineSeparator } from "@material-ui/lab";
+import { Card, CardActions, CardContent, IconButton, Typography } from "@mui/material";
+import { TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineSeparator } from "@mui/lab";
 
 import Download from "components/icons/Download";
 import PropTypes from "prop-types";

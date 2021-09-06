@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-import { Box } from "@material-ui/core";
+import { Box } from "@mui/material";
 import ExpTimeline from "components/ExpTimeline";
 import data from "contents/data";
 import useSx from "./useWorkingExperienceTimelineSx";

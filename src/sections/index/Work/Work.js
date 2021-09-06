@@ -1,5 +1,5 @@
 import Companies from "./Companies";
-import { Container } from "@material-ui/core";
+import { Container } from "@mui/material";
 import { HexagonSlice3 } from "mdi-material-ui";
 import SectionHeader from "components/SectionHeader";
 import WorkingExpTimeline from "./WorkingExpTimeline";

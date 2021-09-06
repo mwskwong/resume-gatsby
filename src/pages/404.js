@@ -1,4 +1,4 @@
-import { Button, Container, Typography } from "@material-ui/core";
+import { Button, Container, Typography } from "@mui/material";
 
 import { Link } from "gatsby";
 import SEO from "components/SEO";

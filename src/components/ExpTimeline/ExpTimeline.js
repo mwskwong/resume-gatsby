@@ -1,7 +1,7 @@
 import ExpTimelineItem from "./ExpTimelineItem";
 import PropTypes from "prop-types";
-import { Timeline } from "@material-ui/lab";
-import { useMediaQuery } from "@material-ui/core";
+import { Timeline } from "@mui/lab";
+import { useMediaQuery } from "@mui/material";
 
 const ExpTimeline = ({ data = [] }) => {
   const mdDown = useMediaQuery(theme => theme.breakpoints.down("md"));

@@ -2,7 +2,7 @@ import Email from "components/icons/Email";
 import Location from "components/icons/Location";
 import Mobile from "components/icons/Mobile";
 import PersonalInfoItem from "./PersonalInfoItem";
-import { Stack } from "@material-ui/core";
+import { Stack } from "@mui/material";
 import constants from "contents/constants";
 import data from "contents/data";
 import useSx from "./usePersonalInfoSx";

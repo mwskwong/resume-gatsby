@@ -8,7 +8,7 @@ import {
   Toolbar,
   useScrollTrigger,
   useTheme
-} from "@material-ui/core";
+} from "@mui/material";
 import { Fragment, memo, useCallback, useMemo, useState } from "react";
 
 import Logo from "./Logo";

@@ -1,4 +1,4 @@
-import { Box, Grid, Stack } from "@material-ui/core";
+import { Box, Grid, Stack } from "@mui/material";
 
 import SkillRating from "./SkillRating";
 import data from "contents/data";

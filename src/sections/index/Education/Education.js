@@ -1,4 +1,4 @@
-import { Container } from "@material-ui/core";
+import { Container } from "@mui/material";
 import EducationalExpTimeline from "./EducationalExpTimeline";
 import { HexagonSlice2 } from "mdi-material-ui";
 import SectionHeader from "components/SectionHeader";

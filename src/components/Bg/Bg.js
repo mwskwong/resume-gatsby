@@ -1,6 +1,6 @@
 import { Fragment, memo } from "react";
 
-import { Box } from "@material-ui/core";
+import { Box } from "@mui/material";
 import { GatsbyImage } from "gatsby-plugin-image";
 import PropTypes from "prop-types";
 import useSx from "./useBgSx";

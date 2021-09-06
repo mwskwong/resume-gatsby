@@ -1,4 +1,4 @@
-import { ButtonBase } from "@material-ui/core";
+import { ButtonBase } from "@mui/material";
 import PropTypes from "prop-types";
 import useSx from "./usePaginationItemSx";
 
