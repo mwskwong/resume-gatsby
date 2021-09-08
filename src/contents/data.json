@@ -168,7 +168,7 @@
         "company": "Versitech Limited",
         "details": [
           "Design test suite for E-Form Filler in cooperation with software engineers.",
-          "Design and develope installer for E-Form Filler using NSIS MUI2",
+          "Design and develop installer for E-Form Filler using NSIS MUI2",
           "Rework a 3-year-old MPF cross-platform mobile application using React Native to replace the legacy Apache Cordova framework."
         ]
       },
