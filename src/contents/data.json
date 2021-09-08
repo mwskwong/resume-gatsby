@@ -163,12 +163,12 @@
         ]
       },
       {
-        "period": "Jun － Aug 2018",
+        "period": "Jun － Sep 2018",
         "position": "Summer Internship (Software Development)",
         "company": "Versitech Limited",
         "details": [
           "Design test suite for E-Form Filler in cooperation with software engineers.",
-          "Design and develope installer for E-Form Filler using NSIS MUI2",
+          "Design and develop installer for E-Form Filler using NSIS MUI2",
           "Rework a 3-year-old MPF cross-platform mobile application using React Native to replace the legacy Apache Cordova framework."
         ]
       },
@@ -177,12 +177,12 @@
         "position": "Student Research Assistant",
         "company": "School of Public Health, HKU",
         "details": [
-          "Developed a JavaFX application for visualizing DNA research result."
+          "Develop and design a JavaFX application to perform bioinformatics analysis."
         ],
         "proof": "works/hku_med_ra.pdf"
       },
       {
-        "period": "Jan － Apr 2017",
+        "period": "Jan － May 2017",
         "position": "Teaching Assistant",
         "company": "Faculty of Engineering, HKU",
         "details": [
