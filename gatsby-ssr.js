@@ -1,6 +1,6 @@
 import { Fragment, StrictMode } from "react";
 
-import { CssBaseline } from "@material-ui/core";
+import { CssBaseline } from "@mui/material";
 import PWASnackbar from "components/PWASnackbar";
 import { Provider } from "react-redux";
 import ThemeProvider from "components/ThemeProvider";
