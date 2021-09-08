@@ -163,7 +163,7 @@
         ]
       },
       {
-        "period": "Jun － Aug 2018",
+        "period": "Jun － Sep 2018",
         "position": "Summer Internship (Software Development)",
         "company": "Versitech Limited",
         "details": [
@@ -177,12 +177,12 @@
         "position": "Student Research Assistant",
         "company": "School of Public Health, HKU",
         "details": [
-          "Developed a JavaFX application for visualizing DNA research result."
+          "Develop and design a JavaFX application to perform bioinformatics analysis."
         ],
         "proof": "works/hku_med_ra.pdf"
       },
       {
-        "period": "Jan － Apr 2017",
+        "period": "Jan － May 2017",
         "position": "Teaching Assistant",
         "company": "Faculty of Engineering, HKU",
         "details": [
