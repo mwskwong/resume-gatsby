@@ -1,7 +1,7 @@
 import { Box, Container, Grid } from "@mui/material";
 
 import ContactForm from "./ContactForm";
-import { HexagonSlice6 } from "mdi-material-ui";
+import HexSlice6 from "components/icons/HexSlice6";
 import PersonalInfo from "./PersonalInfo";
 import SectionHeader from "components/SectionHeader";
 import constants from "contents/constants";
@@ -16,7 +16,7 @@ const Contact = () => {
     <Container component="section" id={nav.contact.id}>
       <SectionHeader
         heading={constants.getInTouch}
-        Icon={HexagonSlice6}
+        Icon={HexSlice6}
       />
       <Box sx={sx.gridContainer}>
         <Grid container spacing={2}>

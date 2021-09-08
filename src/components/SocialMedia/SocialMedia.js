@@ -1,4 +1,4 @@
-import { Facebook, Github, Linkedin } from "mdi-material-ui";
+import { Facebook, GitHub, LinkedIn } from "@mui/icons-material";
 import { IconButton, Stack } from "@mui/material";
 
 import PropTypes from "prop-types";
@@ -26,7 +26,7 @@ const SocialMedia = ({ sx: sxProp }) => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Linkedin />
+        <LinkedIn />
       </IconButton>
       <IconButton
         sx={sx.iconButton}
@@ -35,7 +35,7 @@ const SocialMedia = ({ sx: sxProp }) => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Github />
+        <GitHub />
       </IconButton>
     </Stack>
   );

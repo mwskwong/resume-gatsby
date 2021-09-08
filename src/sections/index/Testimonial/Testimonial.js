@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import Bg from "components/Bg";
 import Carousel from "./Carousel";
-import { HexagonSlice5 } from "mdi-material-ui";
+import HexSlice5 from "components/icons/HexSlice5";
 import SectionHeader from "components/SectionHeader";
 import ThemeProvider from "components/ThemeProvider";
 import constants from "contents/constants";
@@ -63,7 +63,7 @@ const Testimonial = () => {
           <Container>
             <SectionHeader
               heading={constants.whatPeopleSay}
-              Icon={HexagonSlice5}
+              Icon={HexSlice5}
             />
             <Carousel />
           </Container>

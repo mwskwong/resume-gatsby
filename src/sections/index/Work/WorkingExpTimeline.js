@@ -25,11 +25,11 @@ const WorkingExpTimeline = () => {
   return (
     <Box sx={sx.root}>
       <ExpTimeline
-        data={data.work.experiences.map(({ period, position, company, description, proof }) => ({
+        data={data.work.experiences.map(({ period, position, company, details, proof }) => ({
           period,
           title: position,
           subheader: company,
-          description,
+          details,
           file: proof
             ? docs.find(({ node: { relativePath } }) => relativePath === proof).node.publicURL
             : null

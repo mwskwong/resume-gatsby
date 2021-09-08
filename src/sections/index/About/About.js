@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-import { HexagonSlice1 } from "mdi-material-ui";
+import HexSlice1 from "components/icons/HexSlice1";
 import Languages from "./Languages";
 import Message from "./Message";
 import SectionHeader from "components/SectionHeader";
@@ -13,7 +13,7 @@ const About = () => {
     <Container component="section" id={nav.about.id}>
       <SectionHeader
         heading={constants.aboutMe}
-        Icon={HexagonSlice1}
+        Icon={HexSlice1}
       />
       <Message />
       <Languages />

@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 
 import PropTypes from "prop-types";
-import Quote from "components/icons/Quote";
+import User from "components/icons/User";
 import { memo } from "react";
 import useSx from "./useEndorsementSx";
 
@@ -10,7 +10,7 @@ const Endorsement = ({ name, company, comment }) => {
 
   return (
     <Box sx={sx.root}>
-      <Quote sx={sx.quoteIcon} />
+      <User sx={sx.icon} />
       <Typography sx={sx.name} variant="h6">
         {name}
       </Typography>

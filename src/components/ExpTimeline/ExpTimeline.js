@@ -2,19 +2,21 @@ import ExpTimelineItem from "./ExpTimelineItem";
 import PropTypes from "prop-types";
 import { Timeline } from "@mui/lab";
 import { useMediaQuery } from "@mui/material";
+import useSx from "./useExpTimelineSx";
 
 const ExpTimeline = ({ data = [] }) => {
+  const sx = useSx();
   const mdDown = useMediaQuery(theme => theme.breakpoints.down("md"));
 
   return (
-    <Timeline position={mdDown ? "right" : "alternate"}>
-      {data.map(({ period, title, subheader, description, file }, idx) => (
+    <Timeline sx={sx.root} position={mdDown ? "right" : "alternate"}>
+      {data.map(({ period, title, subheader, details, file }, idx) => (
         <ExpTimelineItem
           key={idx}
           period={period}
           title={title}
           subheader={subheader}
-          description={description}
+          details={details}
           file={file}
         />
       ))}
