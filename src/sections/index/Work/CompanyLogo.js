@@ -1,7 +1,7 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
-import { Box } from "@material-ui/core";
+import { Box } from "@mui/material";
 import PropTypes from "prop-types";
 import data from "contents/data";
 import useSx from "./useCompanyLogoSx";

@@ -1,6 +1,7 @@
-import { Container } from "@material-ui/core";
+import { Container } from "@mui/material";
+import Courses from "./Courses";
 import EducationalExpTimeline from "./EducationalExpTimeline";
-import { HexagonSlice2 } from "mdi-material-ui";
+import HexSlice3 from "components/icons/HexSlice3";
 import SectionHeader from "components/SectionHeader";
 import constants from "contents/constants";
 import { memo } from "react";
@@ -10,10 +11,11 @@ const Education = () => (
   <Container component="section" id={nav.education.id}>
     <SectionHeader
       heading={constants.education}
-      Icon={HexagonSlice2}
+      Icon={HexSlice3}
     />
     <EducationalExpTimeline />
-  </Container>
+    <Courses />
+  </Container >
 );
 
 Education.whyDidYouRender = true;

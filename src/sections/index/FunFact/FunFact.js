@@ -1,4 +1,4 @@
-import { Box, Container, Grid, useTheme } from "@material-ui/core";
+import { Box, Container, Grid, useTheme } from "@mui/material";
 import { getImage, withArtDirection } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 

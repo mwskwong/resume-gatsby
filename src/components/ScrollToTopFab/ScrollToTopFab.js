@@ -1,4 +1,4 @@
-import { Fab, Zoom } from "@material-ui/core";
+import { Fab, Zoom } from "@mui/material";
 
 import ArrowUp from "components/icons/ArrowUp";
 import { memo } from "react";

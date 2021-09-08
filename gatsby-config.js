@@ -14,7 +14,8 @@ module.exports = {
   flags: {
     FAST_DEV: true,
     PARALLEL_QUERY_RUNNING: true,
-    PARALLEL_SOURCING: true
+    PARALLEL_SOURCING: true,
+    LMDB_STORE: true
   },
   plugins: [
     {
@@ -86,7 +87,8 @@ module.exports = {
         name: "Matthew's Resume",
         short_name: "Matthew",
         start_url: ".",
-        theme_color: "#ffffff"
+        theme_color: "#ffffff",
+        legacy: false
       }
     },
     {

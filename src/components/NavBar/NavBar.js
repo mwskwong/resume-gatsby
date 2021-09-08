@@ -8,8 +8,8 @@ import {
   Toolbar,
   useScrollTrigger,
   useTheme
-} from "@material-ui/core";
-import { Fragment, memo, useCallback, useMemo, useState } from "react";
+} from "@mui/material";
+import { Fragment, memo, useCallback, useState } from "react";
 
 import Logo from "./Logo";
 import Menu from "components/icons/Menu";
@@ -46,47 +46,35 @@ const NavBar = () => {
   }, []);
   const handleMenuExited = () => setMenuExited(true);
 
-  const appBarContent = useMemo(() => (
-    <Fragment>
-      <Logo />
-      <Box sx={sx.spacer} />
-      <Stack
-        sx={sx.navButtonContainer}
-        component="nav"
-        spacing={1}
-        direction="row"
-      >
-        {Object.values(nav).map(({ id, name }) => (
-          <NavButton
-            key={id}
-            id={id}
-            label={name}
-            active={activeSectionId === id}
-          />
-        ))}
-      </Stack>
-      <IconButton
-        sx={sx.menuButton}
-        onClick={handleMenuToggle}
-        aria-label="toggle menu"
-      >
-        <Menu />
-      </IconButton>
-    </Fragment>
-  ), [
-    activeSectionId,
-    handleMenuToggle,
-    sx.menuButton,
-    sx.navButtonContainer,
-    sx.spacer
-  ]);
-
   return (
     <Fragment>
       <AppBar color={color} elevation={elevation}>
         <Toolbar>
           <ThemeProvider mode={trigger || !menuExited ? "light" : "dark"}>
-            {appBarContent}
+            <Logo />
+            <Box sx={sx.spacer} />
+            <Stack
+              sx={sx.navButtonContainer}
+              component="nav"
+              spacing={1}
+              direction="row"
+            >
+              {Object.values(nav).map(({ id, name }) => (
+                <NavButton
+                  key={id}
+                  id={id}
+                  label={name}
+                  active={activeSectionId === id}
+                />
+              ))}
+            </Stack>
+            <IconButton
+              sx={sx.menuButton}
+              onClick={handleMenuToggle}
+              aria-label="toggle menu"
+            >
+              <Menu />
+            </IconButton>
           </ThemeProvider>
         </Toolbar>
         <Collapse in={menuOpen} timeout="auto" unmountOnExit onExited={handleMenuExited}>

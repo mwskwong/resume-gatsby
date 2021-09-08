@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-import { Button } from "@material-ui/core";
+import { Button } from "@mui/material";
 import PropTypes from "prop-types";
 import constants from "contents/constants";
 

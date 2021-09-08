@@ -1,4 +1,4 @@
-import { Button, Snackbar } from "@material-ui/core";
+import { Button, Snackbar } from "@mui/material";
 import { useEffect, useState } from "react";
 
 import constants from "contents/constants";

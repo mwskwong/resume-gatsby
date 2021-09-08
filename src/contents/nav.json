@@ -7,13 +7,13 @@
     "id": "about",
     "name": "about"
   },
-  "education": {
-    "id": "education",
-    "name": "education"
-  },
   "work": {
     "id": "work",
     "name": "work"
+  },
+  "education": {
+    "id": "education",
+    "name": "education"
   },
   "project": {
     "id": "project",

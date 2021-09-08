@@ -1,4 +1,4 @@
-import { ListItemButton, ListItemText } from "@material-ui/core";
+import { ListItemButton, ListItemText } from "@mui/material";
 
 import PropTypes from "prop-types";
 import { memo } from "react";

@@ -1,4 +1,4 @@
-import { Container, Divider, Grid } from "@material-ui/core";
+import { Container, Divider, Grid } from "@mui/material";
 
 import CopyrightStatement from "./CopyrightStatement";
 import SocialMedia from "components/SocialMedia";

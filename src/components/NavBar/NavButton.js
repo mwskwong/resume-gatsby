@@ -1,4 +1,4 @@
-import { Box, Button } from "@material-ui/core";
+import { Box, Button } from "@mui/material";
 
 import PropTypes from "prop-types";
 import { memo } from "react";

@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-import { Box } from "@material-ui/core";
+import { Box } from "@mui/material";
 import ExpTimeline from "components/ExpTimeline";
 import data from "contents/data";
 import useSx from "./useWorkingExperienceTimelineSx";
@@ -25,11 +25,11 @@ const WorkingExpTimeline = () => {
   return (
     <Box sx={sx.root}>
       <ExpTimeline
-        data={data.work.experiences.map(({ period, position, company, description, proof }) => ({
+        data={data.work.experiences.map(({ period, position, company, details, proof }) => ({
           period,
           title: position,
           subheader: company,
-          description,
+          details,
           file: proof
             ? docs.find(({ node: { relativePath } }) => relativePath === proof).node.publicURL
             : null

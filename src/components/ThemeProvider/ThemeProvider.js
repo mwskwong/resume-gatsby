@@ -1,6 +1,6 @@
 import { darkTheme, lightTheme } from "./theme";
 
-import { ThemeProvider as MuiThemeProvider } from "@material-ui/core";
+import { ThemeProvider as MuiThemeProvider } from "@mui/material";
 import PropTypes from "prop-types";
 import { memo } from "react";
 

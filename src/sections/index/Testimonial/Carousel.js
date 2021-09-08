@@ -1,4 +1,4 @@
-import { Box } from "@material-ui/core";
+import { Box } from "@mui/material";
 import Endorsement from "./Endorsement";
 import Pagination from "./Pagination";
 import SwipeableViews from "react-swipeable-views";

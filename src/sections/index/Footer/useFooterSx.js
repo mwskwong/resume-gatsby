@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useTheme } from "@material-ui/core";
+import { useTheme } from "@mui/material";
 
 const useSx = () => {
   const theme = useTheme();

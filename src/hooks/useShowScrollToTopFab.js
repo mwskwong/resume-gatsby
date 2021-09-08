@@ -1,4 +1,4 @@
-import { useScrollTrigger } from "@material-ui/core";
+import { useScrollTrigger } from "@mui/material";
 
 const useShowScrollToTopFab = () => {
   const trigger = useScrollTrigger({
