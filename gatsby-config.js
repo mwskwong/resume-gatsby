@@ -87,8 +87,7 @@ module.exports = {
         name: "Matthew's Resume",
         short_name: "Matthew",
         start_url: ".",
-        theme_color: "#ffffff",
-        legacy: false
+        theme_color: "#ffffff"
       }
     },
     {

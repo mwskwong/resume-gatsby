@@ -7,6 +7,12 @@ import Udemy from "components/icons/Udemy";
 import data from "contents/data";
 import useSx from "./useCoursesSx";
 
+const icon = {
+  Microsoft: Microsoft,
+  Oracle: Oracle,
+  Udemy: Udemy
+};
+
 const Courses = () => {
   const sx = useSx();
   const { workDoc: { edges: docs } } = useStaticQuery(graphql`
@@ -28,22 +34,17 @@ const Courses = () => {
     <Box sx={sx.root}>
       {data.education.courses.map(({ label, issuedBy, proof }) => {
         const doc = proof && docs.find(({ node: { relativePath } }) => relativePath === proof).node.publicURL;
-        const icon = issuedBy === "Microsoft"
-          ? <Microsoft fontSize="small" />
-          : issuedBy === "Oracle"
-            ? <Oracle fontSize="small" />
-            : issuedBy === "Udemy"
-              ? <Udemy fontSize="small" />
-              : null;
+        const Icon = icon[issuedBy];
+
         return (
           <Chip
             key={label}
             sx={sx.chip}
             variant="outlined"
             label={label}
-            icon={icon}
+            icon={<Icon fontSize="small" />}
             clickable={Boolean(doc)}
-            component="a"
+            component={doc && "a"}
             href={doc}
             target="_blank"
             rel="noopener noreferrer"
