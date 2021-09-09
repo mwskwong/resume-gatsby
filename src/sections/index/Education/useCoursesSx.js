@@ -9,9 +9,6 @@ const useSx = () => useMemo(() => ({
   },
   chip: {
     m: .5,
-    "& .MuiChip-icon": {
-      ml: 1
-    },
     textOverflow: "ellipsis",
     maxWidth: `calc(100% - ${4 * 2}px)`
   }

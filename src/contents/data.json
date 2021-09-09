@@ -146,7 +146,7 @@
         "company": "Hospital Authority",
         "details": [
           "Support and guide application teams on MySQL deployment and maintenance.",
-          "Design and develop database health check system to facilitate SRE.",
+          "Design and develop a database health check system to facilitate SRE.",
           "Maintain database management web application.",
           "POC on data virtualization with Delphix DataOp platform."
         ]
@@ -157,13 +157,13 @@
         "company": "Hospital Authority",
         "details": [
           "Support and guide application teams on MySQL deployment and maintenance.",
-          "Design and develop database health check system to facilitate SRE.",
+          "Design and develop a database health check system to facilitate SRE.",
           "Maintain database management web application.",
           "POC on data virtualization with Delphix DataOp platform."
         ]
       },
       {
-        "period": "Jun － Sep 2018",
+        "period": "Jun － Aug 2018",
         "position": "Summer Internship (Software Development)",
         "company": "Versitech Limited",
         "details": [
@@ -182,7 +182,7 @@
         "proof": "works/hku_med_ra.pdf"
       },
       {
-        "period": "Jan － May 2017",
+        "period": "Jan － Apr 2017",
         "position": "Teaching Assistant",
         "company": "Faculty of Engineering, HKU",
         "details": [
