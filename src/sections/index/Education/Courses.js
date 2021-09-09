@@ -42,7 +42,7 @@ const Courses = () => {
             sx={sx.chip}
             variant="outlined"
             label={label}
-            icon={<Icon fontSize="small" />}
+            icon={<Icon />}
             clickable={Boolean(doc)}
             component={doc && "a"}
             href={doc}
