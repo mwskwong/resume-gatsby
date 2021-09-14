@@ -1,22 +1,30 @@
-import { Button, Grid, TextField } from "@mui/material";
+import { Error, CheckCircle as Success } from "@mui/icons-material";
+import { Grid, TextField } from "@mui/material";
 import { isEmailValid, isValueEmpty } from "utils";
 import { useRef, useState } from "react";
 
+import { LoadingButton } from "@mui/lab";
 import constants from "contents/constants";
-import data from "contents/data";
+import emailjs from "emailjs-com";
 import useSx from "./useContactFormSx";
+
+emailjs.init("user_cvUPh6E40cCRJwdO8UklC");
+
+const defaultMessageData = {
+  name: "",
+  email: "",
+  subject: "",
+  message: ""
+};
 
 const ContactForm = () => {
   const sx = useSx();
   const emailInputRef = useRef(null);
   const [emailInputErrorMessage, setEmailInputErrorMessage] = useState(null);
   const invalidEmail = Boolean(emailInputErrorMessage);
-  const [messageData, setMessageData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: ""
-  });
+  const [emailSending, setEmailSending] = useState(false);
+  const [emailSendSuccess, setEmailSendSuccess] = useState(undefined);
+  const [messageData, setMessageData] = useState(defaultMessageData);
 
   const validateEmail = value => {
     if (isValueEmpty(value)) {
@@ -53,12 +61,19 @@ const ContactForm = () => {
       return false;
     }
 
-    document.location.href = `
-      mailto:${data.contact.email}
-      ?cc=${messageData.email}
-      &subject=${encodeURIComponent(messageData.subject)}
-      &body=${encodeURIComponent(messageData.message)}
-    `;
+    setEmailSending(true);
+    emailjs.send("personal_email", "personal_webpage", {
+      ...messageData,
+      message: messageData.message.replaceAll("\n", "<br>")
+    })
+      .then(() => {
+        setEmailSendSuccess(true);
+      })
+      .catch(() => {
+        setEmailSendSuccess(false);
+      }).finally(() => {
+        setEmailSending(false);
+      });
   };
 
   return (
@@ -109,9 +124,27 @@ const ContactForm = () => {
           />
         </Grid>
       </Grid>
-      <Button sx={sx.submitButton} type="submit" variant="contained" size="large">
+      <LoadingButton
+        loading={emailSending}
+        color={emailSendSuccess
+          ? "success"
+          : emailSendSuccess === false
+            ? "error"
+            : "primary"
+        }
+        startIcon={emailSendSuccess
+          ? <Success />
+          : emailSendSuccess === false
+            ? <Error />
+            : null
+        }
+        sx={sx.submitButton}
+        type="submit"
+        variant="contained"
+        size="large"
+      >
         {constants.sendMessage}
-      </Button>
+      </LoadingButton>
     </form>
   );
 };
