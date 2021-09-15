@@ -16,7 +16,7 @@ import {
   TimelineSeparator
 } from "@mui/lab";
 
-import Download from "components/icons/Download";
+import { Download } from "@mui/icons-material";
 import PropTypes from "prop-types";
 import { memo } from "react";
 import useSx from "./useExpTimelineItemSx";

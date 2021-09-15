@@ -12,7 +12,7 @@ import {
 import { Fragment, memo, useCallback, useState } from "react";
 
 import Logo from "./Logo";
-import Menu from "components/icons/Menu";
+import { Menu } from "@mui/icons-material";
 import NavButton from "./NavButton";
 import NavListItem from "./NavListItem";
 import ThemeProvider from "components/ThemeProvider";
