@@ -57,11 +57,12 @@ const ContactForm = () => {
     if (invalidEmail) {
       setEmailInputErrorMessage(emailErrorMessage);
       emailInputRef.current.focus();
-      emailInputRef.current.scrollIntoView({ behavior: "smooth" });
+      emailInputRef.current.scrollIntoView();
       return false;
     }
 
     setEmailSending(true);
+    setEmailSendSuccess(undefined);
     emailjs.send("personal_email", "personal_webpage", {
       ...messageData,
       message: messageData.message.replaceAll("\n", "<br>")
