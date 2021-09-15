@@ -128,6 +128,7 @@ const ContactForm = () => {
       </Grid>
       <LoadingButton
         loading={emailSending}
+        loadingPosition="end"
         color={emailSendSuccess
           ? "success"
           : emailSendSuccess === false
