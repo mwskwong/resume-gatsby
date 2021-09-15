@@ -53,15 +53,6 @@ const createCustomTheme = mode => responsiveFontSizes(createTheme({
           paddingTop: initTheme.spacing(10),
           paddingBottom: initTheme.spacing(10)
         },
-        input: {
-          "@media (min-width: 0px) and (orientation: landscape)": {
-            scrollMarginTop: 48 + parseInt(initTheme.spacing(3)) + "px"
-          },
-          [`@media (min-width: ${initTheme.breakpoints.values.xs}px)`]: {
-            scrollMarginTop: 64 + parseInt(initTheme.spacing(3)) + "px"
-          },
-          scrollMarginTop: 56 + parseInt(initTheme.spacing(3)) + "px"
-        },
         ".Typewriter__cursor": {
           fontWeight: initTheme.typography.h2.fontWeight
         }
@@ -122,6 +113,19 @@ const createCustomTheme = mode => responsiveFontSizes(createTheme({
           maxWidth: 1440,
           marginRight: "auto",
           marginLeft: "auto"
+        }
+      }
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          "@media (min-width: 0px) and (orientation: landscape)": {
+            scrollMarginTop: "72px"
+          },
+          [`@media (min-width: ${initTheme.breakpoints.values.xs}px)`]: {
+            scrollMarginTop: "88px"
+          },
+          scrollMarginTop: "80px"
         }
       }
     }

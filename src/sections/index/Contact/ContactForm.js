@@ -1,5 +1,5 @@
-import { Error, CheckCircle as Success } from "@mui/icons-material";
-import { Grid, TextField } from "@mui/material";
+import { Error, Send, CheckCircle as Success } from "@mui/icons-material";
+import { Grid, TextField, useMediaQuery } from "@mui/material";
 import { isEmailValid, isValueEmpty } from "utils";
 import { useRef, useState } from "react";
 
@@ -19,6 +19,7 @@ const defaultMessageData = {
 
 const ContactForm = () => {
   const sx = useSx();
+  const smDown = useMediaQuery(theme => theme.breakpoints.down("sm"));
   const emailInputRef = useRef(null);
   const [emailInputErrorMessage, setEmailInputErrorMessage] = useState(null);
   const invalidEmail = Boolean(emailInputErrorMessage);
@@ -133,16 +134,17 @@ const ContactForm = () => {
             ? "error"
             : "primary"
         }
-        startIcon={emailSendSuccess
+        endIcon={emailSendSuccess
           ? <Success />
           : emailSendSuccess === false
             ? <Error />
-            : null
+            : <Send />
         }
         sx={sx.submitButton}
         type="submit"
         variant="contained"
         size="large"
+        fullWidth={smDown}
       >
         {constants.sendMessage}
       </LoadingButton>
