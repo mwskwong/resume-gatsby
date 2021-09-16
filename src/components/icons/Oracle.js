@@ -1,8 +1,9 @@
+import PropTypes from "prop-types";
 import { SvgIcon } from "@mui/material";
 import { memo } from "react";
 
-const Oracle = props => {
-  const sx = { p: "2px" };
+const Oracle = ({ sx: sxProp, ...props }) => {
+  const sx = { p: "2px", ...sxProp };
 
   return (
     <SvgIcon sx={sx} {...props}>
@@ -13,5 +14,8 @@ const Oracle = props => {
 
 Oracle.muiName = SvgIcon.muiName;
 Oracle.whyDidYouRender = true;
+Oracle.propTypes = {
+  sx: PropTypes.object
+};
 
 export default memo(Oracle);
