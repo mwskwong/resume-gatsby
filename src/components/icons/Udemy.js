@@ -1,8 +1,8 @@
+import PropTypes from "prop-types";
 import { SvgIcon } from "@mui/material";
 import { memo } from "react";
-
-const Udemy = props => {
-  const sx = { p: "2px" };
+const Udemy = ({ sx: sxProp, ...props }) => {
+  const sx = { p: "2px", ...sxProp };
 
   return (
     <SvgIcon sx={sx} {...props}>
@@ -13,5 +13,8 @@ const Udemy = props => {
 
 Udemy.muiName = SvgIcon.muiName;
 Udemy.whyDidYouRender = true;
+Udemy.propTypes = {
+  sx: PropTypes.object
+};
 
 export default memo(Udemy);
