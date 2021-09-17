@@ -42,12 +42,12 @@
     "react-redux": "^7.2.5",
     "react-swipeable-views": "^0.14.0",
     "react-swipeable-views-utils": "^0.14.0",
-    "typewriter-effect": "^2.18.0"
+    "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
     "@welldone-software/why-did-you-render": "^6.2.1",
     "eslint": "^7.32.0",
-    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react": "^7.25.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "gatsby-plugin-root-import": "^2.0.7",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.25",
