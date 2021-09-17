@@ -66,7 +66,7 @@ const ContactForm = () => {
     setEmailSendSuccess(undefined);
     emailjs.send("personal_email", "personal_webpage", {
       ...messageData,
-      message: messageData.message.replaceAll("\n", "<br>")
+      message: messageData.message.split("\n").map(line => line || "\u200b")
     })
       .then(() => {
         setEmailSendSuccess(true);
