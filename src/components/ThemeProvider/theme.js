@@ -13,15 +13,19 @@ const createCustomTheme = mode => responsiveFontSizes(createTheme({
     MuiAppBar: {
       defaultProps: {
         color: "transparent",
-        elevation: 0,
-        position: "fixed"
+        position: "fixed",
+        variant: "outlined",
+        elevation: 0
       },
       styleOverrides: {
         root: {
           transition: initTheme.transitions.create(
-            ["background-color", "box-shadow"],
+            ["background-color", "border-top-color"],
             { duration: initTheme.transitions.duration.short }
-          )
+          ),
+          borderRight: "none",
+          borderLeft: "none",
+          borderTop: "none"
         }
       }
     },

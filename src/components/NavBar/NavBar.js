@@ -6,10 +6,10 @@ import {
   List,
   Stack,
   Toolbar,
-  useScrollTrigger,
-  useTheme
+  useMediaQuery,
+  useScrollTrigger
 } from "@mui/material";
-import { Fragment, memo, useCallback, useState } from "react";
+import { memo, useCallback, useState } from "react";
 
 import Logo from "./Logo";
 import { Menu } from "@mui/icons-material";
@@ -21,76 +21,63 @@ import useActiveSectionId from "hooks/useActiveSectionId";
 import useSx from "./useNavBarSx";
 
 const NavBar = () => {
-  const sx = useSx();
-  const theme = useTheme();
-  const appBarDefaultProps = {
-    color: theme.components.MuiAppBar.defaultProps.color,
-    elevation: theme.components.MuiAppBar.defaultProps.elevation
-  };
-
+  const mdDown = useMediaQuery(theme => theme.breakpoints.down("md"));
+  const [menuOpen, setMenuOpen] = useState(false);
+  const activeSectionId = useActiveSectionId();
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0
   });
+  const sx = useSx({ solidBg: mdDown || trigger });
 
-  const activeSectionId = useActiveSectionId();
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [menuExited, setMenuExited] = useState(true);
-
-  const color = trigger || !menuExited ? "secondary" : appBarDefaultProps.color;
-  const elevation = trigger || !menuExited ? 4 : appBarDefaultProps.elevation;
-
-  const handleMenuToggle = useCallback(() => {
-    setMenuOpen(menuOpen => !menuOpen);
-    setMenuExited(false);
-  }, []);
-  const handleMenuExited = () => setMenuExited(true);
+  const handleMenuToggle = useCallback(
+    () => setMenuOpen(menuOpen => !menuOpen),
+    []
+  );
 
   return (
-    <Fragment>
-      <AppBar color={color} elevation={elevation}>
-        <Toolbar>
-          <ThemeProvider mode={trigger || !menuExited ? "light" : "dark"}>
-            <Logo />
-            <Box sx={sx.spacer} />
-            <Stack
-              sx={sx.navButtonContainer}
-              component="nav"
-              spacing={1}
-              direction="row"
-            >
-              {Object.values(nav).map(({ id, name }) => (
-                <NavButton
-                  key={id}
-                  id={id}
-                  label={name}
-                  active={activeSectionId === id}
-                />
-              ))}
-            </Stack>
-            <IconButton
-              sx={sx.menuButton}
-              onClick={handleMenuToggle}
-              aria-label="toggle menu"
-            >
-              <Menu />
-            </IconButton>
-          </ThemeProvider>
-        </Toolbar>
-        <Collapse in={menuOpen} timeout="auto" unmountOnExit onExited={handleMenuExited}>
-          <List sx={sx.navList} component="nav" aria-label="nav list">
+    <AppBar color={mdDown || trigger ? "secondary" : undefined} sx={sx.root}>
+      <Toolbar>
+        <ThemeProvider mode={mdDown || trigger ? "light" : "dark"}>
+          <Logo />
+          <Box sx={sx.spacer} />
+          <Stack
+            sx={sx.navButtonContainer}
+            component="nav"
+            spacing={1}
+            direction="row"
+          >
             {Object.values(nav).map(({ id, name }) => (
-              <NavListItem
+              <NavButton
                 key={id}
                 id={id}
                 label={name}
                 active={activeSectionId === id}
               />
             ))}
-          </List>
-        </Collapse>
-      </AppBar>
-    </Fragment>
+          </Stack>
+          <IconButton
+            sx={sx.menuButton}
+            onClick={handleMenuToggle}
+            aria-label="toggle menu"
+          >
+            <Menu />
+          </IconButton>
+        </ThemeProvider>
+      </Toolbar>
+      <Collapse in={menuOpen} timeout="auto" unmountOnExit>
+        <List sx={sx.navList} component="nav" aria-label="nav list">
+          {Object.values(nav).map(({ id, name }) => (
+            <NavListItem
+              key={id}
+              id={id}
+              label={name}
+              active={activeSectionId === id}
+            />
+          ))}
+        </List>
+      </Collapse>
+    </AppBar>
   );
 };
 

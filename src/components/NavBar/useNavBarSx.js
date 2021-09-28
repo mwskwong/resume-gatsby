@@ -1,6 +1,9 @@
 import { useMemo } from "react";
 
-const useSx = () => useMemo(() => ({
+const useSx = ({ solidBg }) => useMemo(() => ({
+  root: {
+    borderBottomColor: solidBg ? undefined : "transparent"
+  },
   navButtonContainer: {
     display: {
       xs: "none",
@@ -14,15 +17,11 @@ const useSx = () => useMemo(() => ({
     display: {
       xs: "inline-flex",
       md: "none"
-    },
-    transition: theme => theme.transitions.create(
-      ["background-color", "color"],
-      { duration: theme.transitions.duration.short }
-    )
+    }
   },
   navList: {
     bgcolor: "background.paper"
   }
-}), []);
+}), [solidBg]);
 
 export default useSx;
