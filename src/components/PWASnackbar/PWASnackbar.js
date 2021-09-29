@@ -2,13 +2,13 @@ import { Button, Snackbar } from "@mui/material";
 import { useEffect, useState } from "react";
 
 import constants from "contents/constants";
-import isSWUpdateReadySelector from "selectors/isSWUpdateReady";
+import { selectSWUpdateReady } from "slices/swUpdateReady";
 import { useSelector } from "react-redux";
 import useShowScrollToTopFab from "hooks/useShowScrollToTopFab";
 import useSx from "./usePWASnackbarSx";
 
 const PWASnackbar = () => {
-  const isSWUpdateReady = useSelector(isSWUpdateReadySelector);
+  const swUpdateReady = useSelector(selectSWUpdateReady);
   const [open, setOpen] = useState(false);
   const showScrollToTopFab = useShowScrollToTopFab();
   const sx = useSx({ showScrollToTopFab });
@@ -22,7 +22,7 @@ const PWASnackbar = () => {
     window.location.reload();
   };
 
-  useEffect(() => setOpen(isSWUpdateReady), [isSWUpdateReady]);
+  useEffect(() => setOpen(swUpdateReady), [swUpdateReady]);
 
   return (
     <Snackbar

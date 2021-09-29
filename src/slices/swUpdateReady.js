@@ -11,3 +11,5 @@ const swUpdateReadySlice = createSlice({
 const { actions, reducer } = swUpdateReadySlice;
 export const { updateReady } = actions;
 export default reducer;
+
+export const selectSWUpdateReady = state => state.swUpdateReady;
