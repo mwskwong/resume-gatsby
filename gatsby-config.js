@@ -28,7 +28,6 @@ module.exports = {
         images: `${__dirname}/src/images`,
         pages: `${__dirname}/src/pages`,
         sections: `${__dirname}/src/sections`,
-        selectors: `${__dirname}/src/selectors`,
         slices: `${__dirname}/src/slices`,
         src: `${__dirname}/src`,
         store: `${__dirname}/src/store`,
