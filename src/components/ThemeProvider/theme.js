@@ -72,7 +72,7 @@ const createCustomTheme = mode => responsiveFontSizes(createTheme({
     MuiFab: {
       styleOverrides: {
         root: {
-          borderRadius: initTheme.shape.borderRadius
+          borderRadius: 8
         }
       }
     },
@@ -151,6 +151,9 @@ const createCustomTheme = mode => responsiveFontSizes(createTheme({
     button: {
       textTransform: "capitalize"
     }
+  },
+  shape: {
+    borderRadius: 8
   }
 }));
 
