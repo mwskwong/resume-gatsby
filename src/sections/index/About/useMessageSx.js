@@ -24,7 +24,7 @@ const useSx = () => useMemo(() => ({
     mx: 2,
     height: 4,
     width: 4,
-    borderRadius: 2,
+    borderRadius: "2px",
     bgcolor: "text.secondary"
   },
   occupation: {
