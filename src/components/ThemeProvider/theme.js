@@ -153,7 +153,7 @@ const createCustomTheme = mode => responsiveFontSizes(createTheme({
     }
   },
   shape: {
-    borderRadius: 8
+    borderRadius: 10
   }
 }));
 
