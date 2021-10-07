@@ -1,6 +1,6 @@
 import { Container } from "@mui/material";
 import HexSlice1 from "components/icons/HexSlice1";
-import Languages from "./Languages";
+// import Languages from "./Languages";
 import Message from "./Message";
 import SectionHeader from "components/SectionHeader";
 import SkillSet from "./SkillSet";
@@ -16,7 +16,7 @@ const About = () => {
         Icon={HexSlice1}
       />
       <Message />
-      <Languages />
+      {/* <Languages /> */}
       <SkillSet />
     </Container>
   );
