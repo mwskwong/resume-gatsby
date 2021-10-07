@@ -1,4 +1,8 @@
-import { Error, Send, CheckCircle as Success } from "@mui/icons-material";
+import {
+  ErrorOutlineOutlined,
+  SendOutlined,
+  CheckCircleOutlined as Success
+} from "@mui/icons-material";
 import { Grid, TextField, useMediaQuery } from "@mui/material";
 import { isEmailValid, isValueEmpty } from "utils";
 import { useRef, useState } from "react";
@@ -138,8 +142,8 @@ const ContactForm = () => {
         endIcon={emailSendSuccess
           ? <Success />
           : emailSendSuccess === false
-            ? <Error />
-            : <Send />
+            ? <ErrorOutlineOutlined />
+            : <SendOutlined />
         }
         sx={sx.submitButton}
         type="submit"
