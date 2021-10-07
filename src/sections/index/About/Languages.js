@@ -1,6 +1,6 @@
 import { Box, useTheme } from "@mui/material";
 
-import { ResponsiveRadar } from "@nivo/radar";
+import { Radar } from "@nivo/radar";
 import data from "contents/data";
 import useSx from "./useLanguageSx";
 
@@ -16,7 +16,9 @@ const Languages = () => {
 
   return (
     <Box sx={sx.root}>
-      <ResponsiveRadar
+      <Radar
+        width={320}
+        height={300}
         data={data.about.languages}
         indexBy="name"
         keys={keys}
