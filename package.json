@@ -25,7 +25,7 @@
     "@nivo/radar": "^0.73.0",
     "@reduxjs/toolkit": "^1.6.2",
     "emailjs-com": "^3.2.0",
-    "gatsby": "next",
+    "gatsby": "4.0.0-zz-next.1",
     "gatsby-plugin-emotion": "next",
     "gatsby-plugin-image": "next",
     "gatsby-plugin-manifest": "next",
