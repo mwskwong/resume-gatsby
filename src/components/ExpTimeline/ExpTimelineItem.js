@@ -16,7 +16,7 @@ import {
   TimelineSeparator
 } from "@mui/lab";
 
-import { Download } from "@mui/icons-material";
+import { FileDownloadOutlined } from "@mui/icons-material";
 import PropTypes from "prop-types";
 import { memo } from "react";
 import useSx from "./useExpTimelineItemSx";
@@ -61,7 +61,7 @@ const ExpTimelineItem = ({ period, title, subheader, details = [], file = "#" })
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Download />
+                    <FileDownloadOutlined />
                   </IconButton>
                 </CardActions>
               )

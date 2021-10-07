@@ -12,7 +12,7 @@ import {
 import { memo, useCallback, useState } from "react";
 
 import Logo from "./Logo";
-import { Menu } from "@mui/icons-material";
+import { MenuOutlined } from "@mui/icons-material";
 import NavButton from "./NavButton";
 import NavListItem from "./NavListItem";
 import ThemeProvider from "components/ThemeProvider";
@@ -61,7 +61,7 @@ const NavBar = () => {
             onClick={handleMenuToggle}
             aria-label="toggle menu"
           >
-            <Menu />
+            <MenuOutlined />
           </IconButton>
         </ThemeProvider>
       </Toolbar>
